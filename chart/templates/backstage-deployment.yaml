@@ -132,7 +132,8 @@ spec:
               value: {{ .Values.backstage.containerPorts.backend | quote }}
             {{- if .Values.postgresql.enabled }}
             - name: POSTGRES_HOST
-              value: {{ include "backstage.postgresql.host" . }}
+              value: {{ .Values.postgresql.host" . }}
+              # value: {{ include "backstage.postgresql.host" . }}
             - name: POSTGRES_PORT
               value: "5432"
             - name: POSTGRES_USER
