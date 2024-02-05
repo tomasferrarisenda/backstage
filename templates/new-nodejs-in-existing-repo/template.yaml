@@ -1,7 +1,7 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: new-folder
+  name: new-nodejs-existing-repo
   title: New Node.js in existing repo
   description: Create directory for new NodeJS service in existing repo
 spec:

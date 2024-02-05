@@ -9,7 +9,7 @@ yarn tsc
 yarn build:backend
 # yarn build:backend --config ../../app-config.production.yaml
 
-docker image build . -f packages/backend/Dockerfile --tag tferrari92/backstage:22
-docker push tferrari92/backstage:22
+docker image build . -f packages/backend/Dockerfile --tag tferrari92/backstage:23
+docker push tferrari92/backstage:23
 
 git cmp "new tag"
