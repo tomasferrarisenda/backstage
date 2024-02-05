@@ -73,7 +73,8 @@ postgresql:
 
   # -- Switch to enable or disable the PostgreSQL helm chart
   enabled: true
-
+  auth:
+    password: "CAMBIAR"
 
 serviceAccount:
 
