@@ -48,17 +48,19 @@ spec:
         values:
           name: ${{parameters.name}}
 
-    # - id: fetch-docs
-    #   name: Fetch Docs
-    #   action: fetch:plain
-    #   input:
-    #     targetPath: ./community
-    #     url: https://github.com/backstage/community/tree/main/backstage-community-sessions
+    - id: fetch-docs
+      name: Fetch Docs
+      action: fetch:plain
+      input:
+        targetPath: ./${{parameters.name}}
+        url: https://github.com/tomasferrarisenda/backstage/tree/main/templates/new-nodejs-in-existing-repo/content
 
     - id: publish
       name: Publish
       action: publish:github:pull-request
       input:
+        allowedHosts: ['github.com']
+
         repoUrl: ${{ parameters.repoUrl }}
         title: "Create new project: ${{parameters.name}}"
         branchName: create-${{parameters.name}}
@@ -80,3 +82,10 @@ spec:
     links:
       - url: ${{steps.publish.output.remoteUrl}}
         title: "Go to PR"
+
+      - title: Repository
+        url: ${{ steps['publish'].output.remoteUrl }}
+
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps['register'].output.entityRef }}
