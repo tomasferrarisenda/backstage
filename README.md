@@ -54,8 +54,8 @@ yarn install --frozen-lockfile
 yarn tsc
 yarn build:backend
 
-docker image build . -f packages/backend/Dockerfile --tag tferrari92/backstage:4
-docker push tferrari92/backstage:4
+docker image build . -f packages/backend/Dockerfile --tag tferrari92/backstage:20
+docker push tferrari92/backstage:20
 ```
 
 
