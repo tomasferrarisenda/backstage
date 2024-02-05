@@ -1,6 +1,6 @@
 app:
-  # Should be the same as backend.baseUrl when using the `app-backend` plugin.
   title: Automate All The Things
+  # Should be the same as backend.baseUrl when using the `app-backend` plugin.
   baseUrl: http://localhost:7007
 
 organization:
@@ -17,6 +17,15 @@ backend:
   # all interfaces, the most permissive setting. The right value depends on your specific deployment.
   listen:
     port: 7007
+
+  csp:
+    connect-src: ["'self'", 'http:', 'https:']
+    # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
+    # Default Helmet Content-Security-Policy values can be removed by setting the key to false
+  cors:
+    origin: http://localhost:3000
+    methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
+    credentials: true
 
   # config options: https://node-postgres.com/api/client
   database:
