@@ -6,7 +6,8 @@ yarn tsc
 
 # Build the backend, which bundles it all up into the packages/backend/dist folder.
 # The configuration files here should match the one you use inside the Dockerfile below.
-yarn build:backend --config ../../app-config.production.yaml
+yarn build:backend
+# yarn build:backend --config ../../app-config.production.yaml
 
-docker image build . -f packages/backend/Dockerfile --tag tferrari92/backstage:15
-docker push tferrari92/backstage:15
+docker image build . -f packages/backend/Dockerfile --tag tferrari92/backstage:16
+docker push tferrari92/backstage:16
