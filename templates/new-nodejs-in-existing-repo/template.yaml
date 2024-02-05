@@ -76,7 +76,8 @@ spec:
       name: Register
       action: catalog:register
       input:
-        repoContentsUrl: ${{ parameters.repoUrl }}
+        repoContentsUrl: https://github.com/tomasferrarisenda/backstage
+        # repoContentsUrl: ${{ parameters.repoUrl }}
         # repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
         catalogInfoPath: '/my-app/${{parameters.name}}/catalog-info.yaml'
 
