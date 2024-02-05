@@ -5,47 +5,70 @@ metadata:
   title: New Node.js in existing repo
   description: Create directory for new NodeJS service in existing repo
 spec:
-  owner: your-team-name
+  owner: backstage/techdocs-core
   type: service
 
   parameters:
-    - title: Fill in the details for your new service folder
+    - title: Fill in some steps
       required:
         - name
       properties:
         name:
+          title: Name
           type: string
-          title: Folder Name
-          description: The name of the new service folder to be created.
+          description: Unique name of the component
+          ui:field: EntityNamePicker
+          ui:autofocus: true
+        description:
+          title: Description
+          type: string
+          description: Description of the component
+        targetPath:
+          title: Target Path in repo
+          type: string
+          description: Name of the directory to create in the repository
+    - title: Choose a location
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
 
   steps:
-    - id: fetchBase
-      name: Fetch Base Template
+    - id: fetch-base
+      name: Fetch Base
       action: fetch:template
       input:
-        url: ./path/to/your/base/template
+        url: ./template
         values:
-          name: ${{ parameters.name }}
+          name: ${{parameters.name}}
 
-    - id: prepareFolder
-      name: Prepare New Folder
-      action: fetch:cookiecutter
+    - id: fetch-docs
+      name: Fetch Docs
+      action: fetch:plain
       input:
-        url: ${{ steps.fetchBase.output.folder }}
-        values:
-          name: ${{ parameters.name }}
-        # This step assumes the use of cookiecutter to prepare the folder structure.
-      
-    - id: customGitOperation
-      name: Custom Git Operation
-      action: custom:git:commit
+        targetPath: ./community
+        url: https://github.com/backstage/community/tree/main/backstage-community-sessions
+
+    - id: publish
+      name: Publish
+      action: publish:github:pull-request
       input:
-        repoUrl: https://github.com/tomasferrarisenda/backstage
-        targetPath: /my-app/${{ parameters.name }}
-        commitMessage: 'Adding new service folder: ${{ parameters.name }}'
-        branch: main
-        # This action should be a custom action you've defined to handle Git operations.
-        # You'll need to implement or configure an action to clone the repo, add your folder, and push.
+        repoUrl: ${{ parameters.repoUrl }}
+        title: "Create new project: ${{parameters.name}}"
+        branchName: create-${{parameters.name}}
+        description: |
+          # New project: ${{parameters.name}}
+
+          ${{ parameters.description if parameters.description }}
+        targetPath: ${{ parameters.targetPath if parameters.targetPath else parameters.name }}
 
   output:
-    createdFolderUrl: ${{ steps.customGitOperation.output.folderUrl }}
+    links:
+      - url: ${{steps.publish.output.remoteUrl}}
+        title: "Go to PR"
