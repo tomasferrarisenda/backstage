@@ -79,22 +79,22 @@ catalog:
 
   locations:
     - type: url
-      target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/test-docs-template-url/template.yaml
-      rules:
-        - allow: [Template]
-        
-    - type: file
-      target: ../../../templates/test-docs-template-file/template.yaml
-      rules:
-        - allow: [Template]
-
-    - type: url
       target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/new-nodejs/template.yaml
       rules:
         - allow: [Template]
 
     - type: url
       target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/new-nodejs-in-existing-repo/template.yaml
+      rules:
+        - allow: [Template]
+        
+    - type: url
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/test-docs-template-url/template.yaml
+      rules:
+        - allow: [Template]
+        
+    - type: file
+      target: ../../../templates/test-docs-template-file/template.yaml
       rules:
         - allow: [Template]
 
