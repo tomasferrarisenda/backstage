@@ -1,45 +1,45 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: backstage
-  namespace: argocd
-spec:
-  destination:
-    namespace: backstage
-    server: https://kubernetes.default.svc  
-  project: default
-  source:
-    path: chart
-    helm:
-      valueFiles:
-        - values-custom.yaml
-    repoURL: https://github.com/tomasferrarisenda/backstage.git # This value was modified by the initial-setup python script
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
-
 # apiVersion: argoproj.io/v1alpha1
 # kind: Application
 # metadata:
 #   name: backstage
 #   namespace: argocd
-# spec:  
+# spec:
 #   destination:
 #     namespace: backstage
-#     server: https://kubernetes.default.svc
+#     server: https://kubernetes.default.svc  
 #   project: default
 #   source:
+#     path: chart
+#     helm:
+#       valueFiles:
+#         - values-custom.yaml
 #     repoURL: https://github.com/tomasferrarisenda/backstage.git # This value was modified by the initial-setup python script
-#     path: manifests
-#     directory:
-#       recurse: true
-#       jsonnet: {}
 #   syncPolicy:
 #     automated:
-#       selfHeal: true
 #       prune: true
+#       selfHeal: true
 #     syncOptions:
 #       - CreateNamespace=true
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backstage
+  namespace: argocd
+spec:  
+  destination:
+    namespace: backstage
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    repoURL: https://github.com/tomasferrarisenda/backstage.git # This value was modified by the initial-setup python script
+    path: manifests
+    directory:
+      recurse: true
+      jsonnet: {}
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
