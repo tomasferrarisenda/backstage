@@ -48,12 +48,12 @@ spec:
         values:
           name: ${{parameters.name}}
 
-    - id: fetch-docs
-      name: Fetch Docs
-      action: fetch:plain
-      input:
-        targetPath: ./${{parameters.name}}
-        url: https://github.com/tomasferrarisenda/backstage/tree/main/templates/new-nodejs-in-existing-repo/content
+    # - id: fetch-docs
+    #   name: Fetch Docs
+    #   action: fetch:plain
+    #   input:
+    #     targetPath: ./${{parameters.name}}
+    #     url: https://github.com/tomasferrarisenda/backstage/tree/main/templates/new-nodejs-in-existing-repo/content
 
     - id: publish
       name: Publish
