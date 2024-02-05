@@ -9,61 +9,82 @@ spec:
   type: service
 
   parameters:
-    - title: Fill in some details
+    - title: Fill in some steps
       required:
         - name
-        - repoUrl
-        - directoryPath
       properties:
         name:
           title: App Name
           type: string
-          description: Unique name for your app within the repo
+          description: Unique name for your app
           ui:autofocus: true
+          ui:options:
+            rows: 5
+    - title: Choose a Repo location
+      required:
+        - repoUrl
+      properties:
         repoUrl:
-          title: Repository URL
+          title: Repository Location
           type: string
-          description: "The URL of the existing GitHub repository"
-        directoryPath:
-          title: Directory Path
-          type: string
-          description: "The path within the repository where the new directory will be created"
-          default: "/mi-app/"
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
 
   steps:
-    - id: setup-git
-      name: Setup Git Environment
-      action: custom:git-setup
+    - id: fetch-base
+      name: Fetch Base
+      action: fetch:template
       input:
-        repoUrl: ${{ parameters.repoUrl }}
-        directoryPath: ${{ parameters.directoryPath }}
-
-    - id: create-directory
-      name: Create Directory
-      action: custom:git-create-directory
-      input:
-        directoryPath: ${{ parameters.directoryPath }}
-        name: ${{ parameters.name }}
-
-    - id: add-files
-      name: Add Files to Directory
-      action: custom:git-add-files
-      input:
-        directoryPath: ${{ parameters.directoryPath }}
-        filesPath: ./content
+        url: ./content
         values:
           name: ${{ parameters.name }}
 
-    - id: commit-push
-      name: Commit and Push Changes
-      action: custom:git-commit-push
+    # Step to setup a workspace and clone the repository
+    - id: setup
+      name: Setup Repository
+      action: fetch:cookiecutter
       input:
-        message: "Add ${{ parameters.name }} application"
+        url: ${{ parameters.repoUrl }}
+        outputPath: "./workspace"
 
-  # Outputs are displayed to the user after a successful execution of the template.
+    # Step to create a new branch in the cloned repository
+    - id: create-branch
+      name: Create Branch
+      action: git:create-branch
+      input:
+        branchName: "add-my-app-${{ parameters.name }}"
+
+    # Step to add new directory with contents to the branch
+    - id: add-directory
+      name: Add Directory
+      action: file:write
+      input:
+        path: "./workspace/my-app/${{ parameters.name }}"
+        content: ${{ steps.fetch-base.output.content }}
+
+    # Step to commit and push the changes to the remote repository
+    - id: commit-and-push
+      name: Commit and Push
+      action: git:commit-push
+      input:
+        message: "Add new app directory my-app/${{ parameters.name }}"
+
+    # Step to create a pull request for the new branch
+    - id: create-pr
+      name: Create Pull Request
+      action: github:create-pull-request
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+        branchName: "add-my-app-${{ parameters.name }}"
+        title: "Add ${parameters.name} app directory"
+        description: "Adding a new directory `my-app/${parameters.name}` for the Node.js app deployment on AWS EKS using Terraform."
+
   output:
     links:
-      - title: Repository
-        url: ${{ parameters.repoUrl }}
-      - title: View Directory
-        url: ${{ parameters.repoUrl }}/tree/master${{ parameters.directoryPath }}/${{ parameters.name }}
+      - title: Pull Request
+        url: ${{ steps['create-pr'].output.pullRequestUrl }}
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps['register'].output.entityRef }}
