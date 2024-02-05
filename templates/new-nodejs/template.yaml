@@ -1,9 +1,9 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: eks-cluster
-  title: Node.js App on AWS EKS Cluster
-  description: Deploy a Node.js App on AWS EKS Cluster using Terraform
+  name: new-nodejs
+  title: New Node.js
+  description: Create repo for new NodeJS service
 spec:
   owner: user:guest
   type: service

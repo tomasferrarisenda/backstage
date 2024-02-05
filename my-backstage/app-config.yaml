@@ -89,12 +89,12 @@ catalog:
         - allow: [Template]
 
     - type: url
-      target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/eks-cluster-template/template.yaml
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/new-nodejs/template.yaml
       rules:
         - allow: [Template]
 
     - type: url
-      target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/new-folder-template/template.yaml
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/new-nodejs-in-existing-repo/template.yaml
       rules:
         - allow: [Template]
 
