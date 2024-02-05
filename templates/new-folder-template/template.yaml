@@ -1,0 +1,69 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: new-folder
+  title: Node.js App on AWS EKS Cluster (Directory)
+  description: Deploy a Node.js App in a new directory within an existing AWS EKS Cluster repo using Terraform
+spec:
+  owner: user:guest
+  type: service
+
+  parameters:
+    - title: Fill in some details
+      required:
+        - name
+        - repoUrl
+        - directoryPath
+      properties:
+        name:
+          title: App Name
+          type: string
+          description: Unique name for your app within the repo
+          ui:autofocus: true
+        repoUrl:
+          title: Repository URL
+          type: string
+          description: "The URL of the existing GitHub repository"
+        directoryPath:
+          title: Directory Path
+          type: string
+          description: "The path within the repository where the new directory will be created"
+          default: "/deployments/eks"
+
+  steps:
+    - id: setup-git
+      name: Setup Git Environment
+      action: custom:git-setup
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+        directoryPath: ${{ parameters.directoryPath }}
+
+    - id: create-directory
+      name: Create Directory
+      action: custom:git-create-directory
+      input:
+        directoryPath: ${{ parameters.directoryPath }}
+        name: ${{ parameters.name }}
+
+    - id: add-files
+      name: Add Files to Directory
+      action: custom:git-add-files
+      input:
+        directoryPath: ${{ parameters.directoryPath }}
+        filesPath: ./content
+        values:
+          name: ${{ parameters.name }}
+
+    - id: commit-push
+      name: Commit and Push Changes
+      action: custom:git-commit-push
+      input:
+        message: "Add ${{ parameters.name }} application"
+
+  # Outputs are displayed to the user after a successful execution of the template.
+  output:
+    links:
+      - title: Repository
+        url: ${{ parameters.repoUrl }}
+      - title: View Directory
+        url: ${{ parameters.repoUrl }}/tree/master${{ parameters.directoryPath }}/${{ parameters.name }}

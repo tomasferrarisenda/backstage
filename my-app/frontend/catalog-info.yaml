@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: frontend
+  description: My-app Frontend
+  annotations:
+    backstage.io/kubernetes-id: frontend
+  tags:
+    - nginx
+  links:
+    - title: Website
+      url: http://tferrari.com
+    - title: Documentation
+      url: https://github.com/tferrari92/automate-all-the-things-nirvana
+    - url: https://tferrari.com
+      title: Admin Dashboard
+      icon: dashboard
+      type: admin-dashboard
+    - url: https://grafana.tferrari.com/
+      title: metrics
+      icon: analytics
+      type: metrics-dashboard
+    - url: https://grafana.tferrari.com/
+      title: logs
+      icon: assignment
+      type: logs-dashboard  
+spec:
+  type: service
+  lifecycle: production
+  owner: front-team
+  system: my-app
