@@ -44,6 +44,7 @@ spec:
       name: Fetch Base
       action: fetch:template
       input:
+        targetPath: ./${{parameters.name}}
         url: ./content
         values:
           name: ${{parameters.name}}
@@ -71,12 +72,12 @@ spec:
         targetPath: ${{ parameters.targetPath if parameters.targetPath else parameters.name }}
 
     # The final step is to register our new component in the catalog.
-    - id: register
-      name: Register
-      action: catalog:register
-      input:
-        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-        catalogInfoPath: '/catalog-info.yaml'
+    # - id: register
+    #   name: Register
+    #   action: catalog:register
+    #   input:
+    #     repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+    #     catalogInfoPath: '/catalog-info.yaml'
 
   output:
     links:
@@ -86,6 +87,6 @@ spec:
       - title: Repository
         url: ${{ steps['publish'].output.remoteUrl }}
 
-      - title: Open in catalog
-        icon: catalog
-        entityRef: ${{ steps['register'].output.entityRef }}
+      # - title: Open in catalog
+      #   icon: catalog
+      #   entityRef: ${{ steps['register'].output.entityRef }}
