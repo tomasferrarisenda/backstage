@@ -17,7 +17,7 @@ spec:
       serviceAccountName: backstage-service-account
       containers:
         - name: backstage
-          image: tferrari92/backstage:22
+          image: tferrari92/backstage:23
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
