@@ -32,4 +32,23 @@ catalog:
   # Overrides the default list locations from app-config.yaml as these contain example data.
   # See https://backstage.io/docs/features/software-catalog/#adding-components-to-the-catalog for more details
   # on how to get entities into the catalog.
-  locations: []
+  locations:
+    - type: url
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/test-docs-template-url/template.yaml
+      rules:
+        - allow: [Template]
+        
+    - type: file
+      target: ../../../templates/test-docs-template-file/template.yaml
+      rules:
+        - allow: [Template]
+
+    - type: url
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/eks-cluster-template/template.yaml
+      rules:
+        - allow: [Template]
+
+    - type: url
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/new-folder-template/template.yaml
+      rules:
+        - allow: [Template]
