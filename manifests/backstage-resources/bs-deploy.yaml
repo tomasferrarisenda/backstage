@@ -25,8 +25,8 @@ spec:
           envFrom:
             - secretRef:
                 name: postgres-secrets
-            - secretRef:
-                name: backstage-secrets
+            # - secretRef:
+            #     name: backstage-secrets
           env:
           - name: POSTGRES_PORT
             value: "5432"
