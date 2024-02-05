@@ -3,6 +3,7 @@ kind: Component
 metadata:
   name: ${{ values.name | dump }}
   annotations:
+    backstage.io/kubernetes-id: ${{ values.name }}
   description: ${{ values.name }} NodeJS App
 spec:
   type: service
