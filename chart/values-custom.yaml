@@ -73,6 +73,9 @@ postgresql:
 
   # -- Switch to enable or disable the PostgreSQL helm chart
   enabled: true
+
+  host: "postgres.backstage.svc.cluster.local"
+
   auth:
     password: "CAMBIAR"
 
