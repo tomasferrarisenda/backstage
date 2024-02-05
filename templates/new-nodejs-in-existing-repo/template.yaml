@@ -5,86 +5,47 @@ metadata:
   title: New Node.js in existing repo
   description: Create directory for new NodeJS service in existing repo
 spec:
-  owner: user:guest
+  owner: your-team-name
   type: service
 
   parameters:
-    - title: Fill in some steps
+    - title: Fill in the details for your new service folder
       required:
         - name
       properties:
         name:
-          title: App Name
           type: string
-          description: Unique name for your app
-          ui:autofocus: true
-          ui:options:
-            rows: 5
-    - title: Choose a Repo location
-      required:
-        - repoUrl
-      properties:
-        repoUrl:
-          title: Repository Location
-          type: string
-          ui:field: RepoUrlPicker
-          ui:options:
-            allowedHosts:
-              - github.com
+          title: Folder Name
+          description: The name of the new service folder to be created.
 
   steps:
-    - id: fetch-base
-      name: Fetch Base
+    - id: fetchBase
+      name: Fetch Base Template
       action: fetch:template
       input:
-        url: ./content
+        url: ./path/to/your/base/template
         values:
           name: ${{ parameters.name }}
 
-    # Step to setup a workspace and clone the repository
-    - id: setup
-      name: Setup Repository
+    - id: prepareFolder
+      name: Prepare New Folder
       action: fetch:cookiecutter
       input:
-        url: ${{ parameters.repoUrl }}
-        outputPath: "./workspace"
-
-    # Step to create a new branch in the cloned repository
-    - id: create-branch
-      name: Create Branch
-      action: git:create-branch
+        url: ${{ steps.fetchBase.output.folder }}
+        values:
+          name: ${{ parameters.name }}
+        # This step assumes the use of cookiecutter to prepare the folder structure.
+      
+    - id: customGitOperation
+      name: Custom Git Operation
+      action: custom:git:commit
       input:
-        branchName: "add-my-app-${{ parameters.name }}"
-
-    # Step to add new directory with contents to the branch
-    - id: add-directory
-      name: Add Directory
-      action: file:write
-      input:
-        path: "./workspace/my-app/${{ parameters.name }}"
-        content: ${{ steps.fetch-base.output.content }}
-
-    # Step to commit and push the changes to the remote repository
-    - id: commit-and-push
-      name: Commit and Push
-      action: git:commit-push
-      input:
-        message: "Add new app directory my-app/${{ parameters.name }}"
-
-    # Step to create a pull request for the new branch
-    - id: create-pr
-      name: Create Pull Request
-      action: github:create-pull-request
-      input:
-        repoUrl: ${{ parameters.repoUrl }}
-        branchName: "add-my-app-${{ parameters.name }}"
-        title: "Add ${parameters.name} app directory"
-        description: "Adding a new directory `my-app/${parameters.name}` for the Node.js app deployment on AWS EKS using Terraform."
+        repoUrl: https://github.com/tomasferrarisenda/backstage
+        targetPath: /my-app/${{ parameters.name }}
+        commitMessage: 'Adding new service folder: ${{ parameters.name }}'
+        branch: main
+        # This action should be a custom action you've defined to handle Git operations.
+        # You'll need to implement or configure an action to clone the repo, add your folder, and push.
 
   output:
-    links:
-      - title: Pull Request
-        url: ${{ steps['create-pr'].output.pullRequestUrl }}
-      - title: Open in catalog
-        icon: catalog
-        entityRef: ${{ steps['register'].output.entityRef }}
+    createdFolderUrl: ${{ steps.customGitOperation.output.folderUrl }}
