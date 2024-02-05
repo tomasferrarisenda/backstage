@@ -8,5 +8,5 @@ yarn tsc
 # The configuration files here should match the one you use inside the Dockerfile below.
 yarn build:backend --config ../../app-config.production.yaml
 
-docker image build . -f packages/backend/Dockerfile --tag tferrari92/backstage:13
-docker push tferrari92/backstage:13
+docker image build . -f packages/backend/Dockerfile --tag tferrari92/backstage:latest
+docker push tferrari92/backstage:latest

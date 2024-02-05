@@ -23,7 +23,8 @@ backend:
     # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
     # Default Helmet Content-Security-Policy values can be removed by setting the key to false
   cors:
-    origin: http://localhost:3000
+    # origin: http://localhost:3000
+    origin: http://localhost:7007
     methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
     credentials: true
 
@@ -34,7 +35,8 @@ backend:
       host: ${POSTGRES_HOST}
       port: ${POSTGRES_PORT}
       user: ${POSTGRES_USER}
-      password: ${POSTGRES_PASSWORD}
+      # password: "${POSTGRES_PASSWORD}"
+      password: ""
       # https://node-postgres.com/features/ssl
       # you can set the sslmode configuration option via the `PGSSLMODE` environment variable
       # see https://www.postgresql.org/docs/current/libpq-ssl.html Table 33.1. SSL Mode Descriptions (e.g. require)
