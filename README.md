@@ -207,3 +207,8 @@ https://backstage.io/docs/features/software-catalog/descriptor-format/#overall-s
 
 
 # CAMBIAR GITHUB_TOKEN PARA Q USE VARIABLE DE ENTONRNO POR SERCRET. La imagen de tag 8 tiene el token hardcodeado
+
+
+
+# BACKSTAGE
+If the only change you've made is to the app-config.yaml (or other configuration files) and not to the application code itself, you don't necessarily need to run yarn build or yarn build:backend. The Docker image build process should copy the updated configuration files into the image.
