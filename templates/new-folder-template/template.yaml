@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: new-folder
-  title: Node.js App on AWS EKS Cluster (Directory)
+  title: New Node.js App
   description: Deploy a Node.js App in a new directory within an existing AWS EKS Cluster repo using Terraform
 spec:
   owner: user:guest

@@ -1,4 +1,5 @@
 app:
+  # Should be the same as backend.baseUrl when using the `app-backend` plugin.
   title: Automate All The Things
   baseUrl: http://localhost:3000
 
@@ -78,7 +79,7 @@ catalog:
 
   locations:
     - type: url
-      target: https://github.com/tomasferrarisenda/backstage-chart/blob/main/templates/test-docs-template-url/template.yaml
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/test-docs-template-url/template.yaml
       rules:
         - allow: [Template]
         
@@ -88,12 +89,12 @@ catalog:
         - allow: [Template]
 
     - type: url
-      target: https://github.com/tomasferrarisenda/backstage-chart/blob/main/templates/eks-cluster-template/template.yaml
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/eks-cluster-template/template.yaml
       rules:
         - allow: [Template]
 
     - type: url
-      target: https://github.com/tomasferrarisenda/backstage-chart/blob/main/templates/new-folder-template/template.yaml
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/new-folder-template/template.yaml
       rules:
         - allow: [Template]
 

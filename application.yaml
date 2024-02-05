@@ -13,7 +13,7 @@ spec:
     helm:
       valueFiles:
         - values-custom.yaml
-    repoURL: https://github.com/tomasferrarisenda/backstage-chart.git # This value was modified by the initial-setup python script
+    repoURL: https://github.com/tomasferrarisenda/backstage.git # This value was modified by the initial-setup python script
   syncPolicy:
     automated:
       prune: true
@@ -32,7 +32,7 @@ spec:
 #     server: https://kubernetes.default.svc
 #   project: default
 #   source:
-#     repoURL: https://github.com/tomasferrarisenda/backstage-chart.git # This value was modified by the initial-setup python script
+#     repoURL: https://github.com/tomasferrarisenda/backstage.git # This value was modified by the initial-setup python script
 #     path: manifests
 #     directory:
 #       recurse: true
