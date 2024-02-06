@@ -44,6 +44,6 @@ stages:
 - template: templates/deploy-stage.yml
     SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
 
-- template: templates/deploy-prod.yml
-    SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
-    USER_EMAIL: $(USER_EMAIL)
+# - template: templates/deploy-prod.yml
+#     SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
+#     USER_EMAIL: $(USER_EMAIL)
