@@ -33,15 +33,19 @@ spec:
             limits:
               memory: "50Mi"
               cpu: "200m"
-          # env:
-          #   - name: SERVICE
-          #     value: {{ .Values.appName }}-{{ .Values.service }}-{{ .Values.environment }}
-          #   - name: REDIS_HOST
-          #     value: {{ .Values.redis_host }} 
-          #   - name: JAEGER_HOST
-          #     value: jaeger-collector.observability
-          #   - name: REDIS_PASS
-          #     valueFrom:
-          #       secretKeyRef:
-          #         name: redis-secret
-          #         key: REDIS_PASS
+          env:
+            - name: SERVICE
+              value: {{ .Values.appName }}-{{ .Values.service }}-{{ .Values.environment }}
+            - name: REDIS_HOST
+              value: {{ .Values.redis_host }} 
+            - name: JAEGER_HOST
+              value: jaeger-collector.observability
+            - name: REDIS_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secret
+                  key: REDIS_PASS
+      # TRANSENDANCE
+      # imagePullSecrets:
+      # - name: harbor-credentials
+

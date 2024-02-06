@@ -12,3 +12,4 @@ spec:
       targetPort: {{ .Values.containerPort }}
   type: ClusterIP
 {{- end }}
+
