@@ -68,6 +68,15 @@ spec:
         values:
           name: ${{parameters.name}}
 
+    - id: fetch-azure-pipeline
+      name: Fetch Azure pipeline
+      action: fetch:template
+      input:
+        url: ./azure-devops
+        targetPath: azure-devops
+        values:
+          name: ${{parameters.name}}
+
     # - id: fetch-docs
     #   name: Fetch Docs
     #   action: fetch:plain
@@ -94,6 +103,7 @@ spec:
           - my-app/${{parameters.name}}
           - helm/my-app/${{parameters.name}}
           - argocd/applications/my-app/${{parameters.name}}
+          - azure-devops
 
     # - id: publish-helm
     #   name: Publish Helm

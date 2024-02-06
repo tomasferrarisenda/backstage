@@ -1,4 +1,4 @@
-name: build-and-deploy-service
+name: build-and-deploy-backend
 
 trigger:
   branches:
@@ -14,9 +14,6 @@ parameters:
     type: string
 
 variables:
-  # - group: aws-keys
-  # - name: AWS_REGION
-  #   value: us-east-1  # This value was modified by the initial-setup python script
   - name: APP_NAME
     value: gonchi # This value was modified by the initial-setup python script
   - name: DOCKERHUB_USERNAME
@@ -46,11 +43,9 @@ stages:
 - template: templates/deploy-stage.yml
   parameters: 
     SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
-    # BUILD_ID: $(Build.BuildId)
 
 - template: templates/deploy-prod.yml
   parameters: 
     SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
     USER_EMAIL: $(USER_EMAIL)
-    # BUILD_ID: $(Build.BuildId)
 
