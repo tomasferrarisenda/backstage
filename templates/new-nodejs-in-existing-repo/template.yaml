@@ -45,7 +45,7 @@ spec:
       action: fetch:template
       input:
         url: ./content
-        targetPath: ./${{parameters.name}}
+        targetPath: my-app/${{parameters.name}}
         values:
           name: ${{parameters.name}}
 
@@ -77,7 +77,7 @@ spec:
           # New project: ${{parameters.name}}
 
           ${{ parameters.description if parameters.description }}
-        targetPath: ./${{parameters.name}}
+        targetPath: my-app/${{parameters.name}}
         # targetPath: ${{ parameters.targetPath if parameters.targetPath else parameters.name }}
 
 
