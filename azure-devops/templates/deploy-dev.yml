@@ -1,6 +1,5 @@
 parameters:
   - name: SERVICE_NAME
-  - name: BUILD_ID
 
 stages:
 - stage: DeployDev
@@ -19,7 +18,7 @@ stages:
       displayName: Update repo
 
     - script: |
-        sed 's/tag:.*/tag: ${{ parameters.BUILD_ID }}/g' helm/my-app/${{ parameters.SERVICE_NAME }}/environments/values-dev.yaml > helm/my-app/${{ parameters.SERVICE_NAME }}/environments/values-dev.temp
+        sed 's/tag:.*/tag: $(Build.BuildId)/g' helm/my-app/${{ parameters.SERVICE_NAME }}/environments/values-dev.yaml > helm/my-app/${{ parameters.SERVICE_NAME }}/environments/values-dev.temp
         mv helm/my-app/${{ parameters.SERVICE_NAME }}/environments/values-dev.temp helm/my-app/${{ parameters.SERVICE_NAME }}/environments/values-dev.yaml
       displayName: Update Tag In values-dev.yaml
 
@@ -28,6 +27,6 @@ stages:
         git config --global user.name "Azure DevOps - Build & Deploy App Pipeline"
         git checkout -b main
         git add helm/my-app/${{ parameters.SERVICE_NAME }}/environments/values-dev.yaml 
-        git commit -m "App version tag updated to ${{ parameters.BUILD_ID }} by Azure DevOps"
+        git commit -m "App version tag updated to $(Build.BuildId) by Azure DevOps"
         git push --set-upstream origin main
       displayName: 'Push changes to GitHub'

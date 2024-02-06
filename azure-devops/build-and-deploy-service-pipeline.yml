@@ -46,8 +46,11 @@ stages:
 - template: templates/deploy-stage.yml
   parameters: 
     SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
+    # BUILD_ID: $(Build.BuildId)
 
 - template: templates/deploy-prod.yml
   parameters: 
     SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
     USER_EMAIL: $(USER_EMAIL)
+    # BUILD_ID: $(Build.BuildId)
+
