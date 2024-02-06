@@ -40,8 +40,8 @@ spec:
               - github.com
 
   steps:
-    - id: fetch-base
-      name: Fetch Base
+    - id: fetch-base-code
+      name: Fetch Base Code
       action: fetch:template
       input:
         url: ./content
@@ -49,12 +49,21 @@ spec:
         values:
           name: ${{parameters.name}}
 
-    - id: fetch-helm
-      name: Fetch Helm
+    - id: fetch-helm-chart
+      name: Fetch Helm Chart
       action: fetch:template
       input:
         url: ./helm
         targetPath: helm/my-app/${{parameters.name}}
+        values:
+          name: ${{parameters.name}}
+
+    - id: fetch-argocd-application-manifest
+      name: Fetch ArgoCD Application Manifest
+      action: fetch:template
+      input:
+        url: ./applications
+        targetPath: argocd/applications/my-app/${{parameters.name}}
         values:
           name: ${{parameters.name}}
 
@@ -83,6 +92,7 @@ spec:
         paths: 
           - my-app/${{parameters.name}}
           - helm/my-app/${{parameters.name}}
+          - argocd/applications/my-app/${{parameters.name}}
 
     # - id: publish-helm
     #   name: Publish Helm
