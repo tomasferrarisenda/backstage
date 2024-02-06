@@ -40,6 +40,7 @@ stages:
 
 - template: templates/deploy-dev.yml
     SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
+    BUILD_ID: $(Build.BuildId)
 
 # - template: templates/deploy-stage.yml
 #     SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
