@@ -1,0 +1,4 @@
+apiVersion: v2
+name: middleend 
+description: A Helm chart for deploying middleend
+version: 1.0
