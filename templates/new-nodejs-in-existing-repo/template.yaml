@@ -105,7 +105,7 @@ spec:
           - argocd/applications/my-app/${{parameters.name}}
           - azure-devops
 
-    # - id: publish-helm
+    # - id: publish-helm  
     #   name: Publish Helm
     #   action: publish:github:pull-request
     #   input:

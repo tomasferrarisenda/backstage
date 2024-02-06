@@ -8,14 +8,16 @@ trigger:
     include:
       - my-app/backend/*
 
-parameters:
-  - name: SERVICE_NAME
-    displayName: 'Introduce the name of the service'
-    type: string
+# parameters:
+#   - name: SERVICE_NAME
+#     displayName: 'Introduce the name of the service'
+#     type: string
 
 variables:
   - name: APP_NAME
     value: gonchi # This value was modified by the initial-setup python script
+  - name: SERVICE_NAME
+    value: backend # This value was modified by the initial-setup python script
   - name: DOCKERHUB_USERNAME
     value: tferrari92 # This value was modified by the initial-setup python script
   - name: USER_EMAIL
@@ -32,20 +34,20 @@ stages:
 - template: templates/build-docker-image.yml
   parameters: 
     APP_NAME: $(APP_NAME)
-    SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
+    SERVICE_NAME: $(SERVICE_NAME)
     DOCKERHUB_USERNAME: $(DOCKERHUB_USERNAME)
 
 - template: templates/deploy-dev.yml
   parameters: 
-    SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
+    SERVICE_NAME: $(SERVICE_NAME)
     BUILD_ID: $(Build.BuildId)
 
 - template: templates/deploy-stage.yml
   parameters: 
-    SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
+    SERVICE_NAME: $(SERVICE_NAME)
 
 - template: templates/deploy-prod.yml
   parameters: 
-    SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
+    SERVICE_NAME: $(SERVICE_NAME)
     USER_EMAIL: $(USER_EMAIL)
 
