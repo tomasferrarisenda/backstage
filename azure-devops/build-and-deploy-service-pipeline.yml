@@ -35,9 +35,15 @@ stages:
 - template: templates/build-docker-image.yml
   parameters: 
     APP_NAME: $(APP_NAME)
-    # APP_NAME: ${{ parameters.APP_NAME }}
     SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
     DOCKERHUB_USERNAME: $(DOCKERHUB_USERNAME)
+
 - template: templates/deploy-dev.yml
+    SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
+
 - template: templates/deploy-stage.yml
+    SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
+
 - template: templates/deploy-prod.yml
+    SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
+    USER_EMAIL: $(USER_EMAIL)

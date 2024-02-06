@@ -1,3 +1,7 @@
+parameters:
+  - name: SERVICE_NAME
+  - name: USER_EMAIL
+
 stages:
 - stage: DeployProd
   condition: succeeded()
@@ -10,7 +14,7 @@ stages:
     - task: ManualValidation@0
       timeoutInMinutes: 1440 # Task times out in 1 day
       inputs:
-        notifyUsers: '$(USER_EMAIL)'
+        notifyUsers: ${{ parameters.USER_EMAIL }}
         instructions: 'Please validate and approve deployment to prod.'
 
   - job: DeployProdJob
@@ -28,15 +32,15 @@ stages:
       displayName: Update repo
 
     - script: |
-        sed 's/tag:.*/tag: $(Build.BuildId)/g' helm/my-app/backend/environments/values-prod.yaml > helm/my-app/backend/environments/values-prod.temp
-        mv helm/my-app/backend/environments/values-prod.temp helm/my-app/backend/environments/values-prod.yaml
+        sed 's/tag:.*/tag: $(Build.BuildId)/g' helm/my-app/${{ parameters.SERVICE_NAME }}/environments/values-prod.yaml > helm/my-app/${{ parameters.SERVICE_NAME }}/environments/values-prod.temp
+        mv helm/my-app/${{ parameters.SERVICE_NAME }}/environments/values-prod.temp helm/my-app/${{ parameters.SERVICE_NAME }}/environments/values-prod.yaml
       displayName: Update Tag In values-prod.yaml
 
     - script: |
         git config --global user.email "AzureDevOps@Build&DeployAppPipeline.com"
         git config --global user.name "Azure DevOps - Build & Deploy App Pipeline"
         git checkout -b main
-        git add helm/my-app/backend/environments/values-prod.yaml 
+        git add helm/my-app/${{ parameters.SERVICE_NAME }}/environments/values-prod.yaml 
         git commit -m "App version tag updated to $(Build.BuildId) by Azure DevOps"
         git push --set-upstream origin main
       displayName: 'Push changes to GitHub'
