@@ -25,7 +25,6 @@ spec:
           image: {{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}
           ports:
             - containerPort: {{ .Values.containerPort }}
-          # We specify resources now because we are using Horizontal Pod Autoscalers
           resources:
             requests:
               memory: "5Mi"
@@ -33,15 +32,11 @@ spec:
             limits:
               memory: "50Mi"
               cpu: "200m"
-          # env:
-          #   - name: SERVICE
-          #     value: {{ .Values.appName }}-{{ .Values.service }}-{{ .Values.environment }}
-          #   - name: REDIS_HOST
-          #     value: {{ .Values.redis_host }} 
-          #   - name: JAEGER_HOST
-          #     value: jaeger-collector.observability
-          #   - name: REDIS_PASS
-          #     valueFrom:
-          #       secretKeyRef:
-          #         name: redis-secret
-          #         key: REDIS_PASS
+          env:
+            - name: 
+              value:
+            - name: 
+              valueFrom:
+                secretKeyRef:
+                  name: 
+                  key: 
