@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "emma"
+  annotations:
+    backstage.io/kubernetes-id: emma
+  description: emma NodeJS App
+spec:
+  type: service
+  owner: user:guest
+  lifecycle: experimental

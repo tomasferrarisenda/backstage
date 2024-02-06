@@ -1,0 +1,4 @@
+apiVersion: v2
+name: emma 
+description: A Helm chart for deploying emma
+version: 1.0
