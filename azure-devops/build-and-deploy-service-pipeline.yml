@@ -39,12 +39,15 @@ stages:
     DOCKERHUB_USERNAME: $(DOCKERHUB_USERNAME)
 
 - template: templates/deploy-dev.yml
+  parameters: 
     SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
     BUILD_ID: $(Build.BuildId)
 
-# - template: templates/deploy-stage.yml
-#     SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
+- template: templates/deploy-stage.yml
+  parameters: 
+    SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
 
-# - template: templates/deploy-prod.yml
-#     SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
-#     USER_EMAIL: $(USER_EMAIL)
+- template: templates/deploy-prod.yml
+  parameters: 
+    SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
+    USER_EMAIL: $(USER_EMAIL)
