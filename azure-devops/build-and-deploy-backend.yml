@@ -17,7 +17,7 @@ variables:
   - name: APP_NAME
     value: gonchi # This value was modified by the initial-setup python script
   - name: SERVICE_NAME
-    value: backend # This value was modified by the initial-setup python script
+    value: backend
   - name: DOCKERHUB_USERNAME
     value: tferrari92 # This value was modified by the initial-setup python script
   - name: USER_EMAIL
