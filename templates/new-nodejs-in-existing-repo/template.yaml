@@ -77,20 +77,23 @@ spec:
           # New project: ${{parameters.name}}
 
           ${{ parameters.description if parameters.description }}
-        targetPath: my-app/${{parameters.name}}
+        # targetPath: my-app/${{parameters.name}}
         # targetPath: ${{ parameters.targetPath if parameters.targetPath else parameters.name }}
+        targetPath: "" # Leave empty to use the root of the repo or specify if needed
+        paths: 
+          - my-app/${{parameters.name}}
+          - helm/my-app/${{parameters.name}}
 
-
-    - id: publish-helm
-      name: Publish Helm
-      action: publish:github:pull-request
-      input:
-        allowedHosts: ['github.com']
-        repoUrl: ${{ parameters.repoUrl }}
-        title: "Create new project: ${{parameters.name}}"
-        branchName: create-${{parameters.name}}
-        description: "New project: ${{parameters.name}}"
-        targetPath: helm/my-app/${{parameters.name}}
+    # - id: publish-helm
+    #   name: Publish Helm
+    #   action: publish:github:pull-request
+    #   input:
+    #     allowedHosts: ['github.com']
+    #     repoUrl: ${{ parameters.repoUrl }}
+    #     title: "Create new project: ${{parameters.name}}"
+    #     branchName: create-${{parameters.name}}
+    #     description: "New project: ${{parameters.name}}"
+    #     targetPath: helm/my-app/${{parameters.name}}
 
     # The final step is to register our new component in the catalog.
     - id: register
