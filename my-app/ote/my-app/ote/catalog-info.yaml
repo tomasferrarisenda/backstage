@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "ote"
+  annotations:
+    backstage.io/kubernetes-id: ote
+  description: ote NodeJS App
+spec:
+  type: service
+  owner: user:guest
+  lifecycle: experimental
