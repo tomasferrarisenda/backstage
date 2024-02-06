@@ -77,7 +77,8 @@ spec:
           # New project: ${{parameters.name}}
 
           ${{ parameters.description if parameters.description }}
-        targetPath: ${{ parameters.targetPath if parameters.targetPath else parameters.name }}
+        targetPath: ./${{parameters.name}}
+        # targetPath: ${{ parameters.targetPath if parameters.targetPath else parameters.name }}
 
 
     # - id: publish-helm
