@@ -1,8 +1,7 @@
 parameters:
+  - name: APP_NAME
   - name: SERVICE_NAME
-    displayName: 'Introduce the name of the service'
-    type: string
-
+  - name: DOCKERHUB_USERNAME
 
 stages:
 - stage: BuildApp
@@ -19,6 +18,6 @@ stages:
       displayName: Build And Push Image
       inputs:
         containerRegistry: 'dockerhub'
-        repository: '$(DOCKERHUB_USERNAME)/$(APP_NAME)-${{ parameters.SERVICE_NAME }}'
+        repository: '${{ parameters.DOCKERHUB_USERNAME }}/${{ parameters.APP_NAME }}-${{ parameters.SERVICE_NAME }}'
         command: 'buildAndPush'
         Dockerfile: 'my-app/backend/Dockerfile'

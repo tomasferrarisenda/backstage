@@ -14,9 +14,9 @@ parameters:
     type: string
 
 variables:
-  - group: aws-keys
-  - name: AWS_REGION
-    value: us-east-1  # This value was modified by the initial-setup python script
+  # - group: aws-keys
+  # - name: AWS_REGION
+  #   value: us-east-1  # This value was modified by the initial-setup python script
   - name: APP_NAME
     value: gonchi # This value was modified by the initial-setup python script
   - name: DOCKERHUB_USERNAME
@@ -34,7 +34,10 @@ pool:
 stages:
 - template: templates/build-docker-image.yml
   parameters: 
+    APP_NAME: $(APP_NAME)
+    # APP_NAME: ${{ parameters.APP_NAME }}
     SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
+    DOCKERHUB_USERNAME: $(DOCKERHUB_USERNAME)
 - template: templates/deploy-dev.yml
 - template: templates/deploy-stage.yml
 - template: templates/deploy-prod.yml
