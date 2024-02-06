@@ -23,10 +23,10 @@ spec:
           title: Description
           type: string
           description: Description of the component
-        # targetPath:
-        #   title: Target Path in repo
-        #   type: string
-        #   description: Name of the directory to create in the repository. Don't include the root slash.
+        targetPath:
+          title: Target Path in repo
+          type: string
+          description: Name of the directory to create in the repository. Don't include the root slash.
     - title: Choose a location
       required:
         - repoUrl
