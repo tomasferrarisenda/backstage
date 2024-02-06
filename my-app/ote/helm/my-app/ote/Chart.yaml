@@ -1,0 +1,4 @@
+apiVersion: v2
+name: ote 
+description: A Helm chart for deploying ote
+version: 1.0
