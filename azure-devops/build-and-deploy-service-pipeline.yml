@@ -33,6 +33,8 @@ pool:
 
 stages:
 - template: templates/build-docker-image.yml
+  parameters: 
+    SERVICE_NAME: ${{ parameters.SERVICE_NAME }}
 - template: templates/deploy-dev.yml
 - template: templates/deploy-stage.yml
 - template: templates/deploy-prod.yml
