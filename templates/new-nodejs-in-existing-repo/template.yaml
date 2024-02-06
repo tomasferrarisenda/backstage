@@ -49,14 +49,14 @@ spec:
         values:
           name: ${{parameters.name}}
 
-    - id: fetch-helm
-      name: Fetch Helm
-      action: fetch:template
-      input:
-        url: ./helm
-        targetPath: ../helm/my-app/${{parameters.name}}
-        values:
-          name: ${{parameters.name}}
+    # - id: fetch-helm
+    #   name: Fetch Helm
+    #   action: fetch:template
+    #   input:
+    #     url: ./helm
+    #     targetPath: ../helm/my-app/${{parameters.name}}
+    #     values:
+    #       name: ${{parameters.name}}
 
     # - id: fetch-docs
     #   name: Fetch Docs
@@ -80,17 +80,17 @@ spec:
         targetPath: ${{ parameters.targetPath if parameters.targetPath else parameters.name }}
 
 
-    - id: publish-helm
-      name: Publish Helm
-      action: publish:github:pull-request
-      input:
-        allowedHosts: ['github.com']
-        repoUrl: ${{ parameters.repoUrl }}
-        title: "Create new project: ${{parameters.name}}"
-        branchName: create-${{parameters.name}}
-        description: "New project: ${{parameters.name}}"
-        targetPath: ../helm/my-app/${{parameters.name}}
-        
+    # - id: publish-helm
+    #   name: Publish Helm
+    #   action: publish:github:pull-request
+    #   input:
+    #     allowedHosts: ['github.com']
+    #     repoUrl: ${{ parameters.repoUrl }}
+    #     title: "Create new project: ${{parameters.name}}"
+    #     branchName: create-${{parameters.name}}
+    #     description: "New project: ${{parameters.name}}"
+    #     targetPath: ../helm/my-app/${{parameters.name}}
+
     # The final step is to register our new component in the catalog.
     - id: register
       name: Register
