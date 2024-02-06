@@ -107,15 +107,15 @@ spec:
     #     targetPath: helm/my-app/${{parameters.name}}
 
     # The final step is to register our new component in the catalog.
-    - id: register
-      name: Register
-      action: catalog:register
-      input:
-        # repoContentsUrl: https://github.com/tomasferrarisenda/backstage/tree/create-${{parameters.name}}
-        repoContentsUrl: https://github.com/tomasferrarisenda/backstage/blob/create-${{parameters.name}}
-        # repoContentsUrl: ${{ parameters.repoUrl }}
-        # repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-        catalogInfoPath: my-app/${{parameters.name}}/catalog-info.yaml
+    # - id: register
+    #   name: Register
+    #   action: catalog:register
+    #   input:
+    #     # repoContentsUrl: https://github.com/tomasferrarisenda/backstage/tree/create-${{parameters.name}}
+    #     repoContentsUrl: https://github.com/tomasferrarisenda/backstage/blob/create-${{parameters.name}}
+    #     # repoContentsUrl: ${{ parameters.repoUrl }}
+    #     # repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+    #     catalogInfoPath: my-app/${{parameters.name}}/catalog-info.yaml
 
   output:
     links:
@@ -125,6 +125,6 @@ spec:
       - title: Repository
         url: ${{ steps['publish'].output.remoteUrl }}
 
-      - title: Open in catalog
-        icon: catalog
-        entityRef: ${{ steps['register'].output.entityRef }}
+      # - title: Open in catalog
+      #   icon: catalog
+      #   entityRef: ${{ steps['register'].output.entityRef }}

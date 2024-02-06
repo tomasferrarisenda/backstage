@@ -1,0 +1,33 @@
+name: build-and-deploy-service
+
+trigger:
+  branches:
+    include:
+      - main  
+  paths:
+    include:
+      - my-app/backend/*
+
+variables:
+  - group: aws-keys
+  - name: AWS_REGION
+    value: AATT_AWS_REGION  # This value was modified by the initial-setup python script
+  - name: APP_NAME
+    value: AATT_APP_NAME # This value was modified by the initial-setup python script
+  - name: DOCKERHUB_USERNAME
+    value: AATT_DOCKERHUB_USERNAME # This value was modified by the initial-setup python script
+  - name: USER_EMAIL
+    value: AATT_USER_EMAIL # This value was modified by the initial-setup python script
+    
+pool:
+  vmImage: 'ubuntu-latest' 
+  # If you are using a self-hosted agent, comment out the previous line and uncomment the following three
+  # name: <agent-pool-name> # Insert here the name of the agent pool you created
+  # demands:
+  #   - agent.name -equals <agent-name> # Insert here the name of the agent you created
+
+stages:
+- template: templates/build-docker-image.yml
+- template: templates/deploy-dev.yml
+- template: templates/deploy-stage.yml
+- template: templates/deploy-prod.yml
