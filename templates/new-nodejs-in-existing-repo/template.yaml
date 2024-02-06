@@ -34,7 +34,6 @@ spec:
         repoUrl:
           title: Repository Location
           type: string
-          default: "backstage"
           ui:field: RepoUrlPicker
           ui:options:
             allowedHosts:
@@ -45,7 +44,7 @@ spec:
       name: Fetch Base Code
       action: fetch:template
       input:
-        url: ./content
+        url: ./base-code
         targetPath: my-app/${{parameters.name}}
         values:
           name: ${{parameters.name}}
@@ -54,7 +53,7 @@ spec:
       name: Fetch Helm Chart
       action: fetch:template
       input:
-        url: ./helm
+        url: ./helm-chart
         targetPath: helm/my-app/${{parameters.name}}
         values:
           name: ${{parameters.name}}
@@ -63,7 +62,7 @@ spec:
       name: Fetch ArgoCD Application Manifest
       action: fetch:template
       input:
-        url: ./application
+        url: ./argocd-applications
         targetPath: argocd/applications/my-app/${{parameters.name}}
         values:
           name: ${{parameters.name}}
