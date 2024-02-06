@@ -63,7 +63,7 @@ spec:
       name: Fetch ArgoCD Application Manifest
       action: fetch:template
       input:
-        url: ./applications
+        url: ./application
         targetPath: argocd/applications/my-app/${{parameters.name}}
         values:
           name: ${{parameters.name}}
