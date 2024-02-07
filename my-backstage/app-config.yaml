@@ -90,11 +90,6 @@ catalog:
         - allow: [Template]
 
     # - type: url
-    #   target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/borrar.yaml
-    #   rules:
-    #     - allow: [Template]
-
-    # - type: url
     #   target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/new-nodejs/template.yaml
     #   rules:
     #     - allow: [Template]
