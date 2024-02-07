@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: all-templates
+  description: A collection of all Backstage example APIs
+spec:
+  targets:
+    - ./new-nodejs/template.yaml
+    - ./new-nodejs-in-existing-repo/template.yaml
