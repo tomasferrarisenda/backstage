@@ -75,13 +75,24 @@ catalog:
   #   entityFilename: catalog-info.yaml
   #   pullRequestBranchName: backstage-integration
   rules:
-    - allow: [Component, System, API, Resource, Location]
+    - allow:
+        - Component
+        - API
+        - Resource
+        - System
+        - Domain
+        - Location
 
   locations:
     - type: url
       target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/all-templates.yaml
       rules:
-        - allow: [Location]
+        - allow: [Template]
+
+    # - type: url
+    #   target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/borrar.yaml
+    #   rules:
+    #     - allow: [Template]
 
     # - type: url
     #   target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/new-nodejs/template.yaml
