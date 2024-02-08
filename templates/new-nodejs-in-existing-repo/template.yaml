@@ -129,7 +129,7 @@ spec:
         # repoContentsUrl: "tomasferrarisenda/${{ parameters.repoUrl }}"
         # repoContentsUrl: tomasferrarisenda/backstage
         # repoContentsUrl: https://raw.githubusercontent.com/tomasferrarisenda/backstage/create-backend-2/my-app/backend-2/catalog-info.yaml
-        # catalogInfoPath: blob/create-backend-2/my-app/backend-2/catalog-info.yaml
+        catalogInfoPath: blob/create-backend-2/my-app/backend-2
         # catalogInfoPath: create-backend-2/my-app/${{parameters.name}}/catalog-info.yaml
         # catalogInfoPath: /catalog-info.yaml
         
