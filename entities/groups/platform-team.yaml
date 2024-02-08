@@ -23,9 +23,9 @@ spec:
     - frontend-subteam
   # Members of the group, typically referencing User entities
   members:
-    - Geralt
-    - Kratos
-    - Masterchief
+    - geralt
+    - kratos
+    - masterchief
   # A list of group profiles, for adding additional structured metadata
   profile:
     # Example of adding a team email as a profile information
