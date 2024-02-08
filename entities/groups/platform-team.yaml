@@ -16,7 +16,7 @@ spec:
   type: team
   # Parent group if this group is part of a larger organization
   # If this is a top-level group, parent can be omitted
-  parent: engineering-department
+  # parent: engineering-department
   # Children groups if this group contains subgroups
   children: 
     - backend-subteam
