@@ -5,7 +5,7 @@ metadata:
 spec:
   profile:
     displayName: Masterchief
-    email: masterchief@somewhere.com
+    email: masterchief@eridanus.com
     picture: https://i.imgur.com/a8eqzkH.jpg
   memberOf:
     - platform-team
