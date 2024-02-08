@@ -14,8 +14,6 @@ spec:
     - backend-subteam
     - frontend-subteam
   members:
-    - geralt
-    - kratos
     - masterchief
   profile:
     email: borrar-team@example.com
