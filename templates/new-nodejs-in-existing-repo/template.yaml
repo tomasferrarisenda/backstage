@@ -157,3 +157,4 @@ spec:
         icon: catalog
         entityRef: ${{ steps.register.output.entityRef }}
 
+
