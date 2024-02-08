@@ -123,7 +123,7 @@ spec:
                         #  https://github.com/tomasferrarisenda/backstage/tree/create-backend-2/my-app/backend-2/my-app/backend-2/catalog-info.yaml
         # repoContentsUrl: https://github.com/tomasferrarisenda/backstage/blob/create-${{parameters.name}}
         # repoContentsUrl: https://github.com/tomasferrarisenda/backstage/tree/create-${{parameters.name}}
-        repoContentsUrl: tomasferrarisenda/${{ parameters.repoUrl }}
+        repoContentsUrl: "tomasferrarisenda/${{ parameters.repoUrl }}"
         # repoContentsUrl: https://raw.githubusercontent.com/tomasferrarisenda/backstage/create-backend-2/my-app/backend-2/catalog-info.yaml
         # repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
         # catalogInfoPath: blob/create-backend-2/my-app/backend-2/catalog-info.yaml
