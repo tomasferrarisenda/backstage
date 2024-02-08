@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "backend2"
+  annotations:
+    github.com/project-slug: undefined/undefined
+    backstage.io/kubernetes-id: backend2
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: service
+  lifecycle: experimental
+  owner: 
