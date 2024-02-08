@@ -116,6 +116,7 @@ spec:
       name: Register
       action: catalog:register
       input:
+        # repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }} # Invalid input passed to action catalog:register, instance is not exactly one from [subschema 0],[subschema 1]
         repoContentsUrl: ${{ steps.publish[0].output.repoContentsUrl }}
         # repoContentsUrl: https://github.com/tomasferrarisenda/backstage
                         #  https://github.com/tomasferrarisenda/backstage/blob/create-backend-2/my-app/backend-2/catalog-info.yaml
