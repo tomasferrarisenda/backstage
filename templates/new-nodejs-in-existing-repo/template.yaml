@@ -13,6 +13,7 @@ spec:
     - title: Provide some simple information
       required:
         - name
+        - owner
       properties:
         name:
           title: Name
@@ -24,6 +25,14 @@ spec:
           title: Description
           type: string
           description: Help others understand what this service is for
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
         # targetPath:
         #   title: Target Path in repo
         #   type: string
@@ -49,6 +58,8 @@ spec:
         targetPath: my-app/${{parameters.name}}
         values:
           name: ${{parameters.name}}
+          description: ${{ parameters.description }}
+          owner: ${{ parameters.owner }}
 
     - id: fetch-helm-chart
       name: Fetch Helm Chart
