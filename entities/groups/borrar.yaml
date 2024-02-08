@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: borrar-team
+  title: borrar Team
+  description: Responsible for maintaining and developing the internal borrar
+  tags:
+    - engineering
+    - infrastructure
+spec:
+  type: team
+  # parent: engineering-department
+  children: 
+    - backend-subteam
+    - frontend-subteam
+  members:
+    - geralt
+    - kratos
+    - masterchief
+  profile:
+    email: borrar-team@example.com
+    slack: #borrar-team

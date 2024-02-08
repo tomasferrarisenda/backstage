@@ -8,3 +8,4 @@ spec:
     - ./groups/platform-team.yaml
     - ./groups/backend-subteam.yaml
     - ./groups/frontend-subteam.yaml
+    - ./groups/borrar.yaml
