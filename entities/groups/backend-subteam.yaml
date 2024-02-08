@@ -6,7 +6,6 @@ metadata:
   description: Responsible for maintaining and developing the backend of internal platform
   tags:
     - engineering
-    - infrastructure
     - nodejs
 spec:
   type: team
