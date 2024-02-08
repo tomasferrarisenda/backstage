@@ -13,6 +13,7 @@ spec:
   # parent: platform-team
   members:
     # - masterchief
+    - borrar
   profile:
     email: backend-subteam@example.com
     slack: #platform-team
