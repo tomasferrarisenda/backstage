@@ -82,12 +82,26 @@ catalog:
         - System
         - Domain
         - Location
+        # - User
+        # - Group
+        # - Template
+        # - TemplateRecipe
 
   locations:
     - type: url
       target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/all-templates.yaml
       rules:
         - allow: [Template]
+
+    - type: url
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/entities/all-users.yaml
+      rules:
+        - allow: [User]
+
+    - type: url
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/entities/all-groups.yaml
+      rules:
+        - allow: [Group]
 
   refreshIntervalSeconds: 5 # In seconds. Default is 100
 
