@@ -119,7 +119,7 @@ spec:
         # repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }} # Invalid input passed to action catalog:register, instance is not exactly one from [subschema 0],[subschema 1]
         # repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }} # Invalid input passed to action catalog:register, instance is not exactly one from [subschema 0],[subschema 1]
         # repoContentsUrl: ${{ steps.publish[0].output.repoContentsUrl }} # Invalid input passed to action catalog:register, instance is not exactly one from [subschema 0],[subschema 1]
-        repoContentsUrl: https://github.com/tomasferrarisenda/backstage
+        repoContentsUrl: https://github.com/tomasferrarisenda/backstage # Unable to read url, Error: Incorrect URL: https://github.com/tomasferrarisenda/backstage/catalog-info.yaml
                         #  https://github.com/tomasferrarisenda/backstage/blob/create-backend-2/my-app/backend-2/catalog-info.yaml
                         #  https://github.com/tomasferrarisenda/backstage/tree/create-backend-2/catalog-info.yaml
                         #  https://github.com/tomasferrarisenda/backstage/tree/create-backend-2/my-app/backend-2/my-app/backend-2/catalog-info.yaml
@@ -129,7 +129,7 @@ spec:
         # repoContentsUrl: "tomasferrarisenda/${{ parameters.repoUrl }}"
         # repoContentsUrl: tomasferrarisenda/backstage
         # repoContentsUrl: https://raw.githubusercontent.com/tomasferrarisenda/backstage/create-backend-2/my-app/backend-2/catalog-info.yaml
-        catalogInfoPath: blob/create-backend-2/my-app/backend-2
+        catalogInfoPath: blob/create-backend-2/my-app/backend-2/catalog-info.yaml
         # catalogInfoPath: create-backend-2/my-app/${{parameters.name}}/catalog-info.yaml
         # catalogInfoPath: /catalog-info.yaml
         
