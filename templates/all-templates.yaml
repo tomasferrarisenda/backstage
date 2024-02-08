@@ -7,3 +7,4 @@ spec:
   targets:
     - ./new-nodejs/template.yaml
     - ./new-nodejs-in-existing-repo/template.yaml
+    - ./new-documentation/template.yaml

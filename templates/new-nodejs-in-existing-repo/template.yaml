@@ -17,13 +17,13 @@ spec:
         name:
           title: Name
           type: string
-          description: Unique name of the component
+          description: Unique name of the new service.
           ui:field: EntityNamePicker
           ui:autofocus: true
         description:
           title: Description
           type: string
-          description: Help others understand what this service is for
+          description: Help others understand what this service is for.
         # targetPath:
         #   title: Target Path in repo
         #   type: string
