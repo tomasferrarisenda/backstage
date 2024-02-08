@@ -89,6 +89,9 @@ catalog:
       rules:
         - allow: [Template]
 
+  refreshIntervalSeconds: 30 # In seconds. Default is 100
+
+
     # - type: url
     #   target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/new-nodejs/template.yaml
     #   rules:
