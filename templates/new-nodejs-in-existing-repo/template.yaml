@@ -130,8 +130,8 @@ spec:
         # catalogInfoPath: blob/create-backend-2/my-app/backend-2/catalog-info.yaml
         # catalogInfoPath: create-backend-2/my-app/${{parameters.name}}/catalog-info.yaml
         
-https://github.com/tomasferrarisenda/backstage/blob/create-backend-2/my-app/backend-2/catalog-info.yaml
-https://github.com/tomasferrarisenda/create-backend-2/my-app/backend-2/catalog-info.yaml
+# https://github.com/tomasferrarisenda/backstage/blob/create-backend-2/my-app/backend-2/catalog-info.yaml
+# https://github.com/tomasferrarisenda/create-backend-2/my-app/backend-2/catalog-info.yaml
 
   output:
     links:
