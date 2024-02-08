@@ -12,10 +12,10 @@ spec:
   children: 
     - backend-subteam
     - frontend-subteam
-  members:
-    - geralt
-    - kratos
-    - masterchief
+  # members:
+  #   - geralt
+  #   - kratos
+  #   - masterchief
   profile:
     email: platform-team@example.com
     slack: #platform-team
