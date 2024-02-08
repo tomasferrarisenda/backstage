@@ -9,7 +9,10 @@ metadata:
     github.com/project-slug: ${{values.destination.owner + "/" + values.destination.repo}}
     backstage.io/kubernetes-id: ${{ values.name }}
     backstage.io/techdocs-ref: dir:.
-
+  tags:
+    {% for tag in values.tags %}
+    - {{ tag }}
+    {% endfor %}
 spec:
   type: service
   lifecycle: experimental
