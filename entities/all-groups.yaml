@@ -6,3 +6,5 @@ metadata:
 spec:
   targets:
     - ./groups/platform-team.yaml
+    - ./groups/backend-subteam.yaml
+    - ./groups/frontend-subteam.yaml
