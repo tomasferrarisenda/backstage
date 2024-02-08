@@ -2,8 +2,8 @@ apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
   name: backend-subteam
-  title: borrar Team
-  description: Responsible for maintaining and developing the internal borrar
+  title: Backend Subteam
+  description: Responsible for maintaining and developing the backend of internal platform
   tags:
     - engineering
     - infrastructure
