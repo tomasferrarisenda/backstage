@@ -13,4 +13,3 @@ spec:
   type: service
   lifecycle: experimental
   owner: ${{values.owner | dump}}
-  # owner: hola
