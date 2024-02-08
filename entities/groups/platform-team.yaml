@@ -9,7 +9,6 @@ metadata:
     - infrastructure
 spec:
   type: team
-  # parent: engineering-department
   children: 
     - backend-subteam
     - frontend-subteam

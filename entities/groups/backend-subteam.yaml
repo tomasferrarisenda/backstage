@@ -12,8 +12,7 @@ spec:
   # parent: platform-team
   children: []
   members:
-    # - masterchief
-    - borrar
+    - masterchief
   profile:
     email: backend-subteam@example.com
     slack: #platform-team
