@@ -7,6 +7,9 @@ metadata:
     github.com/project-slug: undefined/undefined
     backstage.io/kubernetes-id: backend-2
     backstage.io/techdocs-ref: dir:.
+  tags:
+    - example-tag
+    - dynamically-added-tag
 spec:
   type: service
   lifecycle: experimental
