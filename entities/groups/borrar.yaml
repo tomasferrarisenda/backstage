@@ -12,7 +12,7 @@ spec:
   # parent: engineering-department
   children: 
   #   - backend-subteam
-  #   - frontend-subteam
+    - frontend-subteam
   members:
     - masterchief
   profile:
