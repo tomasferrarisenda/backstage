@@ -1,18 +1,19 @@
-# apiVersion: backstage.io/v1alpha1
-# kind: Group
-# metadata:
-#   name: backend-subteam
-#   title: Backend Subteam
-#   description: Responsible for maintaining and developing the backend of internal platform
-#   tags:
-#     - engineering
-#     - nodejs
-# spec:
-#   type: team
-#   # parent: platform-team
-#   members:
-#     # - masterchief
-#     - borrar
-#   profile:
-#     email: backend-subteam@example.com
-#     slack: #platform-team
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: backend-subteam
+  title: Backend Subteam
+  description: Responsible for maintaining and developing the backend of internal platform
+  tags:
+    - engineering
+    - nodejs
+spec:
+  type: team
+  # parent: platform-team
+  children: []
+  members:
+    # - masterchief
+    - borrar
+  profile:
+    email: backend-subteam@example.com
+    slack: #platform-team
