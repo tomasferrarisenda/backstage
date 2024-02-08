@@ -10,9 +10,7 @@ metadata:
     backstage.io/kubernetes-id: ${{ values.name }}
     backstage.io/techdocs-ref: dir:.
   tags:
-    {% for tag in values.tags %}
-    - {{ tag }}
-    {% endfor %}
+    - nodejs
 spec:
   type: service
   lifecycle: experimental

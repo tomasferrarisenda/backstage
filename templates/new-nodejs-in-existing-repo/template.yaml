@@ -69,9 +69,9 @@ spec:
           description: ${{ parameters.description }}
           owner: ${{ parameters.owner }}
           # tags: ['nodejs', 'example-tag2', 'example-tag3']
-          tags:
-            - hard-coded-tag1
-            - hard-coded-tag2
+          # tags:
+          #   - hard-coded-tag1
+          #   - hard-coded-tag2
 
 
     - id: fetch-helm-chart
