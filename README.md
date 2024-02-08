@@ -204,6 +204,16 @@ https://backstage.io/docs/features/software-catalog/descriptor-format/#overall-s
 
 
 
+# Following this approach, no template will load in the UI if any one of those is broken!!!
+  locations:
+    - type: url
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/all-templates.yaml
+      rules:
+        - allow: [Template]
+
+
+
+
 
 
 # CAMBIAR GITHUB_TOKEN PARA Q USE VARIABLE DE ENTONRNO POR SERCRET. La imagen de tag 8 tiene el token hardcodeado
