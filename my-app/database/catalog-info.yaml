@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "database"
+  description: "this is database"
+  annotations:
+    github.com/project-slug: undefined/undefined
+    backstage.io/kubernetes-id: database
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - nodejs
+spec:
+  type: service
+  lifecycle: experimental
+  owner: "group:default/backend-subteam"
