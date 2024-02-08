@@ -10,9 +10,9 @@ metadata:
 spec:
   type: team
   # parent: engineering-department
-  children: 
-    - backend-subteam
-    - frontend-subteam
+  # children: 
+  #   - backend-subteam
+  #   - frontend-subteam
   members:
     - masterchief
   profile:
