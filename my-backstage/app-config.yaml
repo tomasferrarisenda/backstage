@@ -89,7 +89,7 @@ catalog:
       rules:
         - allow: [Template]
 
-  refreshIntervalSeconds: 30 # In seconds. Default is 100
+  refreshIntervalSeconds: 5 # In seconds. Default is 100
 
 
     # - type: url
