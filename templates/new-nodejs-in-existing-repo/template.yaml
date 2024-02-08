@@ -103,6 +103,7 @@ spec:
           - argocd/applications/my-app/${{parameters.name}}
           - azure-devops
 
+    # ESTO NO FUNCIONA!
     # - id: log-publish-output
     #   name: Log Publish Output
     #   action: shell
@@ -111,16 +112,17 @@ spec:
 
 
     # The final step is to register our new component in the catalog.
-    # - id: register
-    #   name: Register
-    #   action: catalog:register
-    #   input:
-    #     repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }}
-    #     # repoContentsUrl: https://github.com/tomasferrarisenda/backstage/blob/create-${{parameters.name}}
-    #     # repoContentsUrl: https://github.com/tomasferrarisenda/backstage/tree/create-${{parameters.name}}
-    #     # repoContentsUrl: ${{ parameters.repoUrl }}
-    #     # repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-    #     catalogInfoPath: my-app/${{parameters.name}}/catalog-info.yaml
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        # repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }}
+        repoContentsUrl: https://raw.githubusercontent.com/tomasferrarisenda/backstage/create-backend-2/my-app/backend-2/catalog-info.yaml
+        # repoContentsUrl: https://github.com/tomasferrarisenda/backstage/blob/create-${{parameters.name}}
+        # repoContentsUrl: https://github.com/tomasferrarisenda/backstage/tree/create-${{parameters.name}}
+        # repoContentsUrl: ${{ parameters.repoUrl }}
+        # repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: my-app/${{parameters.name}}/catalog-info.yaml
 
   output:
     links:
@@ -131,6 +133,4 @@ spec:
       - title: Open in catalog
         icon: catalog
         entityRef: ${{ steps.register.output.entityRef }}
-      - title: Open catalog
-        icon: catalog
-        entityRef: ${{ steps.publish.output.repoContentsUrl }}
+
