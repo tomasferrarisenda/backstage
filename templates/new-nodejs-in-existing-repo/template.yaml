@@ -33,6 +33,12 @@ spec:
           ui:options:
             allowedKinds:
               - Group
+        # tags:
+        #   type: array
+        #   title: Tags
+        #   description: Tags to categorize the service
+        #   items:
+        #     type: string
         # targetPath:
         #   title: Target Path in repo
         #   type: string
@@ -60,6 +66,7 @@ spec:
           name: ${{parameters.name}}
           description: ${{ parameters.description }}
           owner: ${{ parameters.owner }}
+          tags: ['nodejs', 'example-tag2', 'example-tag3']
 
     - id: fetch-helm-chart
       name: Fetch Helm Chart
