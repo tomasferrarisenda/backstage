@@ -103,11 +103,11 @@ spec:
           - argocd/applications/my-app/${{parameters.name}}
           - azure-devops
 
-    - id: log-publish-output
-      name: Log Publish Output
-      action: shell
-      input:
-        script: echo "Publish Step Output: ${{ steps.publish.output }}"
+    # - id: log-publish-output
+    #   name: Log Publish Output
+    #   action: shell
+    #   input:
+    #     script: echo "Publish Step Output: ${{ steps.publish.output }}"
 
 
     # The final step is to register our new component in the catalog.
