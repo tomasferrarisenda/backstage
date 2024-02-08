@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: borrar-team
+  name: backend-team
   title: borrar Team
   description: Responsible for maintaining and developing the internal borrar
   tags:
