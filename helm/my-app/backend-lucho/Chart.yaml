@@ -1,0 +1,4 @@
+apiVersion: v2
+name: backend-lucho 
+description: A Helm chart for deploying backend-lucho
+version: 1.0

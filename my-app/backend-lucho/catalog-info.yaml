@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "backend-lucho"
+  annotations:
+    github.com/project-slug: undefined/undefined
+    backstage.io/kubernetes-id: backend-lucho
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: service
+  lifecycle: experimental
+  owner: 
