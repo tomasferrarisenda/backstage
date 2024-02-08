@@ -5,6 +5,6 @@ metadata:
   description: A collection of all Backstage software templates
 spec:
   targets:
-    - ./template/new-nodejs/template.yaml
-    - ./template/new-nodejs-in-existing-repo/template.yaml
-    - ./template/new-documentation/template.yaml
+    - ./templates/new-nodejs/template.yaml
+    - ./templates/new-nodejs-in-existing-repo/template.yaml
+    - ./templates/new-documentation/template.yaml
