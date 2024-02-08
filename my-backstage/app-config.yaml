@@ -89,9 +89,14 @@ catalog:
 
   locations:
     - type: url
-      target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/all-templates.yaml
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/entities/all-templates.yaml
       rules:
         - allow: [Template]
+
+    # - type: url
+    #   target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/all-templates.yaml
+    #   rules:
+    #     - allow: [Template]
 
     - type: url
       target: https://github.com/tomasferrarisenda/backstage/blob/main/entities/all-users.yaml

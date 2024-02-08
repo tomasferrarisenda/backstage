@@ -2,17 +2,29 @@
 # kind: User
 # metadata:
 #   # A unique identifier for the user, typically matching their login
-#   name: geralt
+#   name: masterchief
 #   # A human-readable name for the user
-#   title: Geralt
+#   title: Masterchief
 #   # A brief description of the user or their role
 #   description: Senior Software Engineer
 # spec:
 #   # The organizational role of the user, can be used for defining access and permissions
 #   profile:
-#     displayName: Geralt
-#     email: geralt@rivia.com
+#     displayName: Masterchief
+#     email: masterchief@somewhere.com
 #     picture: https://example.com/jane.jpg
 #   # Membership in groups, referencing Group entities in the catalog
 #   memberOf:
 #     - platform-team
+
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: masterchief
+spec:
+  profile:
+    displayName: Masterchief
+    email: masterchief@somewhere.com
+    picture: https://example.com/staff/jenny-with-party-hat.jpeg
+  memberOf:
+    - platform-team
