@@ -10,11 +10,13 @@ metadata:
 spec:
   type: team
   # parent: engineering-department
-  # children: 
+  children: 
   #   - backend-subteam
   #   - frontend-subteam
   members:
     - masterchief
   profile:
-    email: borrar-team@example.com
+    # email: borrar-team@example.com
+    email: backend-subteam@example.com
+
     slack: #borrar-team
