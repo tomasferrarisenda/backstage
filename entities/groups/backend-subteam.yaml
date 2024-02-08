@@ -10,9 +10,9 @@ metadata:
     - nodejs
 spec:
   type: team
-  parent: platform-team
+  # parent: platform-team
   members:
-    - masterchief
+    # - masterchief
   profile:
     email: backend-subteam@example.com
     slack: #platform-team
