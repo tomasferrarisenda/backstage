@@ -120,7 +120,7 @@ spec:
       - url: ${{steps.publish.output.remoteUrl}}
         title: "Go to PR"
       - title: Repository
-        url: ${{ steps['publish'].output.remoteUrl }}
+        url: ${{ steps.publish.output.remoteUrl }}
       - title: Open in catalog
         icon: catalog
         entityRef: ${{ steps.register.output.entityRef }}
