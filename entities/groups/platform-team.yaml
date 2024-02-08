@@ -1,34 +1,22 @@
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  # The name of the group, usually lowercase letters
   name: platform-team
-  # A human-readable name for the group
   title: Platform Team
-  # A brief description of the group
   description: Responsible for maintaining and developing the internal platform
-  # Tags that can be used for searching or categorizing
   tags:
     - engineering
     - infrastructure
 spec:
-  # The type of group; often used to represent organizational structure
   type: team
-  # Parent group if this group is part of a larger organization
-  # If this is a top-level group, parent can be omitted
   # parent: engineering-department
-  # Children groups if this group contains subgroups
   children: 
     - backend-subteam
     - frontend-subteam
-  # Members of the group, typically referencing User entities
   members:
     - geralt
     - kratos
     - masterchief
-  # A list of group profiles, for adding additional structured metadata
   profile:
-    # Example of adding a team email as a profile information
     email: platform-team@example.com
-    # You can also add other profile information like slack channel, office location etc.
     slack: #platform-team
