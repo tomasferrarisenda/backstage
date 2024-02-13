@@ -1,0 +1,10 @@
+# user manifest for user snake
+apiVersion: v1
+kind: User
+metadata:
+  name: snake
+  description: A user who is a member of the platform team
+spec:
+  memberOf:
+    - platform-team
+```
