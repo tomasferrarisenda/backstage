@@ -16,6 +16,7 @@ spec:
         - lastName
         - email
         - group
+        - pictureURL
       properties:
         name:
           title: Name
@@ -34,6 +35,11 @@ spec:
           type: string
           description: Email of the new user
           # ui:field: EntityNamePicker
+          ui:autofocus: true
+        pictureURL:
+          title: Profile picutre
+          type: string
+          description: URL to the profile picture of the new user
           ui:autofocus: true
         group:
           title: Group
@@ -101,6 +107,7 @@ spec:
           lastName: ${{ parameters.lastName }}
           email: ${{ parameters.email }}
           group: ${{ parameters.group }}
+          pictureURL: ${{ parameters.pictureURL }}
 
 
     # - id: fetch-helm-chart
