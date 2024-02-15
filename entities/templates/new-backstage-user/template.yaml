@@ -75,15 +75,15 @@ spec:
           group: ${{ parameters.group }}
           pictureURL: ${{ parameters.pictureURL }}
 
-    - id: append-new-user
-      name: Append new user to all-users.yaml
-      action: shell
-      input:
-        cmd: bash
-        args:
-          - -c
-          - |
-            echo "    - ./users/${{parameters.name | lower }}-${{parameters.lastName | lower }}.yaml" >> entities/all-users.yaml
+    # - id: append-new-user
+    #   name: Append new user to all-users.yaml
+    #   action: shell
+    #   input:
+    #     cmd: bash
+    #     args:
+    #       - -c
+    #       - |
+    #         echo "    - ./users/${{parameters.name | lower }}-${{parameters.lastName | lower }}.yaml" >> entities/all-users.yaml
 
     - id: publish
       name: Publish
@@ -95,11 +95,11 @@ spec:
         branchName: create-${{parameters.name | lower }}-${{parameters.lastName | lower }}
         description: |
           # New user: ${{parameters.name}} ${{parameters.lastName}}
-        # targetPath: entities/users
-        targetPath: "" # Leave empty to use the root of the repo or specify if needed
-        paths: 
-          - entities/users
-          - entities/all-users.yaml
+        targetPath: entities/users
+        # targetPath: "" # Leave empty to use the root of the repo or specify if needed
+        # paths: 
+        #   - entities/users
+        #   - entities/all-users.yaml
         
   output:
     links:
