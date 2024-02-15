@@ -8,3 +8,4 @@ spec:
     - ./templates/new-nodejs/template.yaml
     - ./templates/new-nodejs-in-existing-repo/template.yaml
     - ./templates/new-documentation/template.yaml
+    - ./templates/new-backstage-user/template.yaml
