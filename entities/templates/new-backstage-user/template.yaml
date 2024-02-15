@@ -8,7 +8,7 @@ metadata:
     - backstage
 spec:
   owner: web@example.com
-  type: service
+  type: component
   parameters:
     - title: Provide some simple information
       required:
