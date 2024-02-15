@@ -49,28 +49,6 @@ spec:
           ui:options:
             allowedKinds:
               - Group
-        # description:
-        #   title: Description
-        #   type: string
-        #   description: Help others understand what this service is for
-        # owner:
-        #   title: Owner
-        #   type: string
-        #   description: Owner of the service
-        #   ui:field: OwnerPicker
-        #   ui:options:
-        #     allowedKinds:
-        #       - Group
-        # tags:
-        #   type: array
-        #   title: Tags
-        #   description: Tags to categorize the service
-        #   items:
-        #     type: string
-        # targetPath:
-        #   title: Target Path in repo
-        #   type: string
-        #   description: Name of the directory to create in the repository. Don't include the root slash.
 
     - title: Choose a location
       required:
@@ -83,20 +61,8 @@ spec:
           ui:options:
             allowedHosts:
               - github.com
-            # placeholder: "https://github.com/tomasferrarisenda/backstage"
 
   steps:
-    # - id: fetch-base-code
-    #   name: Fetch Base Code
-    #   action: fetch:template
-    #   input:
-    #     url: ./base-code
-    #     targetPath: my-app/${{parameters.name}}
-    #     values:
-    #       name: ${{parameters.name}}
-    #       description: ${{ parameters.description }}
-    #       owner: ${{ parameters.owner }}
-
     - id: fetch-base
       name: Fetch Base
       action: fetch:template
@@ -109,40 +75,15 @@ spec:
           group: ${{ parameters.group }}
           pictureURL: ${{ parameters.pictureURL }}
 
-
-    # - id: fetch-helm-chart
-    #   name: Fetch Helm Chart
-    #   action: fetch:template
-    #   input:
-    #     url: ./helm-chart
-    #     targetPath: helm/my-app/${{parameters.name}}
-    #     values:
-    #       name: ${{parameters.name}}
-
-    # - id: fetch-argocd-application-manifest
-    #   name: Fetch ArgoCD Application Manifest
-    #   action: fetch:template
-    #   input:
-    #     url: ./argocd-applications
-    #     targetPath: argocd/applications/my-app/${{parameters.name}}
-    #     values:
-    #       name: ${{parameters.name}}
-
-    # - id: fetch-azure-pipeline
-    #   name: Fetch Azure pipeline
-    #   action: fetch:template
-    #   input:
-    #     url: ./azure-devops
-    #     targetPath: azure-devops
-    #     values:
-    #       name: ${{parameters.name}}
-
-    # - id: fetch-docs
-    #   name: Fetch Docs
-    #   action: fetch:plain
-    #   input:
-    #     targetPath: ./${{parameters.name}}
-    #     url: https://github.com/tomasferrarisenda/backstage/tree/main/templates/new-nodejs-in-existing-repo/content
+    - id: append-new-user
+      name: Append new user to all-users.yaml
+      action: shell
+      input:
+        cmd: bash
+        args:
+          - -c
+          - |
+            echo "    - ./users/${{parameters.name | lower }}-${{parameters.lastName | lower }}.yaml" >> entities/all-users.yaml
 
     - id: publish
       name: Publish
@@ -154,29 +95,11 @@ spec:
         branchName: create-${{parameters.name | lower }}-${{parameters.lastName | lower }}
         description: |
           # New user: ${{parameters.name}} ${{parameters.lastName}}
-        targetPath: entities/users # Leave empty to use the root of the repo or specify if needed
-        # paths: 
-        #   - my-app/${{parameters.name}}
-        #   - helm/my-app/${{parameters.name}}
-        #   - argocd/applications/my-app/${{parameters.name}}
-        #   - azure-devops
-
-
-    # ESTO NO FUNCIONA!
-    # - id: log-publish-output
-    #   name: Log Publish Output
-    #   action: shell
-    #   input:
-    #     script: echo "Publish Step Output: ${{ steps.publish.output }}"
-
-
-    # The final step is to register our new component in the catalog.
-    # - id: register
-    #   name: Register
-    #   action: catalog:register
-    #   input:
-    #     repoContentsUrl: https://github.com/tomasferrarisenda/backstage
-    #     catalogInfoPath: backstage/blob/create-${{parameters.name}}/my-app/${{parameters.name}}/catalog-info.yaml
+        # targetPath: entities/users
+        targetPath: "" # Leave empty to use the root of the repo or specify if needed
+        paths: 
+          - entities/users
+          - entities/all-users.yaml
         
   output:
     links:
