@@ -24,19 +24,19 @@ spec:
           ui:field: EntityNamePicker
           ui:autofocus: true
         lastName:
-          title: Name
+          title: Last Name
           type: string
           description: Last name of the new user
           ui:field: EntityNamePicker
           ui:autofocus: true
         email:
-          title: Name
+          title: Email
           type: string
           description: Email of the new user
-          ui:field: EntityNamePicker
+          # ui:field: EntityNamePicker
           ui:autofocus: true
         group:
-          title: Owner
+          title: Group
           type: string
           description: Group this user belongs to
           ui:field: OwnerPicker
