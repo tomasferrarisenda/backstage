@@ -1,11 +1,11 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: new-nodejs-in-existing-repo
-  title: New Node.js in existing repo
-  description: Create directory for new NodeJS service in existing repo
+  name: new-backstage-user
+  title: New Backstage User
+  description: Create new Backstage user
   tags:
-    - nodejs
+    - backstage
 spec:
   owner: web@example.com
   type: service
