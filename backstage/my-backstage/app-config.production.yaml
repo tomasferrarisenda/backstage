@@ -37,11 +37,40 @@ techdocs:
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
-# catalog:
+catalog:
 #   # Overrides the default list locations from app-config.yaml as these contain example data.
 #   # See https://backstage.io/docs/features/software-catalog/#adding-components-to-the-catalog for more details
 #   # on how to get entities into the catalog.
 #   locations:
+  rules:
+    - allow:
+        - Component
+        - API
+        - Resource
+        - System
+        - Domain
+        - Location
+        # - User
+        # - Group
+        # - Template
+
+  locations:
+    - type: url
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-templates.yaml
+      rules:
+        - allow: [Template]
+
+    - type: url
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-users.yaml
+      rules:
+        - allow: [User]
+
+    - type: url
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-groups.yaml
+      rules:
+        - allow: [Group]
+
+  refreshIntervalSeconds: 5 # In seconds. Default is 100
 
 
 kubernetes:

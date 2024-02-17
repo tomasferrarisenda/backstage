@@ -12,7 +12,7 @@ backstage:
     repository: tferrari92/backstage
 
     # -- Backstage image tag (immutable tags are recommended)
-    tag: "36"
+    tag: "37"
 
   extraEnvVars:
     - name: GITHUB_TOKEN
