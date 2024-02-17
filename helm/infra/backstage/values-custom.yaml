@@ -2,7 +2,7 @@ backstage:
 
   # command: ["node", "packages/backend"] # DEFAULT
   # command: ["node", "packages/backend", "--config", "app-config.yaml"]
-  command: ["node", "packages/backend", "--config", "app-config.production.yaml"] # Porque este chabon busca la cconfig.production?? no se
+  command: ["node", "packages/backend", "--config", "app-config.production.yaml"]
 
   image:
     # -- Backstage image registry
