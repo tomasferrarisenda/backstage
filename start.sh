@@ -22,16 +22,11 @@ kubectl create -n argocd -f argo-cd/self-manage/argocd-application.yaml
 # Finally, we create an application that will automatically deploy any ArgoCD Applications we specify in the argo-cd/applications directory (App of Apps pattern).
 kubectl create -n argocd -f argo-cd/self-manage/argocd-app-of-apps-application.yaml  
 
-# # We create the secret manifest for the Github token in the parent directory so it's outside of our repo. This way the token won't get pushed to Github.
-# kubectl create ns backstage
-# kubectl create secret generic github-token --namespace=backstage --from-literal=GITHUB_TOKEN="$GITHUB_TOKEN" --dry-run=client -o yaml > ../backstage-github-secret.yaml
-# kubectl apply -f ../backstage-github-secret.yaml
-
 # We create the secret for the Github token with this command. This way the token won't get pushed to Github.
 kubectl create ns backstage
 kubectl create secret generic github-token --namespace=backstage --from-literal=GITHUB_TOKEN="$GITHUB_TOKEN"
 
-# Access ArgoCD
+# Get ArgoCD admin password
 until kubectl -n argocd get secret argocd-initial-admin-secret &> /dev/null; do
   echo "Waiting for secret 'argocd-initial-admin-secret' to be available..."
   sleep 3
@@ -40,14 +35,13 @@ echo "##########################################################################
 echo "#############################################################################"
 echo "#############################################################################"
 echo " "
-echo "The ArgoCD 'admin' password is:"
+echo "THE ARGOCD 'admin' PASSWORD IS:"
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 echo " "
 echo " "
 echo "#############################################################################"
 echo "#############################################################################"
 echo "#############################################################################"
-
 
 # Wait for the Backstage pod to be ready
 echo "Waiting for backstage pod to be ready..."
@@ -56,6 +50,5 @@ until [[ $(kubectl -n backstage get pods -l "app.kubernetes.io/name=backstage" -
   sleep 3
 done
 
-
-# AGREGAR PASO DE ESPERAR A Q ESTE READY
+# Port forward the Backstage service
 kubectl port-forward -n backstage service/backstage 8080:7007
