@@ -38,10 +38,11 @@ techdocs:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
 catalog:
-#   # Overrides the default list locations from app-config.yaml as these contain example data.
-#   # See https://backstage.io/docs/features/software-catalog/#adding-components-to-the-catalog for more details
-#   # on how to get entities into the catalog.
-#   locations:
+  # Overrides the default list locations from app-config.yaml as these contain example data.
+  # If we leave it empty, no locations will be fetched.
+  # See https://backstage.io/docs/features/software-catalog/#adding-components-to-the-catalog for more details
+  # on how to get entities into the catalog.
+  # locations:
   rules:
     - allow:
         - Component

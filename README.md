@@ -34,6 +34,11 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 kubectl port-forward service/argocd-server -n argocd 8080:443
 ```
 
+## Build and push backstage container image
+```bash
+backstage/my-backstage/start.sh
+```
+
 
 ## Crear github token secret
 ```bash
