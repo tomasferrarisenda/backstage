@@ -14,14 +14,19 @@ backstage:
     # -- Backstage image tag (immutable tags are recommended)
     tag: "30"
 
-  # extraEnvVars:
+  extraEnvVars:
+    - name: GITHUB_TOKEN
+      valueFrom:
+        secretKeyRef:
+          name: github-token
+          key: GITHUB_TOKEN
   #   - name: POSTGRES_PORT
   #     value: "5432"
     # - name: POSTGRES_HOST
     #   value: "postgres.backstage.svc.cluster.local"
 
-  extraEnvVarsSecrets:
-    - github-token
+  # extraEnvVarsSecrets:
+  #   - github-token
     # - postgres-secrets
 
   # extraEnvVarsSecrets:

@@ -36,8 +36,12 @@ kubectl port-forward service/argocd-server -n argocd 8080:443
 
 
 ## Crear github token secret
-ESTO HAY Q HACERLO SI USAMOS LOS MANIFEST PELADOS EN LUGAR DEL HELM CHART DE BACKSTAGE
+```bash
+# We create the secret manifest for the Github token in the parent directory so it's outside of our repo. This way the token won't get pushed to Github.
+kubectl create secret generic github-token --namespace=backstage --from-literal=GITHUB_TOKEN="<your-github-token>" --dry-run=client -o yaml > ../backstage-github-secret.yaml
 kubectl apply -f ../backstage-github-secret.yaml
+```
+
 
 ## Access Backstage UI
 ```bash
