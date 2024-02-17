@@ -37,3 +37,14 @@ backend:
 #   locations:
 
 
+kubernetes:
+ serviceLocatorMethod:
+   type: 'multiTenant'
+ clusterLocatorMethods:
+   - type: 'config'
+     clusters:
+       - url: kubernetes.default.svc.cluster.local:443
+         name: local
+         authProvider: 'serviceAccount'
+         skipTLSVerify: false
+         skipMetricsLookup: true
