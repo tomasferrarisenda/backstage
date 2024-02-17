@@ -12,8 +12,20 @@ chmod +x start.sh
 
 # Build and push backstage container image
 ```bash
-chmod +x backstage/my-backstage/start.sh
-backstage/my-backstage/start.sh
+cd backstage/my-backstage
+chmod +x build-push-image.sh
+./build-push-image.sh
+```
+
+# Update image tag in backstage chart values
+```bash
+vim ../../helm/infra/backstage/values-custom.yaml
+```
+Save and push to repo
+```bash
+git add -A
+git commit -m "Updated backstage image tag"
+git push
 ```
 
 
@@ -35,20 +47,13 @@ yarn --version
 yarn global add concurrently
 ```
 
-## Download backstage
-```bash
-git clone git@github.com:backstage/backstage.git backstage
-cd backstage
-git checkout v1.13.2
-```
-
 ## Create app
 ```bash
 npx @backstage/create-app@latest
 cd backstage-aatt/
 ```
 
-## Edit backstage-aatt/app-config.yaml if you want and test it with:
+## To test locally run
 ```bash
 yarn dev
 ```
