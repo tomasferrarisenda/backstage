@@ -88,17 +88,17 @@ catalog:
 
   locations:
     - type: url
-      target: https://github.com/tomasferrarisenda/backstage/blob/main/entities/all-templates.yaml
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-templates.yaml
       rules:
         - allow: [Template]
 
     - type: url
-      target: https://github.com/tomasferrarisenda/backstage/blob/main/entities/all-users.yaml
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-users.yaml
       rules:
         - allow: [User]
 
     - type: url
-      target: https://github.com/tomasferrarisenda/backstage/blob/main/entities/all-groups.yaml
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-groups.yaml
       rules:
         - allow: [Group]
 
