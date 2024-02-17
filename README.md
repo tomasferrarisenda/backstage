@@ -10,25 +10,12 @@ chmod +x start.sh
 ./start.sh
 ```
 
-
-## Build and push backstage container image
+# Build and push backstage container image
 ```bash
+chmod +x backstage/my-backstage/start.sh
 backstage/my-backstage/start.sh
 ```
 
-
-## Crear github token secret
-```bash
-# We create the secret manifest for the Github token in the parent directory so it's outside of our repo. This way the token won't get pushed to Github.
-kubectl create secret generic github-token --namespace=backstage --from-literal=GITHUB_TOKEN="<your-github-token>" --dry-run=client -o yaml > ../backstage-github-secret.yaml
-kubectl apply -f ../backstage-github-secret.yaml
-```
-
-
-## Access Backstage UI
-```bash
-kubectl port-forward -n backstage service/backstage 8081:80
-```
 
 # Backstage Setup
 
