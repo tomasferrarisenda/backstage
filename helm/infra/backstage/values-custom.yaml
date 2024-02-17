@@ -21,7 +21,7 @@ backstage:
     #   value: "postgres.backstage.svc.cluster.local"
 
   extraEnvVarsSecrets:
-    - github-secret
+    - github-token
     # - postgres-secrets
 
   # extraEnvVarsSecrets:
