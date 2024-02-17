@@ -55,25 +55,11 @@ cd backstage-aatt/
 
 ## To test locally run
 ```bash
+export GITHUB_TOKEN=<your-github-token>
 yarn dev
 ```
 
 
-<!-- Once backstage is running go to:
-http://localhost:3000/catalog-import
-Paste this:
-https://github.com/backstage/backstage/blob/master/catalog-info.yaml -->
-
-
-# Build container image
-```bash
-yarn install --frozen-lockfile
-yarn tsc
-yarn build:backend
-
-docker image build . -f packages/backend/Dockerfile --tag tferrari92/backstage:20
-docker push tferrari92/backstage:20
-```
 
 
 # minikube delete when you are done
@@ -91,12 +77,7 @@ Publishing software templates:
     repo
     workflow (if templates include GitHub workflows)
 
-```bash
-echo "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" | base64
-```
 
-#### Copy output to bs-secret.yaml
-https://github.com/backstage/backstagehttps://github.com/backstage/backstage/blob/master/catalog-info.yaml
 
 
 # Kubernetes Plugin Installation
@@ -176,14 +157,24 @@ kubernetes:
          skipMetricsLookup: true
 ```
 
-```bash
-yarn build:backend
-docker image build . -f packages/backend/Dockerfile --tag tferrari92/backstage:5
-docker push tferrari92/backstage:5
-```
 
 
-#### Change tag on deployment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -232,6 +223,8 @@ https://backstage.io/docs/features/software-catalog/descriptor-format/#overall-s
 
 
 ## USAR PLUGIN DE AUTODISCOVERY POR LA MODALIDAD ACTUAL NO BORRA USERSAL SACARLOS DEL REPO
+# EXPLICAR LO DE app-config.yaml y app-config.production.ymal
+uno se usa para local (yarn dev), el otro apra el cluster. Ppalmente por la config para la bbdd postgress (en local no la utilizamos)
 
 
 
@@ -247,5 +240,5 @@ If the only change you've made is to the app-config.yaml (or other configuration
 
 
 
-COSAS MODIFICADAS:
+# COSAS MODIFICADAS:
 values custom de argo, ingress.enabled cambiado a false
