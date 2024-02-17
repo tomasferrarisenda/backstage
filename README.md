@@ -6,6 +6,8 @@
 
 # Environment Setup
 
+chmod +x start.sh
+
 ## Cluster setup
 
 ```bash
@@ -106,6 +108,8 @@ docker image build . -f packages/backend/Dockerfile --tag tferrari92/backstage:2
 docker push tferrari92/backstage:20
 ```
 
+
+# minikube delete when you are done
 
 ### Backstage needs github api token to access software catalog. Get one on github console.
 
