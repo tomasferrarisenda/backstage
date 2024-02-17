@@ -248,3 +248,10 @@ https://backstage.io/docs/features/software-catalog/descriptor-format/#overall-s
 
 # BACKSTAGE
 If the only change you've made is to the app-config.yaml (or other configuration files) and not to the application code itself, you don't necessarily need to run yarn build or yarn build:backend. The Docker image build process should copy the updated configuration files into the image.
+
+
+
+
+
+COSAS MODIFICADAS:
+values custom de argo, ingress.enabled cambiado a false

@@ -25,7 +25,7 @@ configs:
 
 server:
   ingress:
-    enabled: true
+    enabled: false
 
     hosts: 
       - argocd.tferrari.com # This value was modified by the initial-setup python script
