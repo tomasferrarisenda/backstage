@@ -95,11 +95,11 @@ spec:
         branchName: create-${{parameters.name | lower }}-${{parameters.lastName | lower }}
         description: |
           # New user: ${{parameters.name}} ${{parameters.lastName}}
-        targetPath: entities/users
+        targetPath: backstage/entities/users
         # targetPath: "" # Leave empty to use the root of the repo or specify if needed
         # paths: 
-        #   - entities/users
-        #   - entities/all-users.yaml
+        #   - backstage/entities/users
+        #   - backstage/entities/all-users.yaml
         
   output:
     links:
