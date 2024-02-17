@@ -12,7 +12,7 @@ backstage:
     repository: tferrari92/backstage
 
     # -- Backstage image tag (immutable tags are recommended)
-    tag: "15"
+    tag: "30"
 
   # extraEnvVars:
   #   - name: POSTGRES_PORT

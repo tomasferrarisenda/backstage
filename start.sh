@@ -1,16 +1,21 @@
-#!/usr/bin/bash
-yarn install --frozen-lockfile
+# Start cluster
+minikube start
 
-# tsc outputs type definitions to dist-types/ in the repo root, which are then consumed by the build
-yarn tsc
+# Install ArgoCD
+helm install argocd -n argocd helm/infra/argo-cd --values helm/infra/argo-cd/values-custom.yaml --dependency-update --create-namespace
 
-# Build the backend, which bundles it all up into the packages/backend/dist folder.
-# The configuration files here should match the one you use inside the Dockerfile below.
-yarn build
-# yarn build:backend
-# yarn build:backend --config ../../app-config.production.yaml
+# We first create an ArgoCD AppProject called "argocd" where all ArgoCD self-managment resources will exist.
+kubectl create -n argocd -f argo-cd/self-manage/appprojects/argocd-appproject.yaml  
 
-docker image build . -f packages/backend/Dockerfile --tag tferrari92/backstage:25
-docker push tferrari92/backstage:25
+# Then we create an application that will automatically deploy any ArgoCD AppProjects we specify in the argo-cd/self-manage/appprojects/ directory.
+kubectl create -n argocd -f argo-cd/self-manage/argocd-app-of-projects-application.yaml
 
-git cmp "new tag"
+# Then we create an application that will monitor the helm/infra/argocd directory, the same we used to deploy ArgoCD, making ArgoCD self-managed. Any changes we apply in the helm/infra/argocd directory will be automatically applied.
+kubectl create -n argocd -f argo-cd/self-manage/argocd-application.yaml  
+
+# Finally, we create an application that will automatically deploy any ArgoCD Applications we specify in the argo-cd/applications directory (App of Apps pattern).
+kubectl create -n argocd -f argo-cd/self-manage/argocd-app-of-apps-application.yaml  
+
+# Access ArgoCD
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+kubectl port-forward service/argocd-server -n argocd 8080:443

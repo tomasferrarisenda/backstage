@@ -4,6 +4,8 @@
 - kubectl
 - Helm
 
+# Environment Setup
+
 ## Cluster setup
 
 ```bash
@@ -32,9 +34,10 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 kubectl port-forward service/argocd-server -n argocd 8080:443
 ```
 
+# Backstage Setup
+
 ## Install NVM
 ```bash
-
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 nvm install 18
 nvm use 18
