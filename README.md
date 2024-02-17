@@ -34,6 +34,16 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 kubectl port-forward service/argocd-server -n argocd 8080:443
 ```
 
+
+## Crear github token secret
+ESTO HAY Q HACERLO SI USAMOS LOS MANIFEST PELADOS EN LUGAR DEL HELM CHART DE BACKSTAGE
+kubectl apply -f ../backstage-github-secret.yaml
+
+## Access Backstage UI
+```bash
+kubectl port-forward -n backstage service/backstage 8081:80
+```
+
 # Backstage Setup
 
 ## Install NVM
