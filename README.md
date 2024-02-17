@@ -260,6 +260,7 @@ https://backstage.io/docs/features/software-catalog/descriptor-format/#overall-s
         - allow: [Template]
 
 
+## USAR PLUGIN DE AUTODISCOVERY POR LA MODALIDAD ACTUAL NO BORRA USERSAL SACARLOS DEL REPO
 
 
 
