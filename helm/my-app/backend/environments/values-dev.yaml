@@ -6,3 +6,4 @@ deployment:
   replicas: 1
   env:
     redis_host: redis-dev-headless 
+    redis_pass: redis-dev

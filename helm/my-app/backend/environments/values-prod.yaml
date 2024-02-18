@@ -6,3 +6,4 @@ deployment:
   replicas: 1
   env:
     redis_host: redis-prod-master 
+    redis_pass: redis-prod
