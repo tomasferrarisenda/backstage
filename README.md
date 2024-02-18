@@ -97,33 +97,34 @@ yarn dev
 
 # Run in a Kubernetes Environment
 
-### Minikube Environment Setup
-Run the start.sh script to get everything setup
-```bash
-cd ../..
-chmod +x start.sh
-./start.sh
-```
-
-### Build and push backstage container image
+### Build and push backstage container image to DockerHub
 To build and push the Docker image, run the build-push-image.sh script
 ```bash
-cd backstage/my-backstage
 chmod +x build-push-image.sh
 ./build-push-image.sh
 ```
 
 ### Update image tag in backstage chart values
-Open another terminal, and cd into the repository and update the image tag in the backstage values
+Update the value of backstage.image.tag in the backstage values-custom.yaml
 ```bash
+cd ../..
 vim helm/infra/backstage/values-custom.yaml
 ```
+
 Save and push to repo
 ```bash
-git add -A
+git add .
 git commit -m "Updated backstage image tag"
 git push
 ```
+
+### Minikube Environment Setup
+Run the start.sh script to get everything setup
+```bash
+chmod +x start.sh
+./start.sh
+```
+
 </br>
 
 # Plugins I've added
