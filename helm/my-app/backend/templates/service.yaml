@@ -1,4 +1,3 @@
-{{- if eq .Values.environment "dev" }} # Deploy only in dev environment
 apiVersion: v1
 kind: Service
 metadata:
@@ -11,5 +10,4 @@ spec:
       port: {{ .Values.containerPort }}
       targetPort: {{ .Values.containerPort }}
   type: ClusterIP
-{{- end }}
 
