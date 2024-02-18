@@ -1,16 +1,59 @@
+# BACKSTAGE LAB
+
+# INDEX
+
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+  <!-- - [What we'll be doing](#what-well-be-doing)
+  - [Tools we'll be using](#tools-well-be-using)
+  - [Disclaimer](#disclaimer) -->
+- [Initial Setup](#initial-setup)
+- [Backstage Local Setup](#backstage-local-setup)
+- [Run In A Kubernetes Environment](#run-in-a-kubernetes-environment)
+- [Plugins I've Added](#plugins-ive-added)
+- [Templates I've Added](#templates-ive-added)
+
+# Introduction
+lorem ipsum
+
+</br>
 
 # Prerequisites
-- Minikube
-- kubectl
-- Helm
+- Minikube installed
+- kubectl installed
+- Helm installed
 
 </br>
 
 # Initial setup
-fork repo
-git clone 
+In order to turn this whole deployment into your own thing, we need to do some initial setup:
+
+1. Fork this repo. Keep the repository name "automate-all-the-things".
+1. Clone the repo from your fork:
+
+```bash
+git clone https://github.com/<your-github-username>/backstage-lab.git
+```
+
+2. Move into the directory:
+
+```bash
 cd backstage-lab
-Correr script de reemplazo de vars
+```
+
+2. Run the initial setup script. Come back when you are done:
+
+```bash
+python3 python/initial-setup.py
+```
+
+4. Hope you enjoyed the welcome script! Now push your customized repo to GitHub:
+
+```bash
+git add .
+git commit -m "customized repo"
+git push
+```
 
 </br>
 
