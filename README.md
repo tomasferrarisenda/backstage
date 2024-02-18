@@ -6,7 +6,10 @@
 
 </br>
 
-# Set up variables
+# Initial setup
+fork repo
+git clone 
+cd backstage-lab
 Correr script de reemplazo de vars
 
 </br>
