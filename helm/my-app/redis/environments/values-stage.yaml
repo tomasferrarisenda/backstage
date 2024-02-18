@@ -10,5 +10,5 @@
 #     namespace: monitoring
 # networkPolicy:
 #   allowExternal: false
-# replica:
-#   replicaCount: 1
+replica:
+  replicaCount: 1
