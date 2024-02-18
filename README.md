@@ -1,6 +1,6 @@
 # BACKSTAGE LAB
 
-# INDEX
+# Index
 
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
@@ -12,6 +12,8 @@
 - [Run In A Kubernetes Environment](#run-in-a-kubernetes-environment)
 - [Plugins I've Added](#plugins-ive-added)
 - [Templates I've Added](#templates-ive-added)
+
+</br>
 
 # Introduction
 lorem ipsum
@@ -28,7 +30,7 @@ lorem ipsum
 # Initial setup
 In order to turn this whole deployment into your own thing, we need to do some initial setup:
 
-1. Fork this repo. Keep the repository name "automate-all-the-things".
+1. Fork this repo. Keep the repository name "backstage-lab".
 1. Clone the repo from your fork:
 
 ```bash
@@ -122,16 +124,27 @@ git add -A
 git commit -m "Updated backstage image tag"
 git push
 ```
+</br>
 
 # Plugins I've added
 - Kubernetes plugin
 
+</br>
+
 # Templates I've created
-- New nodejs in new repo
-- New nodejs in existing repo
-- New backstage user
-- New backstage group
-- New documentation
+### New nodejs in new repo
+lorem ipsum
+
+### New nodejs in existing repo
+lorem ipsum
+
+### New backstage user
+lorem ipsum
+
+### New backstage group
+lorem ipsum
+
+### New documentation
 
 
 
@@ -152,82 +165,7 @@ Publishing software templates:
 
 
 
-# Kubernetes Plugin Installation
-https://backstage.io/docs/features/kubernetes/installation/
-```bash
-yarn add --cwd packages/app @backstage/plugin-kubernetes
-yarn add --cwd packages/backend @backstage/plugin-kubernetes-backend
-```
 
-### Edit file:
-packages/app/src/components/catalog/EntityPage.tsx
-
-add:
-```ts
-import { EntityKubernetesContent } from '@backstage/plugin-kubernetes';
-
-// You can add the tab to any number of pages, the service page is shown as an
-// example here
-const serviceEntityPage = (
-  <EntityLayout>
-    {/* other tabs... */}
-    <EntityLayout.Route path="/kubernetes" title="Kubernetes">
-      <EntityKubernetesContent refreshIntervalMs={30000} />
-    </EntityLayout.Route>
-  </EntityLayout>
-);
-```
-
-#### Create file
-packages/backend/src/plugins/kubernetes.ts
-```ts
-import { KubernetesBuilder } from '@backstage/plugin-kubernetes-backend';
-import { Router } from 'express';
-import { PluginEnvironment } from '../types';
-import { CatalogClient } from '@backstage/catalog-client';
-
-export default async function createPlugin(
-  env: PluginEnvironment,
-): Promise<Router> {
-  const catalogApi = new CatalogClient({ discoveryApi: env.discovery });
-  const { router } = await KubernetesBuilder.createBuilder({
-    logger: env.logger,
-    config: env.config,
-    catalogApi,
-    permissions: env.permissions,
-  }).build();
-  return router;
-}
-```
-
-
-#### Edit packages/backend/src/index.ts
-```ts
-// ..
-import kubernetes from './plugins/kubernetes';
-
-async function main() {
-  // ...
-  const kubernetesEnv = useHotMemoize(module, () => createEnv('kubernetes'));
-  // ...
-  apiRouter.use('/kubernetes', await kubernetes(kubernetesEnv));
-```
-
-
-#### Edit app-config.yaml
-```ts
-kubernetes:
- serviceLocatorMethod:
-   type: 'multiTenant'
- clusterLocatorMethods:
-   - type: 'config'
-     clusters:
-       - url: kubernetes.default.svc.cluster.local:443
-         name: local
-         authProvider: 'serviceAccount'
-         skipTLSVerify: false
-         skipMetricsLookup: true
-```
 
 
 
