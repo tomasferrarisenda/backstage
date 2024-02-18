@@ -40,7 +40,9 @@ export GITHUB_TOKEN=<your-github-token>
 
 Then
 ```bash
-cd my-backstage/
+cd backstage/my-backstage/
+yarn install
+yarn tsc
 yarn dev
 ```
 </br>
