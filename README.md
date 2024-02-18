@@ -16,7 +16,7 @@
 </br>
 
 # Introduction
-lorem ipsum
+We are using a Gitops methodology with ArgoCD and the App Of Apps Pattern.
 
 </br>
 
@@ -24,6 +24,9 @@ lorem ipsum
 - Minikube installed
 - kubectl installed
 - Helm installed
+
+- Knowledge of Helm
+- Knowledge of ArgoCD
 
 </br>
 
@@ -137,13 +140,37 @@ Now go to localhost:8080 on your browser and Voilá!
 
 </br>
 
-# What we have
-redis 
-backend
+# My Customized Backstage
+This repo is made for you to be able to customize and deploy Backstage in any way you want, but I've already added some custom stuff to the default Backstage installation that I think you will find useful.
 
-test backend 
+## Plugins I've added
+- Kubernetes plugin
 
-If you run 
+</br>
+
+## Templates I've created
+### New nodejs in new repo
+lorem ipsum
+
+### New nodejs in existing repo
+lorem ipsum
+
+### New backstage user
+lorem ipsum
+
+### New backstage group
+lorem ipsum
+
+### New documentation
+
+</br>
+
+# Excersise
+
+## What we are starting with
+We are starting off with a Redis database and a backend. Everytime the backend recieves a request it gets the value of "count" from the Redis db and returns it to the user. Before returning it, it adds +1 to "count".
+
+You can test it like this:
 ```bash
 kubectl get pods -n my-app-dev -l app=my-app-backend-dev -o name | xargs -I {} kubectl exec -n my-app-dev {} -- curl -s localhost:3000
 ```
@@ -159,30 +186,16 @@ kubectl get pods -n my-app-stage -l app=my-app-backend-stage -o name | xargs -I 
 kubectl get pods -n my-app-prod -l app=my-app-backend-prod -o name | xargs -I {} kubectl exec -n my-app-prod {} -- curl -s localhost:3000
 ```
 
+## What we are doing
+We are going to create the missing piece with the help of backstage, the frontend.
 
-# Plugins I've added
-- Kubernetes plugin
+Let's analyze the backend. With this Gitops setup we have, there's a number of things that need to exist in order for the backend service to be deployed. These are:
+1. The [my-app/backend directory](/my-app/backend/): In a production environment, the backend service would have its own repo where we would store all the application code. In this small lab we'll just save it in its own directory.
+2. The [helm/my-app/backend directory](/helm/my-app/backend/): Here we save the Helm chart for our backend service. This of course would also be in its own repo on a production environment.
+3. The [backend service argocd application manifests](/argo-cd/applications/my-app/backend/): These are read by the App of Apps to 
+4. The [backend build pipeline]():
 
-</br>
-
-# Templates I've created
-### New nodejs in new repo
-lorem ipsum
-
-### New nodejs in existing repo
-lorem ipsum
-
-### New backstage user
-lorem ipsum
-
-### New backstage group
-lorem ipsum
-
-### New documentation
-
-
-
-
+All of these files and directories we need to create for any new service we want to deploy. Luckily, we have Backstage Software Templates.
 
 
 
