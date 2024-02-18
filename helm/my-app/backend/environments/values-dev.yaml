@@ -2,7 +2,7 @@ environment: dev
 
 deployment:
   image:  
-    tag: 1636
+    tag: 1640
   replicas: 1
   env:
     redis_host: redis-dev-master 
