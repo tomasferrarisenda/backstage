@@ -1,8 +1,8 @@
 environment: stage
 
-redis_host: redis-stage-master 
-
 deployment:
   image:
     tag: 1635
   replicas: 1
+  env:
+    redis_host: redis-stage-master 
