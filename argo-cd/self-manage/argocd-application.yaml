@@ -3,10 +3,8 @@ kind: Application
 metadata:
   name: argocd
   namespace: argocd
-  annotations:
-    argocd.argoproj.io/sync-wave: "-11"
 spec:
-  project: argocd
+  project: default
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc

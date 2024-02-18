@@ -79,7 +79,7 @@ Once that file is committed, it's just a matter of waiting for the master applic
 This completes the process of deploying new tools in the cluster. All that's left is to wait for ArgoCD to do its job.
 IMPORTANT: ArgoCD pulls from the repos to look for changes every 3 minutes.
 
-# App of Projects Pattern
+<!-- # App of Projects Pattern
 One last clarification is that at , we are also using the App of Apps pattern for ArgoCD projects.
 
 Projects in Argo CD are units of organization and access control that group related applications. They allow for the definition of deployment policies and security restrictions, such as which clusters and Kubernetes resources can be used and who can make changes.
@@ -105,7 +105,7 @@ spec:
   - '*'
 ```
 
-This example leaves the project completely open, but if we wanted to limit it, we could modify those values.
+This example leaves the project completely open, but if we wanted to limit it, we could modify those values. -->
 
 # Deleting Tools
 Continuing with the example of Jenkins, all we need to do to remove the Jenkins deployment from the cluster is to delete the jenkins-application.yaml file in the repo httpst/argocd-application-manifests.

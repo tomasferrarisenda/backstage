@@ -81,6 +81,8 @@ yarn global add concurrently
 npx @backstage/create-app@latest
 ``` -->
 
+### Get GitHub PAT (Personal Access Token)
+
 ### Local testing
 Create en env var for your GitHub token
 ```bash

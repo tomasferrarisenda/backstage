@@ -3,13 +3,11 @@ kind: Application
 metadata:
   name: app-of-apps
   namespace: argocd
-  annotations:
-    argocd.argoproj.io/sync-wave: "-10"
 spec:    
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc
-  project: argocd
+  project: default
   source:
     repoURL: https://github.com/tomasferrarisenda/backstage-lab.git # This value was modified by the initial-setup python script
     path: argo-cd/applications
