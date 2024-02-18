@@ -20,5 +20,3 @@ spec:
           env:
             - name: REDIS_HOST
               value: {{ .Values.deployment.env.redis_host }} 
-            - name: REDIS_PASS
-              value: {{ .Values.deployment.env.redis_pass }} 
