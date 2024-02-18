@@ -9,16 +9,16 @@ metadata:
     - nodejs
   links:
     - title: Documentation
-      url: https://github.com/tferrari92/automate-all-the-things-nirvana
+      url: https://github.com/tomasferrarisenda/backstage-lab
     - url: https://admin.example-org.com
       title: Admin Dashboard
       icon: dashboard
       type: admin-dashboard
-    - url: https://grafana.tferrari.com/
+    - url: https://grafana.domain.com/
       title: metrics
       icon: analytics
       type: metrics-dashboard
-    - url: https://grafana.tferrari.com/
+    - url: https://grafana.domain.com/
       title: logs
       icon: assignment
       type: logs-dashboard  
