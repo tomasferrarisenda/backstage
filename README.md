@@ -55,6 +55,7 @@ yarn dev
 ### Minikube Environment Setup
 Run the start.sh script to get everything setup
 ```bash
+cd ../..
 chmod +x start.sh
 ./start.sh
 ```
@@ -78,6 +79,16 @@ git add -A
 git commit -m "Updated backstage image tag"
 git push
 ```
+
+# Plugins I've added
+- Kubernetes plugin
+
+# Templates I've created
+- New nodejs in new repo
+- New nodejs in existing repo
+- New backstage user
+- New backstage group
+- New documentation
 
 
 
