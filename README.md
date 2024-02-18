@@ -132,8 +132,8 @@ git push
 ### Minikube Environment Setup
 Run the start.sh script to get everything setup
 ```bash
-chmod +x start.sh
-./start.sh
+chmod +x backstage/deploy-k8s-environment.sh
+backstage/deploy-k8s-environment.sh
 ```
 
 Now go to localhost:8080 on your browser and Voilá!
