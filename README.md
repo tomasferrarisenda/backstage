@@ -143,9 +143,22 @@ backend
 
 test backend 
 
-kubectl get pods -n my-app-dev -l app=my-app-backend-dev -o name | xargs -I {} kubectl exec -n my-app-dev {} -it -- curl localhost:3000
-kubectl get pods -n my-app-stage -l app=my-app-backend-stage -o name | xargs -I {} kubectl exec -n my-app-stage {} -it -- curl localhost:3000
-kubectl get pods -n my-app-prod -l app=my-app-backend-prod -o name | xargs -I {} kubectl exec -n my-app-prod {} -it -- curl localhost:3000
+If you run 
+```bash
+kubectl get pods -n my-app-dev -l app=my-app-backend-dev -o name | xargs -I {} kubectl exec -n my-app-dev {} -- curl -s localhost:3000
+```
+
+You should get:
+```bash
+{"count":1}%
+```
+
+You can test it on the other environments too:
+```bash
+kubectl get pods -n my-app-stage -l app=my-app-backend-stage -o name | xargs -I {} kubectl exec -n my-app-stage {} -- curl -s localhost:3000
+kubectl get pods -n my-app-prod -l app=my-app-backend-prod -o name | xargs -I {} kubectl exec -n my-app-prod {} -- curl -s localhost:3000
+```
+
 
 # Plugins I've added
 - Kubernetes plugin
