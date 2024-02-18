@@ -35,6 +35,11 @@ echo "##########################################################################
 echo "#############################################################################"
 echo "#############################################################################"
 echo " "
+echo "TO ACCESS THE ARGOCD DASHBOARD, RUN THE FOLLOWING COMMAND:"
+echo "kubectl port-forward svc/argocd-server -n argocd 8081:443"
+echo " "
+echo "user: admin"
+echo "password: $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d)"
 echo "THE ARGOCD 'admin' PASSWORD IS:"
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 echo " "
