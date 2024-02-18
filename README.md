@@ -4,22 +4,56 @@
 - kubectl
 - Helm
 
-# Environment Setup
+# Backstage Local Setup
+
+### Install NVM
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+nvm install 18
+nvm use 18
+nvm alias default 18
+```
+
+### Install yarn
+```bash
+npm install --global yarn
+yarn set version 1.22.19
+yarn --version
+yarn global add concurrently
+```
+<!-- ## Create app
+```bash
+npx @backstage/create-app@latest
+``` -->
+
+### To test locally run
+```bash
+cd my-backstage/
+export GITHUB_TOKEN=<your-github-token>
+yarn dev
+```
+
+# Run in a Kubernetes Environment
+
+### Minikube Environment Setup
+Run the start.sh script to get everything setup
 ```bash
 chmod +x start.sh
 ./start.sh
 ```
 
-# Build and push backstage container image
+### Build and push backstage container image
+To build and push the Docker image, run the build-push-image.sh script
 ```bash
 cd backstage/my-backstage
 chmod +x build-push-image.sh
 ./build-push-image.sh
 ```
 
-# Update image tag in backstage chart values
+### Update image tag in backstage chart values
+On another terminal, cd into the repository and update the image tag in the backstage values
 ```bash
-vim ../../helm/infra/backstage/values-custom.yaml
+vim helm/infra/backstage/values-custom.yaml
 ```
 Save and push to repo
 ```bash
@@ -29,40 +63,7 @@ git push
 ```
 
 
-# Backstage Setup
 
-## Install NVM
-```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-nvm install 18
-nvm use 18
-nvm alias default 18
-```
-
-## Install yarn
-```bash
-npm install --global yarn
-yarn set version 1.22.19
-yarn --version
-yarn global add concurrently
-```
-
-## Create app
-```bash
-npx @backstage/create-app@latest
-cd backstage-aatt/
-```
-
-## To test locally run
-```bash
-export GITHUB_TOKEN=<your-github-token>
-yarn dev
-```
-
-
-
-
-# minikube delete when you are done
 
 ### Backstage needs github api token to access software catalog. Get one on github console.
 
