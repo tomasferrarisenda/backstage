@@ -1,15 +1,9 @@
 backstage:
-
   command: ["node", "packages/backend", "--config", "app-config.production.yaml"]
 
   image:
-    # -- Backstage image registry
     registry: ""
-
-    # -- Backstage image repository
     repository: tferrari92/backstage
-
-    # -- Backstage image tag (immutable tags are recommended)
     tag: "40"
 
   extraEnvVars:
@@ -21,8 +15,6 @@ backstage:
 
 postgresql:
   enabled: true
-  # auth:
-  #   password: "CAMBIAR"
 
 serviceAccount:
   create: true
