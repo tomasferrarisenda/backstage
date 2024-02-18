@@ -10,7 +10,7 @@ backstage:
     repository: tferrari92/backstage
 
     # -- Backstage image tag (immutable tags are recommended)
-    tag: "38"
+    tag: "40"
 
   extraEnvVars:
     - name: GITHUB_TOKEN
@@ -27,7 +27,7 @@ postgresql:
 serviceAccount:
   create: true
 
-  
+
 # ingress:
 #   enabled: true
 #   host: backstage.tferrari.com # This value was modified by the initial-setup python script
