@@ -27,7 +27,7 @@ lorem ipsum
 
 </br>
 
-# Initial setup
+# Initial Setup
 In order to turn this whole deployment into your own thing, we need to do some initial setup:
 
 1. Fork this repo. Keep the repository name "backstage-lab".
@@ -114,7 +114,7 @@ chmod +x build-push-image.sh
 ```
 
 ### Update image tag in backstage chart values
-On another terminal, cd into the repository and update the image tag in the backstage values
+Open another terminal, and cd into the repository and update the image tag in the backstage values
 ```bash
 vim helm/infra/backstage/values-custom.yaml
 ```
@@ -145,6 +145,18 @@ lorem ipsum
 lorem ipsum
 
 ### New documentation
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -236,10 +248,6 @@ https://backstage.io/docs/features/software-catalog/descriptor-format/#overall-s
 # EXPLICAR LO DE app-config.yaml y app-config.production.ymal
 uno se usa para local (yarn dev), el otro apra el cluster. Ppalmente por la config para la bbdd postgress (en local no la utilizamos)
 
-
-
-
-# CAMBIAR GITHUB_TOKEN PARA Q USE VARIABLE DE ENTONRNO POR SERCRET. La imagen de tag 8 tiene el token hardcodeado
 
 
 
