@@ -9,7 +9,7 @@
   - [Disclaimer](#disclaimer) -->
 - [Initial Setup](#initial-setup)
 - [Backstage Local Setup](#backstage-local-setup)
-- [Run In A Kubernetes Environment](#run-in-a-kubernetes-environment)
+- [Run In Kubernetes Environment](#run-in-kubernetes-environment)
 - [Plugins I've Added](#plugins-ive-added)
 - [Templates I've Added](#templates-ive-added)
 
@@ -81,12 +81,13 @@ yarn global add concurrently
 npx @backstage/create-app@latest
 ``` -->
 
-### To test locally run
+### Local testing
+Create en env var for your GitHub token
 ```bash
 export GITHUB_TOKEN=<your-github-token>
 ```
 
-Then
+Then run
 ```bash
 cd backstage/my-backstage/
 yarn install
@@ -94,11 +95,13 @@ yarn tsc
 yarn dev
 ```
 
-If all runs smoothly, we can proceed to deploying backstage in Minikube. "Ctrl + C" to stop the running process and let's continue...
+This should open backstage in your browser. If all runs smoothly, we can proceed to deploying backstage in Minikube. 
+
+"Ctrl + C" to stop the running process and let's continue...
 
 </br>
 
-# Run in a Kubernetes Environment
+# Run in Kubernetes Environment
 
 ### Build and push backstage container image to DockerHub
 To build and push the Docker image, run the build-push-image.sh script
