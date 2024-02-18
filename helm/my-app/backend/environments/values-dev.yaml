@@ -5,4 +5,4 @@ deployment:
     tag: 1636
   replicas: 1
   env:
-    redis_host: redis-dev-master 
+    redis_host: redis-dev-headless 
