@@ -7,6 +7,7 @@ const app = express();
 const redisClient = new Redis({
   host: process.env.REDIS_HOST, // Replace with the name of the Redis service
   port: 6379, // Replace with the Redis port if it's different
+  password: process.env.REDIS_PASS, // Replace with your Redis password
 });
 
 // Retrieve the visitor count from Redis

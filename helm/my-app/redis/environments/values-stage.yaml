@@ -1,2 +1,6 @@
 replica:
   replicaCount: 1
+
+global:
+  redis:
+    password: "redis-stage"
