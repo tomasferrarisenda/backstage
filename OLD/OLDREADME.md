@@ -1,80 +1,62 @@
+## Cluster setup
 
-# Prerequisites
-- Minikube
-- kubectl
-- Helm
-
-</br>
-
-# Set up variables
-Correr script de reemplazo de vars
-
-</br>
-
-# Backstage Local Setup
-
-### Install NVM
 ```bash
+minikube start
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+kubectl port-forward -n argocd service/my-argo-cd-argocd-server  8080:443
+```
+
+## Install NVM
+```bash
+
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 nvm install 18
 nvm use 18
 nvm alias default 18
 ```
 
-### Install yarn
+## Install yarn
 ```bash
 npm install --global yarn
 yarn set version 1.22.19
 yarn --version
 yarn global add concurrently
 ```
-<!-- ## Create app
+
+## Download backstage
+```bash
+git clone git@github.com:backstage/backstage.git backstage
+cd backstage
+git checkout v1.13.2
+```
+
+## Create app
 ```bash
 npx @backstage/create-app@latest
-``` -->
-
-### To test locally run
-```bash
-export GITHUB_TOKEN=<your-github-token>
+cd backstage-aatt/
 ```
 
-Then
+## Edit backstage-aatt/app-config.yaml if you want and test it with:
 ```bash
-cd my-backstage/
 yarn dev
 ```
-</br>
 
-# Run in a Kubernetes Environment
 
-### Minikube Environment Setup
-Run the start.sh script to get everything setup
+<!-- Once backstage is running go to:
+http://localhost:3000/catalog-import
+Paste this:
+https://github.com/backstage/backstage/blob/master/catalog-info.yaml -->
+
+
+# Build container image
 ```bash
-chmod +x start.sh
-./start.sh
-```
+yarn install --frozen-lockfile
+yarn tsc
+yarn build:backend
 
-### Build and push backstage container image
-To build and push the Docker image, run the build-push-image.sh script
-```bash
-cd backstage/my-backstage
-chmod +x build-push-image.sh
-./build-push-image.sh
+docker image build . -f packages/backend/Dockerfile --tag tferrari92/backstage:20
+docker push tferrari92/backstage:20
 ```
-
-### Update image tag in backstage chart values
-On another terminal, cd into the repository and update the image tag in the backstage values
-```bash
-vim helm/infra/backstage/values-custom.yaml
-```
-Save and push to repo
-```bash
-git add -A
-git commit -m "Updated backstage image tag"
-git push
-```
-
-
 
 
 ### Backstage needs github api token to access software catalog. Get one on github console.
@@ -90,7 +72,12 @@ Publishing software templates:
     repo
     workflow (if templates include GitHub workflows)
 
+```bash
+echo "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" | base64
+```
 
+#### Copy output to bs-secret.yaml
+https://github.com/backstage/backstagehttps://github.com/backstage/backstage/blob/master/catalog-info.yaml
 
 
 # Kubernetes Plugin Installation
@@ -170,24 +157,14 @@ kubernetes:
          skipMetricsLookup: true
 ```
 
+```bash
+yarn build:backend
+docker image build . -f packages/backend/Dockerfile --tag tferrari92/backstage:5
+docker push tferrari92/backstage:5
+```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#### Change tag on deployment
 
 
 
@@ -235,9 +212,6 @@ https://backstage.io/docs/features/software-catalog/descriptor-format/#overall-s
         - allow: [Template]
 
 
-## USAR PLUGIN DE AUTODISCOVERY POR LA MODALIDAD ACTUAL NO BORRA USERSAL SACARLOS DEL REPO
-# EXPLICAR LO DE app-config.yaml y app-config.production.ymal
-uno se usa para local (yarn dev), el otro apra el cluster. Ppalmente por la config para la bbdd postgress (en local no la utilizamos)
 
 
 
@@ -248,10 +222,3 @@ uno se usa para local (yarn dev), el otro apra el cluster. Ppalmente por la conf
 
 # BACKSTAGE
 If the only change you've made is to the app-config.yaml (or other configuration files) and not to the application code itself, you don't necessarily need to run yarn build or yarn build:backend. The Docker image build process should copy the updated configuration files into the image.
-
-
-
-
-
-# COSAS MODIFICADAS:
-values custom de argo, ingress.enabled cambiado a false
