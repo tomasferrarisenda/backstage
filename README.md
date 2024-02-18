@@ -137,6 +137,16 @@ Now go to localhost:8080 on your browser and Voilá!
 
 </br>
 
+# What we have
+redis 
+backend
+
+test backend 
+
+kubectl get pods -n my-app-dev -l app=my-app-backend-dev -o name | xargs -I {} kubectl exec -n my-app-dev {} -it -- curl localhost:3000
+kubectl get pods -n my-app-stage -l app=my-app-backend-stage -o name | xargs -I {} kubectl exec -n my-app-stage {} -it -- curl localhost:3000
+kubectl get pods -n my-app-prod -l app=my-app-backend-prod -o name | xargs -I {} kubectl exec -n my-app-prod {} -it -- curl localhost:3000
+
 # Plugins I've added
 - Kubernetes plugin
 

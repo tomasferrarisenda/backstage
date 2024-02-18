@@ -1,14 +1,2 @@
-# master:
-#   service:
-#     type: ClusterIP
-# metrics:
-#   enabled: true
-#   serviceMonitor:
-#     additionalLabels:
-#       release: prometheus
-#     enabled: true
-#     namespace: monitoring
-# networkPolicy:
-#   allowExternal: false
 replica:
   replicaCount: 1
