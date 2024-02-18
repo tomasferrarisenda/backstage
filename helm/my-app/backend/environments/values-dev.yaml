@@ -4,7 +4,7 @@ redis_host: redis-dev-master
 
 deployment:
   image:  
-    tag: 1545
+    tag: 1635
   replicas: 1
 
 # secret:
