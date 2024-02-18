@@ -93,6 +93,9 @@ yarn install
 yarn tsc
 yarn dev
 ```
+
+If all runs smoothly, we can proceed to deploying backstage in Minikube. "Ctrl + C" to stop the running process and let's continue...
+
 </br>
 
 # Run in a Kubernetes Environment
@@ -124,6 +127,8 @@ Run the start.sh script to get everything setup
 chmod +x start.sh
 ./start.sh
 ```
+
+Now go to localhost:8080 on your browser and Voilá!
 
 </br>
 
