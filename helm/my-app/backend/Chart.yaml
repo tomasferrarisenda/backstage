@@ -1,4 +1,4 @@
 apiVersion: v2
-name: my-app-backend # This value was modified by the initial-setup python script
-description: A Helm chart for deploying my-app-backend # This value was modified by the initial-setup python script
+name: my-app-backend
+description: A Helm chart for deploying my-app-backend
 version: 1.0
