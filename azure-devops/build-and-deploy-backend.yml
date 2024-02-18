@@ -15,7 +15,7 @@ trigger:
 
 variables:
   - name: APP_NAME
-    value: gonchi # This value was modified by the initial-setup python script
+    value: my-app # This value was modified by the initial-setup python script
   - name: SERVICE_NAME
     value: backend
   - name: DOCKERHUB_USERNAME
