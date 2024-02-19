@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: new-nodejs
-  title: New Node.js
+  title: New Node.js in New Repo
   description: Create repo for new NodeJS service
 spec:
   owner: user:guest
