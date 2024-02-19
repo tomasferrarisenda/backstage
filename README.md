@@ -19,7 +19,7 @@
 
 <p title="All The Things" align="center"> <img src="https://i.imgur.com/5AUzW9l.jpg"> </p>
 
-# Index
+# INDEX
 
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
@@ -29,7 +29,7 @@
 - [Initial Setup](#initial-setup)
 - [Local Backstage Setup](#backstage-local-setup)
 - [Run In Kubernetes Environment](#run-in-kubernetes-environment)
-- [Excersise](#excersise)
+- [Excercise](#excercise)
   - [What we are starting off with](#what-we-are-starting-off-with)
   - [What we are doing](#what-we-are-doing)
 
@@ -37,7 +37,7 @@
 </br>
 </br>
 
-# Introduction
+# INTRODUCTION
 This is a spinoff of my [Automate All The Things](https://github.com/tferrari92/automate-all-the-things) project. While working on the [Nirvana Edition](https://github.com/tferrari92/automate-all-the-things-nirvana) which will include an IDP built with Backstage, I'm creating this smaller lab for anyone who wants to start experimenting with this tool.
 
 We'll be using a GitOps methodology with Helm, ArgoCD and the App Of Apps Pattern. There is some extra information [here](/docs/argocd-notes.md), but you are expected to know about these things.
@@ -45,7 +45,7 @@ We'll be using a GitOps methodology with Helm, ArgoCD and the App Of Apps Patter
 </br>
 </br>
 
-# Prerequisites
+# PREREQUISITES
 - Minikube installed
 - kubectl installed
 - Helm installed
@@ -53,7 +53,7 @@ We'll be using a GitOps methodology with Helm, ArgoCD and the App Of Apps Patter
 </br>
 </br>
 
-# Customising Backstage
+# CUSTOMISING BACKSTAGE
 Backstage is made to be customizable. You are supposed to modify it in ways that fit your own needs. I've already added some custom stuff to the default Backstage installation that I think are essential. 
 
 ## Plugins I've added
@@ -87,7 +87,7 @@ lorem ipsum
 </br>
 </br>
 
-# Initial Setup
+# INITIAL SETUP
 In order to turn this whole deployment into your own thing, we need to do some initial setup:
 
 1. Fork this repo. Keep the repository name "backstage-minikube-lab".
@@ -120,7 +120,7 @@ git push
 </br>
 </br>
 
-# Backstage Local Setup
+# BACKSTAGE LOCAL SETUP
 Before deploying Backstage in a Kubernetes environment (Minikube), we need to build it locally. Testing the change you make to your Backstage implementation is also recommended to be done locally since it's much quicker than building the image, pushing it, etc. to test in in K8S.
 
 #### Install NVM
@@ -165,7 +165,7 @@ Every time you make changes to the Backstage code, it's recommended you test it 
 </br>
 </br>
 
-# Run in Kubernetes Environment
+# RUN IN KUBERNETES ENVIRONMENT
 
 #### Build and push backstage container image to DockerHub
 To build and push the Docker image, run the build-push-image.sh script
@@ -201,7 +201,7 @@ Now go to localhost:8080 on your browser and Voilá!
 </br>
 
 
-# Excersise
+# EXCERCISE
 
 ## What we are starting off with
 We are starting off with a Redis database and a backend. Everytime the backend recieves a request it gets the value of "count" from the Redis db and returns it to the user. Before returning it, it adds +1 to "count".
