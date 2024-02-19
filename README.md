@@ -4,19 +4,19 @@
 
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
-  <!-- - [What we'll be doing](#what-well-be-doing)
-  - [Tools we'll be using](#tools-well-be-using)
-  - [Disclaimer](#disclaimer) -->
+- [Customising Backstage](#customising-backstage)
+  - [Plugins I've Added](#plugins-ive-added)
+  - [Templates I've Added](#templates-ive-added)
 - [Initial Setup](#initial-setup)
-- [Backstage Local Setup](#backstage-local-setup)
+- [Local Backstage Setup](#backstage-local-setup)
 - [Run In Kubernetes Environment](#run-in-kubernetes-environment)
-- [Plugins I've Added](#plugins-ive-added)
-- [Templates I've Added](#templates-ive-added)
 
 </br>
 
 # Introduction
-We are using a Gitops methodology with ArgoCD and the App Of Apps Pattern.
+This is a spinoff of my [Automate All The Things](https://github.com/tferrari92/automate-all-the-things) project. While working on the [Nirvana Edition](https://github.com/tferrari92/automate-all-the-things-nirvana) which will include an IDP built with Backstage, I'm creating this smaller lab for anyone who wants to start experimenting with this tool.
+
+We'll be using a GitOps methodology with Helm, ArgoCD and the App Of Apps Pattern. There is some extra information [here](/docs/argocd-notes.md), but you are expected to know about these things.
 
 </br>
 
@@ -25,8 +25,38 @@ We are using a Gitops methodology with ArgoCD and the App Of Apps Pattern.
 - kubectl installed
 - Helm installed
 
-- Knowledge of Helm
-- Knowledge of ArgoCD
+</br>
+
+# Customising Backstage
+Backstage is made to be customizable. You are supposed to modify it ways that fit your own needs. I've already added some custom stuff to the default Backstage installation that I think are essential. 
+
+## Plugins I've added
+### [Kubernetes plugin](https://backstage.io/docs/features/kubernetes/)
+Kubernetes in Backstage is a tool that's designed around the needs of service owners, not cluster admins. Now developers can easily check the health of their services no matter how or where those services are deployed — whether it's on a local host for testing or in production on dozens of clusters around the world.
+
+It will elevate the visibility of errors where identified, and provide drill down about the deployments, pods, and other objects for a service.
+
+### [GitHub Discovery plugin](https://backstage.io/docs/integrations/github/discovery) 
+The GitHub integration has a discovery provider for discovering catalog entities within a GitHub organization. The provider will crawl the GitHub organization and register entities matching the configured path. This can be useful as an alternative to static locations or manually adding things to the catalog. This is the preferred method for ingesting entities into the catalog.
+
+I've installed it without events support. Updates to the catalog will rely on periodic scanning rather than real-time updates.
+
+</br>
+
+## Templates I've created
+### New nodejs in new repo
+lorem ipsum
+
+### New nodejs in existing repo
+lorem ipsum
+
+### New backstage user
+lorem ipsum
+
+### New backstage group
+lorem ipsum
+
+### New documentation
 
 </br>
 
@@ -63,6 +93,7 @@ git push
 </br>
 
 # Backstage Local Setup
+Before deploying Backstage in a Kubernetes environment (Minikube), we need to build it locally. Testing the change you make to your Backstage implementation is also recommended to be done locally since it's much quicker than building the image, pushing it, etc. to test in in K8S.
 
 ### Install NVM
 ```bash
@@ -79,12 +110,9 @@ yarn set version 1.22.19
 yarn --version
 yarn global add concurrently
 ```
-<!-- ## Create app
-```bash
-npx @backstage/create-app@latest
-``` -->
 
 ### Get GitHub PAT (Personal Access Token)
+lorem pisum
 
 ### Local testing
 Create en env var for your GitHub token
@@ -101,6 +129,8 @@ yarn dev
 ```
 
 This should open backstage in your browser. If all runs smoothly, we can proceed to deploying backstage in Minikube. 
+
+Every time you make changes to the Backstage code, it's recommended you test it by running it locally with "yarn dev", since it will be much faster that testing it in Minikube.
 
 "Ctrl + C" to stop the running process and let's continue...
 
@@ -140,38 +170,7 @@ Now go to localhost:8080 on your browser and Voilá!
 
 </br>
 
-# My Customized Backstage
-This repo is made for you to be able to customize and deploy Backstage in any way you want, but I've already added some custom stuff to the default Backstage installation that I think you will find useful.
 
-## Plugins I've added
-### [Kubernetes plugin](https://backstage.io/docs/features/kubernetes/)
-Kubernetes in Backstage is a tool that's designed around the needs of service owners, not cluster admins. Now developers can easily check the health of their services no matter how or where those services are deployed — whether it's on a local host for testing or in production on dozens of clusters around the world.
-
-It will elevate the visibility of errors where identified, and provide drill down about the deployments, pods, and other objects for a service.
-
-### [GitHub Discovery plugin](https://backstage.io/docs/integrations/github/discovery) 
-The GitHub integration has a discovery provider for discovering catalog entities within a GitHub organization. The provider will crawl the GitHub organization and register entities matching the configured path. This can be useful as an alternative to static locations or manually adding things to the catalog. This is the preferred method for ingesting entities into the catalog.
-
-I've installed it without events support. Updates to the catalog will rely on periodic scanning rather than real-time updates.
-
-</br>
-
-## Templates I've created
-### New nodejs in new repo
-lorem ipsum
-
-### New nodejs in existing repo
-lorem ipsum
-
-### New backstage user
-lorem ipsum
-
-### New backstage group
-lorem ipsum
-
-### New documentation
-
-</br>
 
 # Excersise
 
