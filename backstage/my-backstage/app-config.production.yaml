@@ -45,11 +45,6 @@ techdocs:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
 catalog:
-  # Overrides the default list locations from app-config.yaml as these contain example data.
-  # If we leave it empty, no locations will be fetched.
-  # See https://backstage.io/docs/features/software-catalog/#adding-components-to-the-catalog for more details
-  # on how to get entities into the catalog.
-  # locations:
   rules:
     - allow:
         - Component
@@ -58,27 +53,80 @@ catalog:
         - System
         - Domain
         - Location
-        # - User
-        # - Group
-        # - Template
+        - User
+        - Group
+        - Template
 
-  locations:
-    - type: url
-      target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-templates.yaml
-      rules:
-        - allow: [Template]
-
-    - type: url
-      target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-users.yaml
-      rules:
-        - allow: [User]
-
-    - type: url
-      target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-groups.yaml
-      rules:
-        - allow: [Group]
+  # We don't use this anymore because I installed the GitHub Discovery plugin
+  # locations:
+    # - type: url
+    #   target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-templates.yaml
+    #   rules:
+    #     - allow: [Template]
+    # - type: url
+    #   target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-users.yaml
+    #   rules:
+    #     - allow: [User]
+    # - type: url
+    #   target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-groups.yaml
+    #   rules:
+    #     - allow: [Group]
 
   refreshIntervalSeconds: 5 # In seconds. Default is 100
+
+  providers:
+    github:
+
+      # Use this if new services are created in their own repositories
+      # catalogsProvider:
+      #   organization: 'tomasferrarisenda' # string
+      #   catalogPath: '/catalog-info.yaml' # string
+      #   filters:
+      #     branch: 'main' # string
+      #     repository: '.*' # Regex
+      #   schedule: # same options as in TaskScheduleDefinition
+      #     frequency: { minutes: 30 }
+      #     timeout: { minutes: 3 }
+
+      catalogsProvider:
+        organization: 'tomasferrarisenda' # string
+        catalogPath: '/backstage/entities/catalogs/catalog-info.yaml' # this will search all folders for files that end in template.yaml
+        filters:
+          branch: 'main' # string
+          repository: 'backstage-minikube-lab' # Regex
+        schedule: # same options as in TaskScheduleDefinition
+          frequency: { minutes: 1 }
+          timeout: { minutes: 3 }
+
+      templatesProvider:
+        organization: 'tomasferrarisenda' # string
+        catalogPath: '/backstage/entities/templates/**/*template.yaml' # this will search all folders for files that end in template.yaml
+        filters:
+          branch: 'main' # string
+          repository: 'backstage-minikube-lab' # Regex
+        schedule: # same options as in TaskScheduleDefinition
+          frequency: { minutes: 1 }
+          timeout: { minutes: 3 }
+
+      groupsProvider:
+        organization: 'tomasferrarisenda' # string
+        catalogPath: '/backstage/entities/groups/**/*.yaml' # this will search all folders for files that end in .yaml
+        filters: # optional filters
+          branch: 'main' # optional string
+          repository: 'backstage-minikube-lab' # optional Regex
+        schedule: # same options as in TaskScheduleDefinition
+          frequency: { minutes: 1 }
+          timeout: { minutes: 3 }
+
+      usersProvider:
+        organization: 'tomasferrarisenda' # string
+        catalogPath: '/backstage/entities/users/**/*.yaml' # this will search all folders for files that end in .yaml
+        filters: # optional filters
+          branch: 'main' # optional string
+          repository: 'backstage-minikube-lab' # optional Regex
+        schedule: # same options as in TaskScheduleDefinition
+          frequency: { minutes: 1 }
+          timeout: { minutes: 3 }
 
 
 kubernetes:
