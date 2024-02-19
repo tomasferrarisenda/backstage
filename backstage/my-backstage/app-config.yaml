@@ -87,127 +87,121 @@ catalog:
         - Template
 
   locations:
-    # - type: url
-    #   target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-templates.yaml
-    #   rules:
-    #     - allow: [Template]
+    - type: url
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-templates.yaml
+      rules:
+        - allow: [Template]
 
-    # - type: url
-    #   target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-users.yaml
-    #   rules:
-    #     - allow: [User]
+    - type: url
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-users.yaml
+      rules:
+        - allow: [User]
 
-    # - type: url
-    #   target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-groups.yaml
-    #   rules:
-    #     - allow: [Group]
+    - type: url
+      target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-groups.yaml
+      rules:
+        - allow: [Group]
 
   refreshIntervalSeconds: 5 # In seconds. Default is 100
 
   providers:
     github:
       # the provider ID can be any camelCase string
-      templatesProvider:
-        organization: 'tomasferrarisenda' # string
-        # catalogPath: '/catalog-info.yaml' # string
-        catalogPath: '/backstage/entities/templates/**/*template.yaml' # this will search all folders for files that end in template.yaml
-        filters:
-          branch: 'main' # string
-          repository: 'backstage-minikube-lab' # Regex
-          # repository: '.*' # Regex
-        schedule: # same options as in TaskScheduleDefinition
-          # supports cron, ISO duration, "human duration" as used in code
-          frequency: { minutes: 1 }
-          # supports ISO duration, "human duration" as used in code
-          timeout: { minutes: 3 }
-
-      # customProviderId:
-      #   organization: 'new-org' # string
-      #   catalogPath: '/custom/path/catalog-info.yaml' # string
-      #   filters: # optional filters
-      #     branch: 'develop' # optional string
-      #     repository: '.*' # optional Regex
-      groupsProvider:
-      # wildcardProviderId:
-        organization: 'tomasferrarisenda' # string
-        catalogPath: '/backstage/entities/groups/**/*.yaml' # this will search all folders for files that end in .yaml
-        filters: # optional filters
-          branch: 'main' # optional string
-          repository: 'backstage-minikube-lab' # optional Regex
-      # topicProviderId:
-      #   organization: 'backstage' # string
-      #   catalogPath: '/catalog-info.yaml' # string
+      # catalogsProvider:
+      #   organization: 'tomasferrarisenda' # string
+      #   # catalogPath: '/catalog-info.yaml' # string
+      #   # catalogPath: '/backstage/entities/catalogs/catalog-info.yaml' # this will search all folders for files that end in template.yaml
       #   filters:
       #     branch: 'main' # string
+      #     # repository: 'backstage-minikube-lab' # Regex
+      #     # repository: '^backstage-minikube-lab$'
       #     repository: '.*' # Regex
-      #     topic: 'backstage-exclude' # optional string
-      # topicFilterProviderId:
-      #   organization: 'backstage' # string
-      #   catalogPath: '/catalog-info.yaml' # string
-      #   filters:
-      #     branch: 'main' # string
-      #     repository: '.*' # Regex
-      #     topic:
-      #       include: ['backstage-include'] # optional array of strings
-      #       exclude: ['experiments'] # optional array of strings
-      # validateLocationsExist:
-      #   organization: 'backstage' # string
-      #   catalogPath: '/catalog-info.yaml' # string
-      #   filters:
-      #     branch: 'main' # string
-      #     repository: '.*' # Regex
-      #   validateLocationsExist: true # optional boolean
-      # visibilityProviderId:
-      #   organization: 'backstage' # string
-      #   catalogPath: '/catalog-info.yaml' # string
-      #   filters:
-      #     visibility:
-      #       - public
-      #       - internal
-      # enterpriseProviderId:
-      #   host: ghe.example.net
-      #   organization: 'backstage' # string
-      #   catalogPath: '/catalog-info.yaml' # string
+      #   # schedule: # same options as in TaskScheduleDefinition
+      #   #   # supports cron, ISO duration, "human duration" as used in code
+      #   #   frequency: { minutes: 1 }
+      #   #   # supports ISO duration, "human duration" as used in code
+      #   #   timeout: { minutes: 3 }
 
 
-    # - type: url
-    #   target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/new-nodejs/template.yaml
-    #   rules:
-    #     - allow: [Template]
 
-    # - type: url
-    #   target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/new-nodejs-in-existing-repo/template.yaml
-    #   rules:
-    #     - allow: [Template]
-        
-    # - type: url
-    #   target: https://github.com/tomasferrarisenda/backstage/blob/main/templates/test-docs-template-url/template.yaml
-    #   rules:
-    #     - allow: [Template]
-        
-    # - type: file
-    #   target: ../../../templates/test-docs-template-file/template.yaml
-    #   rules:
-    #     - allow: [Template]
 
-    # Local example data, file locations are relative to the backend process, typically `packages/backend`
-    # - type: file
-    #   target: ../../examples/entities.yaml
+  #     catalogsProvider:
+  #       organization: 'tomasferrarisenda' # string
+  #       # catalogPath: '/catalog-info.yaml' # string
+  #       catalogPath: '/backstage/entities/catalogs/catalog-info.yaml' # this will search all folders for files that end in template.yaml
+  #       filters:
+  #         branch: 'main' # string
+  #         # repository: 'backstage-minikube-lab' # Regex
+  #         # repository: '^backstage-minikube-lab$'
+  #         repository: '.*' # Regex
+  #       schedule: # same options as in TaskScheduleDefinition
+  #         # supports cron, ISO duration, "human duration" as used in code
+  #         frequency: { minutes: 1 }
+  #         # supports ISO duration, "human duration" as used in code
+  #         timeout: { minutes: 3 }
 
-  #   - type: url
-  #     target: https://github.com/tomasferrarisenda/backstage-chart/blob/main/back-component.yaml
 
-    # Local example template
-    # - type: file
-    #   target: ../../examples/template/template.yaml
-    #   rules:
-    #     - allow: [Template]
+  #     templatesProvider:
+  #       organization: 'tomasferrarisenda' # string
+  #       # catalogPath: '/catalog-info.yaml' # string
+  #       catalogPath: '/backstage/entities/templates/**/*template.yaml' # this will search all folders for files that end in template.yaml
+  #       filters:
+  #         branch: 'main' # string
+  #         # repository: 'backstage-minikube-lab' # Regex
+  #         repository: '.*' # Regex
+  #       schedule: # same options as in TaskScheduleDefinition
+  #         # supports cron, ISO duration, "human duration" as used in code
+  #         frequency: { minutes: 1 }
+  #         # supports ISO duration, "human duration" as used in code
+  #         timeout: { minutes: 3 }
 
-  #   # Local example organizational data
-  #   - type: file
-  #     target: ../../examples/org.yaml
-  #     rules:
-  #       - allow: [User, Group]
+  #     # customProviderId:
+  #     #   organization: 'new-org' # string
+  #     #   catalogPath: '/custom/path/catalog-info.yaml' # string
+  #     #   filters: # optional filters
+  #     #     branch: 'develop' # optional string
+  #     #     repository: '.*' # optional Regex
+  #     groupsProvider:
+  #     # wildcardProviderId:
+  #       organization: 'tomasferrarisenda' # string
+  #       catalogPath: '/backstage/entities/groups/**/*.yaml' # this will search all folders for files that end in .yaml
+  #       filters: # optional filters
+  #         branch: 'main' # optional string
+  #         repository: 'backstage-minikube-lab' # optional Regex
+  #     # topicProviderId:
+  #     #   organization: 'backstage' # string
+  #     #   catalogPath: '/catalog-info.yaml' # string
+  #     #   filters:
+  #     #     branch: 'main' # string
+  #     #     repository: '.*' # Regex
+  #     #     topic: 'backstage-exclude' # optional string
+  #     # topicFilterProviderId:
+  #     #   organization: 'backstage' # string
+  #     #   catalogPath: '/catalog-info.yaml' # string
+  #     #   filters:
+  #     #     branch: 'main' # string
+  #     #     repository: '.*' # Regex
+  #     #     topic:
+  #     #       include: ['backstage-include'] # optional array of strings
+  #     #       exclude: ['experiments'] # optional array of strings
+  #     # validateLocationsExist:
+  #     #   organization: 'backstage' # string
+  #     #   catalogPath: '/catalog-info.yaml' # string
+  #     #   filters:
+  #     #     branch: 'main' # string
+  #     #     repository: '.*' # Regex
+  #     #   validateLocationsExist: true # optional boolean
+  #     # visibilityProviderId:
+  #     #   organization: 'backstage' # string
+  #     #   catalogPath: '/catalog-info.yaml' # string
+  #     #   filters:
+  #     #     visibility:
+  #     #       - public
+  #     #       - internal
+  #     # enterpriseProviderId:
+  #     #   host: ghe.example.net
+  #     #   organization: 'backstage' # string
+  #     #   catalogPath: '/catalog-info.yaml' # string
 
     ## Uncomment these lines to add more example data
     # - type: url
