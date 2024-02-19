@@ -38,12 +38,12 @@ We'll be using a GitOps methodology with Helm, ArgoCD and the App Of Apps Patter
 Backstage is made to be customizable. You are supposed to modify it in ways that fit your own needs. I've already added some custom stuff to the default Backstage installation that I think are essential. 
 
 ## Plugins I've added
-### [Kubernetes plugin](https://backstage.io/docs/features/kubernetes/)
+#### [Kubernetes plugin](https://backstage.io/docs/features/kubernetes/)
 Kubernetes in Backstage is a tool that's designed around the needs of service owners, not cluster admins. Now developers can easily check the health of their services no matter how or where those services are deployed — whether it's on a local host for testing or in production on dozens of clusters around the world.
 
 It will elevate the visibility of errors where identified, and provide drill down about the deployments, pods, and other objects for a service.
 
-### [GitHub Discovery plugin](https://backstage.io/docs/integrations/github/discovery) 
+#### [GitHub Discovery plugin](https://backstage.io/docs/integrations/github/discovery) 
 The GitHub integration has a discovery provider for discovering catalog entities within a GitHub organization. The provider will crawl the GitHub organization and register entities matching the configured path. This can be useful as an alternative to static locations or manually adding things to the catalog. This is the preferred method for ingesting entities into the catalog.
 
 I've installed it without events support. Updates to the catalog will rely on periodic scanning rather than real-time updates.
@@ -51,19 +51,19 @@ I've installed it without events support. Updates to the catalog will rely on pe
 </br>
 
 ## Templates I've created
-### New nodejs in new repo
+#### New nodejs in new repo
 lorem ipsum
 
-### New nodejs in existing repo
+#### New nodejs in existing repo
 lorem ipsum
 
-### New backstage user
+#### New backstage user
 lorem ipsum
 
-### New backstage group
+#### New backstage group
 lorem ipsum
 
-### New documentation
+#### New documentation
 
 </br>
 </br>
@@ -104,7 +104,7 @@ git push
 # Backstage Local Setup
 Before deploying Backstage in a Kubernetes environment (Minikube), we need to build it locally. Testing the change you make to your Backstage implementation is also recommended to be done locally since it's much quicker than building the image, pushing it, etc. to test in in K8S.
 
-### Install NVM
+#### Install NVM
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 nvm install 18
@@ -112,7 +112,7 @@ nvm use 18
 nvm alias default 18
 ```
 
-### Install yarn
+#### Install yarn
 ```bash
 npm install --global yarn
 yarn set version 1.22.19
@@ -120,10 +120,10 @@ yarn --version
 yarn global add concurrently
 ```
 
-### Get GitHub PAT (Personal Access Token)
+#### Get GitHub PAT (Personal Access Token)
 lorem pisum
 
-### Local testing
+#### Local testing
 Create en env var for your GitHub token
 ```bash
 export GITHUB_TOKEN=<your-github-token>
@@ -148,14 +148,14 @@ Every time you make changes to the Backstage code, it's recommended you test it 
 
 # Run in Kubernetes Environment
 
-### Build and push backstage container image to DockerHub
+#### Build and push backstage container image to DockerHub
 To build and push the Docker image, run the build-push-image.sh script
 ```bash
 chmod +x build-push-image.sh
 ./build-push-image.sh
 ```
 
-### Update image tag in backstage chart values
+#### Update image tag in backstage chart values
 Update the value of backstage.image.tag in the backstage values-custom.yaml
 ```bash
 cd ../..
@@ -169,7 +169,7 @@ git commit -m "Updated backstage image tag"
 git push
 ```
 
-### Minikube Environment Setup
+#### Minikube Environment Setup
 Run the start.sh script to get everything setup
 ```bash
 chmod +x backstage/deploy-k8s-environment.sh
@@ -225,7 +225,7 @@ All of these files and directories we need to create for any new service we want
 
 
 
-### Backstage needs github api token to access software catalog. Get one on github console.
+#### Backstage needs github api token to access software catalog. Get one on github console.
 
 When creating a personal access token on GitHub, you must select scopes to define the level of access for the token. The scopes required vary depending on your use of the integration: https://backstage.io/docs/integrations/github/locations/#token-scopes
 Reading software components:
@@ -264,26 +264,26 @@ Publishing software templates:
 
 
 
-#### Info interesante:
+##### Info interesante:
 https://backstage.spotify.com/learn/backstage-for-all/software-catalog/4-modeling/
 https://backstage.spotify.com/learn/standing-up-backstage/putting-backstage-into-action/8-integration/
 https://backstage.spotify.com/learn/onboarding-software-to-backstage/onboarding-software-to-backstage/5-register-component/
 
-#### Info datallada sobre objetos de tipo template:
+##### Info datallada sobre objetos de tipo template:
 https://backstage.io/docs/features/software-catalog/descriptor-format#kind-template
-#### Aqui las acciones q puede hacer el template:
+##### Aqui las acciones q puede hacer el template:
 http://localhost:3000/create/actions
-#### Para acciones q no existen default:
+##### Para acciones q no existen default:
 https://backstage.io/docs/features/software-templates/writing-custom-actions/
-#### A note on RepoUrlPicker
+##### A note on RepoUrlPicker
 In the template.yaml file of the template we created, you must have noticed ui:field: RepoUrlPicker in the spec.parameters field. This is known as Scaffolder Field Extensions.
 
 These field extensions are used in taking certain types of input from users like GitHub repository URL, teams registered in catalog for the owners field, etc. Such field extensions can also be customized for your own organization. See https://backstage.io/docs/features/software-templates/writing-custom-field-extensions/
 
-#### Aca hay ejemplos de templates:
+##### Aca hay ejemplos de templates:
 https://github.com/backstage/software-templates
 
-#### Software Templates at Spotify
+##### Software Templates at Spotify
 At Spotify, we have dozens of Software Templates. We divide them into several disciples like Backend, Frontend, Data pipelines, etc. Inside Spotify, we also have stakeholder groups for Web, Backend, Data, etc. separately. These Software Templates are hosted on our internal GitHub enterprise, maintained and reviewed by the concerned experts in the discipline.
 
 The Technical Architecture Group (TAG) at Spotify is the body responsible for reducing fragmentation by deciding on the various Backend, Frontend, Data frameworks to be used inside Spotify. Hence, new Software Templates with completely new frameworks are carefully discussed and reviewed.
@@ -293,7 +293,7 @@ Our Software Templates are fundamental to the concept of Golden Paths at Spotify
 The blessed tools — those on the Golden Path — are visualized in the Explore section of Backstage. Read more https://engineering.atspotify.com/2020/08/how-we-use-golden-paths-to-solve-fragmentation-in-our-software-ecosystem/
 
 
-#### Component objects:
+##### Component objects:
 https://backstage.io/docs/features/software-catalog/descriptor-format/#overall-shape-of-an-entity
 
 
