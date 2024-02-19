@@ -8,5 +8,4 @@ spec:
     - ./users/geralt.yaml
     - ./users/kratos.yaml
     - ./users/masterchief.yaml
-    - ./users/nico-tello.yaml
     
