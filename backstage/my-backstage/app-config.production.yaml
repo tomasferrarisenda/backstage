@@ -90,7 +90,7 @@ catalog:
 
       catalogsProvider:
         organization: 'tomasferrarisenda' # string
-        catalogPath: '/backstage/entities/catalogs/catalog-info.yaml' # this will search all folders for files that end in template.yaml
+        catalogPath: '/my-app/**/*catalog-info.yaml.yaml' # this will search all folders for files that end in template.yaml
         filters:
           branch: 'main' # string
           repository: 'backstage-minikube-lab' # Regex
