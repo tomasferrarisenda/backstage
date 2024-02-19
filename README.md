@@ -144,7 +144,15 @@ Now go to localhost:8080 on your browser and Voilá!
 This repo is made for you to be able to customize and deploy Backstage in any way you want, but I've already added some custom stuff to the default Backstage installation that I think you will find useful.
 
 ## Plugins I've added
-- Kubernetes plugin
+### [Kubernetes plugin](https://backstage.io/docs/features/kubernetes/)
+Kubernetes in Backstage is a tool that's designed around the needs of service owners, not cluster admins. Now developers can easily check the health of their services no matter how or where those services are deployed — whether it's on a local host for testing or in production on dozens of clusters around the world.
+
+It will elevate the visibility of errors where identified, and provide drill down about the deployments, pods, and other objects for a service.
+
+### [GitHub Discovery plugin](https://backstage.io/docs/integrations/github/discovery) 
+The GitHub integration has a discovery provider for discovering catalog entities within a GitHub organization. The provider will crawl the GitHub organization and register entities matching the configured path. This can be useful as an alternative to static locations or manually adding things to the catalog. This is the preferred method for ingesting entities into the catalog.
+
+I've installed it without events support. Updates to the catalog will rely on periodic scanning rather than real-time updates.
 
 </br>
 
