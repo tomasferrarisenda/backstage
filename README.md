@@ -25,7 +25,7 @@
 - [Prerequisites](#prerequisites)
 - [Customising Backstage](#customising-backstage)
   - [Plugins I've Added](#plugins-ive-added)
-  - [Templates I've Added](#templates-ive-created)
+  - [Templates I've Created](#templates-ive-created)
 - [Initial Setup](#initial-setup)
 - [Local Backstage Setup](#backstage-local-setup)
 - [Run In Kubernetes Environment](#run-in-kubernetes-environment)
