@@ -33,17 +33,17 @@ We are using a Gitops methodology with ArgoCD and the App Of Apps Pattern.
 # Initial Setup
 In order to turn this whole deployment into your own thing, we need to do some initial setup:
 
-1. Fork this repo. Keep the repository name "backstage-lab".
+1. Fork this repo. Keep the repository name "backstage-minikube-lab".
 1. Clone the repo from your fork:
 
 ```bash
-git clone https://github.com/<your-github-username>/backstage-lab.git
+git clone https://github.com/<your-github-username>/backstage-minikube-lab.git
 ```
 
 2. Move into the directory:
 
 ```bash
-cd backstage-lab
+cd backstage-minikube-lab
 ```
 
 2. Run the initial setup script. Come back when you are done:
@@ -307,3 +307,6 @@ If the only change you've made is to the app-config.yaml (or other configuration
 
 # COSAS MODIFICADAS:
 values custom de argo, ingress.enabled cambiado a false
+
+
+AGREGARLE DESCRIPTION AL REPO DE GHUB
