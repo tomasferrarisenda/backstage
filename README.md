@@ -10,7 +10,7 @@
 - [Initial Setup](#initial-setup)
 - [Local Backstage Setup](#backstage-local-setup)
 - [Run In Kubernetes Environment](#run-in-kubernetes-environment)
-- [Excersise](#run-in-kubernetes-environment)
+- [Excersise](#excersise)
   - [What we are starting off with](#what-we-are-starting-off-with)
   - [What we are doing](#what-we-are-doing)
 
@@ -38,13 +38,13 @@ We'll be using a GitOps methodology with Helm, ArgoCD and the App Of Apps Patter
 Backstage is made to be customizable. You are supposed to modify it in ways that fit your own needs. I've already added some custom stuff to the default Backstage installation that I think are essential. 
 
 ## Plugins I've added
-#### [Kubernetes plugin](https://backstage.io/docs/features/kubernetes/)
-Kubernetes in Backstage is a tool that's designed around the needs of service owners, not cluster admins. Now developers can easily check the health of their services no matter how or where those services are deployed — whether it's on a local host for testing or in production on dozens of clusters around the world.
+#### Kubernetes plugin
+The [Kubernetes plugin](https://backstage.io/docs/features/kubernetes/) in Backstage is a tool that's designed around the needs of service owners, not cluster admins. Now developers can easily check the health of their services no matter how or where those services are deployed — whether it's on a local host for testing or in production on dozens of clusters around the world.
 
 It will elevate the visibility of errors where identified, and provide drill down about the deployments, pods, and other objects for a service.
 
-#### [GitHub Discovery plugin](https://backstage.io/docs/integrations/github/discovery) 
-The GitHub integration has a discovery provider for discovering catalog entities within a GitHub organization. The provider will crawl the GitHub organization and register entities matching the configured path. This can be useful as an alternative to static locations or manually adding things to the catalog. This is the preferred method for ingesting entities into the catalog.
+#### GitHub Discovery plugin 
+The [GitHub integration](https://backstage.io/docs/integrations/github/discovery) has a discovery provider for discovering catalog entities within a GitHub organization. The provider will crawl the GitHub organization and register entities matching the configured path. This can be useful as an alternative to static locations or manually adding things to the catalog. This is the preferred method for ingesting entities into the catalog.
 
 I've installed it without events support. Updates to the catalog will rely on periodic scanning rather than real-time updates.
 
@@ -214,7 +214,10 @@ Let's analyze the backend. With this Gitops setup we have, there's a number of t
 
 All of these files and directories we need to create for any new service we want to deploy. Luckily, we have Backstage Software Templates.
 
+## How we are doing it
 
+</br>
+</br>
 
 
 
