@@ -27,7 +27,7 @@
   - [Plugins I've Added](#plugins-ive-added)
   - [Templates I've Created](#templates-ive-created)
 - [Initial Setup](#initial-setup)
-- [Local Backstage Setup](#backstage-local-setup)
+- [Backstage Local Setup](#backstage-local-setup)
 - [Run In Kubernetes Environment](#run-in-kubernetes-environment)
 - [Excercise](#excercise)
   - [What we are starting off with](#what-we-are-starting-off-with)
