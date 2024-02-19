@@ -10,7 +10,12 @@
 - [Initial Setup](#initial-setup)
 - [Local Backstage Setup](#backstage-local-setup)
 - [Run In Kubernetes Environment](#run-in-kubernetes-environment)
+- [Excersise](#run-in-kubernetes-environment)
+  - [What we are starting off with](#what-we-are-starting-off-with)
+  - [What we are doing](#what-we-are-doing)
 
+
+</br>
 </br>
 
 # Introduction
@@ -19,6 +24,7 @@ This is a spinoff of my [Automate All The Things](https://github.com/tferrari92/
 We'll be using a GitOps methodology with Helm, ArgoCD and the App Of Apps Pattern. There is some extra information [here](/docs/argocd-notes.md), but you are expected to know about these things.
 
 </br>
+</br>
 
 # Prerequisites
 - Minikube installed
@@ -26,9 +32,10 @@ We'll be using a GitOps methodology with Helm, ArgoCD and the App Of Apps Patter
 - Helm installed
 
 </br>
+</br>
 
 # Customising Backstage
-Backstage is made to be customizable. You are supposed to modify it ways that fit your own needs. I've already added some custom stuff to the default Backstage installation that I think are essential. 
+Backstage is made to be customizable. You are supposed to modify it in ways that fit your own needs. I've already added some custom stuff to the default Backstage installation that I think are essential. 
 
 ## Plugins I've added
 ### [Kubernetes plugin](https://backstage.io/docs/features/kubernetes/)
@@ -58,6 +65,7 @@ lorem ipsum
 
 ### New documentation
 
+</br>
 </br>
 
 # Initial Setup
@@ -90,6 +98,7 @@ git commit -m "customized repo"
 git push
 ```
 
+</br>
 </br>
 
 # Backstage Local Setup
@@ -135,6 +144,7 @@ Every time you make changes to the Backstage code, it's recommended you test it 
 "Ctrl + C" to stop the running process and let's continue...
 
 </br>
+</br>
 
 # Run in Kubernetes Environment
 
@@ -169,12 +179,12 @@ backstage/deploy-k8s-environment.sh
 Now go to localhost:8080 on your browser and Voilá!
 
 </br>
-
+</br>
 
 
 # Excersise
 
-## What we are starting with
+## What we are starting off with
 We are starting off with a Redis database and a backend. Everytime the backend recieves a request it gets the value of "count" from the Redis db and returns it to the user. Before returning it, it adds +1 to "count".
 
 You can test it like this:
