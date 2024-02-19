@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: backend
-  description: My-app Backend
+  description: My-app Backend Service
   annotations:
     backstage.io/kubernetes-id: backend
   tags:
