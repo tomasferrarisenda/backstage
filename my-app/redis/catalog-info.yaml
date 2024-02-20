@@ -1,5 +1,5 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: Resource
 metadata:
   name: my-app-redis
   description: My-App Redis Databse
@@ -23,7 +23,7 @@ metadata:
       icon: assignment
       type: logs-dashboard  
 spec:
-  type: service
+  type: database
   lifecycle: production
   owner: my-app-redis-subteam
   system: my-app
