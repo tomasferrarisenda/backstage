@@ -148,12 +148,12 @@ catalog:
           timeout: { minutes: 3 }
 
       # APIs
-      groupsProvider:
+      catalogsProvider:
         organization: 'tomasferrarisenda' # string
-        catalogPath: '/backstage/entities/APIs/**/*.yaml' # this will search all folders for files that end in .yaml
-        filters: # optional filters
-          branch: 'main' # optional string
-          repository: 'backstage-minikube-lab' # optional Regex
+        catalogPath: '/my-app/**/*api.yaml' # this will search all folders for files that end in template.yaml
+        filters:
+          branch: 'main' # string
+          repository: 'backstage-minikube-lab' # Regex
         schedule: # same options as in TaskScheduleDefinition
           frequency: { minutes: 1 }
           timeout: { minutes: 3 }
