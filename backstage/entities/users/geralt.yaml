@@ -8,4 +8,4 @@ spec:
     email: geralt@rivia.com
     picture: https://i.imgur.com/FRQBE9F.jpg
   memberOf:
-    - platform-team
+    - my-app-frontend-subteam

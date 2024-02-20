@@ -2,18 +2,16 @@ apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
   name: my-app-frontend-subteam
-  title: My-app Frontend Subteam
-  description: Responsible for maintaining and developing the frontend of My-app
+  title: My-App Frontend Subteam
+  description: Responsible for maintaining and developing the frontend of My-App
   tags:
     - engineering
-    - infrastructure
     - reactjs
 spec:
   type: team
   children: []
   members:
     - geralt
-    - kratos
   profile:
-    email: frontend-subteam@example.com
+    email: my-app-frontend-subteam@example.com
     slack: #platform-team

@@ -8,4 +8,4 @@ spec:
     email: kratos@sparta.com
     picture: https://i.imgur.com/LWGqYi2.jpg
   memberOf:
-    - platform-team
+    - my-app-backend-subteam

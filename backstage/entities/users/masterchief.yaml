@@ -8,4 +8,4 @@ spec:
     email: masterchief@eridanus.com
     picture: https://i.imgur.com/a8eqzkH.jpg
   memberOf:
-    - platform-team
+    - my-app-redis-subteam
