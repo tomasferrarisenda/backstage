@@ -15,5 +15,5 @@ spec:
     - my-app-frontend-subteam
   # members:
   profile:
-    email: platform-team@example.com
+    email: my-app-team@example.com
     slack: #platform-team
