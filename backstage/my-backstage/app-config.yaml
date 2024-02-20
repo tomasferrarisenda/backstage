@@ -134,6 +134,16 @@ catalog:
           frequency: { minutes: 1 }
           timeout: { minutes: 3 }
 
+      resourcesProvider:
+        organization: 'tomasferrarisenda' # string
+        catalogPath: '/my-app/**/*catalog-info.yaml' # this will search all folders for files that end in template.yaml
+        filters:
+          branch: 'main' # string
+          repository: 'backstage-minikube-lab' # Regex
+        schedule: # same options as in TaskScheduleDefinition
+          frequency: { minutes: 1 }
+          timeout: { minutes: 3 }
+
       templatesProvider:
         organization: 'tomasferrarisenda' # string
         catalogPath: '/backstage/entities/templates/**/*template.yaml' # this will search all folders for files that end in template.yaml
