@@ -40,8 +40,7 @@
 # INTRODUCTION
 This is a spinoff of my [Automate All The Things](https://github.com/tferrari92/automate-all-the-things) project. While working on the [Nirvana Edition](https://github.com/tferrari92/automate-all-the-things-nirvana) which will include a Developer Portal built with Backstage, I'm creating this smaller lab for anyone who wants to start experimenting with this tool.
 
-Backstage is a framework for creating developer portals. This developer portal should act as a centralized hub for your organization, providing access to documentation, infrastructure, tooling, and code standards. It gives developers everything they need to create and manage their projects in a consistent and standardized manner. 
-
+Backstage is a framework for creating developer portals. This developer portal should act as a centralized hub for your organization, providing access to documentation, infrastructure, tooling, and code standards. It gives developers everything they need to create and manage their projects in a consistent and standardized manner. If you are new to Backstage, I invite you to read [this brilliant series of articles](https://www.kosli.com/blog/evaluating-backstage-1-why-backstage/) by Alexandre Couedelo.
 
 We'll be using a GitOps methodology with Helm, ArgoCD and the App Of Apps Pattern. There is some extra information [here](/docs/argocd-notes.md), but you are expected to know about these things.
 
@@ -72,6 +71,8 @@ The [GitHub integration](https://backstage.io/docs/integrations/github/discovery
 
 I've installed it without events support. Updates to the catalog will rely on periodic scanning rather than real-time updates.
 
+## ArgoCD plugin
+https://roadie.io/backstage/plugins/argo-cd/
 </br>
 
 ## Templates I've created
@@ -145,7 +146,12 @@ yarn global add concurrently
 ```
 
 #### Get GitHub PAT (Personal Access Token)
-lorem pisum
+You can do the following to create a GitHub PAT:
+
+Navigate to the GitHub PAT creation page.
+In the Note field, enter the name of the token, such as backstage-token.
+Choose a value for Expiration and select the scope of your token. When creating a template, you’ll need to select at least the repo scope.
+https://i.imgur.com/x28b4Q5.png
 
 #### Local testing
 Create en env var for your GitHub token
