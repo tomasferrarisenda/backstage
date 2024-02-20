@@ -148,7 +148,7 @@ catalog:
           timeout: { minutes: 3 }
 
       # APIs
-      catalogsProvider:
+      apisProvider:
         organization: 'tomasferrarisenda' # string
         catalogPath: '/my-app/**/*api.yaml' # this will search all folders for files that end in template.yaml
         filters:

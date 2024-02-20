@@ -3,6 +3,8 @@ kind: API
 metadata:
   name: my-app-backend-api
   description: The My-App Backend Service API
+  tags:
+    - restful
 spec:
   type: openapi
   lifecycle: production
