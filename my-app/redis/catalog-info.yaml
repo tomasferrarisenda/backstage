@@ -25,5 +25,5 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: database-subteam
+  owner: my-app-redis-subteam
   system: my-app
