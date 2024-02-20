@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: backend-subteam
-  title: Backend Subteam
-  description: Responsible for maintaining and developing the backend of internal platform
+  name: my-app-backend-subteam
+  title: My-app Backend Subteam
+  description: Responsible for maintaining and developing the backend of My-app
   tags:
     - engineering
     - infrastructure
