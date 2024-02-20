@@ -10,8 +10,9 @@ metadata:
 spec:
   type: team
   children: 
-    - backend-subteam
-    - frontend-subteam
+    - my-app-redis-subteam
+    - my-app-backend-subteam
+    - my-app-frontend-subteam
   # members:
   profile:
     email: platform-team@example.com

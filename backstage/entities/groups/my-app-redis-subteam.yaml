@@ -5,8 +5,7 @@ metadata:
   title: My-App Redis Subteam
   description: Responsible for maintaining and developing the redis database of My-App
   tags:
-    - engineering
-    - infrastructure
+    - database
     - redis
 spec:
   type: team
