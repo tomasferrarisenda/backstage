@@ -25,7 +25,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: backend-subteam
+  owner: my-app-backend-subteam
   system: my-app
   # dependsOn:
   #   - component: my-app-redis
