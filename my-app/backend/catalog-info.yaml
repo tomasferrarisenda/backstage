@@ -30,6 +30,6 @@ spec:
   # dependsOn:
   #   - component: my-app-redis
   dependsOn:
-    - resource:default/my-app-redis
+    - component:default/my-app-redis
   # providesApis:
   #   - my-app-frontend
