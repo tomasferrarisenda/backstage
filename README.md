@@ -364,3 +364,26 @@ values custom de argo, ingress.enabled cambiado a false
 
 
 AGREGARLE DESCRIPTION AL REPO DE GHUB
+
+
+
+
+Searching through App Metadata with Backstage Search
+The Backstage Search feature allows you to integrate custom search engine providers. You can also use any of the three default search engines: Lunr, Postgres, or Elasticsearch. Lunr is the current search engine enabled on your Backstage app. However, the documentation does not recommend this setup for a production environment because this search engine may not perform indexing well enough when the volume of app metadata and documentation increases.
+https://www.kosli.com/blog/implementing-backstage-2-using-the-core-features/
+
+Optimizing Search Highlighting
+For a better search highlighting experience, add these lines of config to app-config.yaml:
+```yaml
+search:
+  pg:
+    highlightOptions:
+      useHighlight: true
+      maxWord: 35 # Used to set the longest headlines to output. The default value is 35.
+      minWord: 15 # Used to set the shortest headlines to output. The default value is 15.
+      shortWord: 3 # Words of this length or less will be dropped at the start and end of a headline, unless they are query terms. The default value of three (3) eliminates common English articles.
+      highlightAll: false # If true the whole document will be used as the headline, ignoring the preceding three parameters. The default is false.
+      maxFragments: 0 # Maximum number of text fragments to display. The default value of zero selects a non-fragment-based headline generation method. A value greater than zero selects fragment-based headline generation (see the linked documentation above for more details).
+      fragmentDelimiter: ' ... ' # Delimiter string used to concatenate fragments. Defaults to " ... ".
+```
+https://www.kosli.com/blog/implementing-backstage-2-using-the-core-features/
