@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: my-app-backend-api
+  description: The My-App Backend Service API
+spec:
+  type: openapi
+  lifecycle: production
+  owner: my-app-backend-subteam
+  definition:
+    location: https://example.com/api-spec.yaml
+  system: my-app
