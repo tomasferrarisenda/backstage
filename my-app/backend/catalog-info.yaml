@@ -27,9 +27,9 @@ spec:
   lifecycle: production
   owner: my-app-backend-subteam
   system: my-app
-  dependsOn:
-    - component: my-app-redis
   # dependsOn:
-  #   - resource:default/my-app-redis
+  #   - component: my-app-redis
+  dependsOn:
+    - resource:default/my-app-redis
   # providesApis:
   #   - my-app-frontend
