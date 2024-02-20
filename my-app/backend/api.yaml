@@ -10,8 +10,8 @@ spec:
   lifecycle: production
   owner: my-app-backend-subteam
   system: my-app
-  definition: ./openapi.yaml
-  # definition: ./my-app/backend/openapi.yaml
+  # definition: ./openapi.yaml
+  definition: ./my-app/backend/openapi.yaml
   # definition: |
   #   openapi: 3.0.0
   #   info:
