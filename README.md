@@ -73,6 +73,10 @@ I've installed it without events support. Updates to the catalog will rely on pe
 
 ## ArgoCD plugin
 https://roadie.io/backstage/plugins/argo-cd/
+
+## GitHub Insights plugin
+
+https://roadie.io/backstage/plugins/github-insights/
 </br>
 
 ## Templates I've created
