@@ -29,5 +29,5 @@ spec:
   system: my-app
   dependsOn:
     - resource:default/my-app-redis
-  # providesApis:
-  #   - my-app-backend-api
+  providesApis:
+    - my-app-backend-api
