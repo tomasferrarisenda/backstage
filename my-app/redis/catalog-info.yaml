@@ -1,12 +1,12 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: my-app-backend
-  description: My-app Backend Service
+  name: my-app-redis
+  description: My-app Redis Databse
   annotations:
     backstage.io/kubernetes-id: backend
   tags:
-    - nodejs
+    - redis 
   links:
     - title: Documentation
       url: https://github.com/tomasferrarisenda/backstage-minikube-lab
@@ -25,9 +25,5 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: backend-subteam
+  owner: database-subteam
   system: my-app
-  dependsOn:
-    - component: my-app-redis
-  providesApis:
-    - my-app-frontend

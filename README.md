@@ -38,7 +38,9 @@
 </br>
 
 # INTRODUCTION
-This is a spinoff of my [Automate All The Things](https://github.com/tferrari92/automate-all-the-things) project. While working on the [Nirvana Edition](https://github.com/tferrari92/automate-all-the-things-nirvana) which will include an IDP built with Backstage, I'm creating this smaller lab for anyone who wants to start experimenting with this tool.
+This is a spinoff of my [Automate All The Things](https://github.com/tferrari92/automate-all-the-things) project. While working on the [Nirvana Edition](https://github.com/tferrari92/automate-all-the-things-nirvana) which will include a Developer Portal built with Backstage, I'm creating this smaller lab for anyone who wants to start experimenting with this tool.
+
+Backstage is a framework for creating developer portals. This developer portal should act as a centralized hub for your organization, providing access to documentation, infrastructure, tooling, and code standards. It gives developers everything they need to create and manage their projects in a consistent and standardized manner. It’s designed from the ground up to be flexible and allow every organization to adapt it to their own needs.
 
 We'll be using a GitOps methodology with Helm, ArgoCD and the App Of Apps Pattern. There is some extra information [here](/docs/argocd-notes.md), but you are expected to know about these things.
 
@@ -226,8 +228,8 @@ kubectl get pods -n my-app-prod -l app=my-app-backend-prod -o name | xargs -I {}
 We are going to create the missing piece with the help of backstage, the frontend.
 
 Let's analyze the backend. With this Gitops setup we have, there's a number of things that need to exist in order for the backend service to be deployed. These are:
-1. The [my-app/backend directory](/my-app/backend/): In a production environment, the backend service would have its own repo where we would store all the application code. In this small lab we'll just save it in its own directory.
-2. The [helm/my-app/backend directory](/helm/my-app/backend/): Here we save the Helm chart for our backend service. This of course would also be in its own repo on a production environment.
+1. The [my-app/backend directory](/my-app/backend/): In a real world scenario, the backend service would have its own repo where we would store all the application code. In this small lab we'll just save it in its own directory.
+2. The [helm/my-app/backend directory](/helm/my-app/backend/): Here we save the Helm chart for our backend service. This of course would also be in its own repo on a real world scenario.
 3. The [backend service argocd application manifests](/argo-cd/applications/my-app/backend/): These are read by the App of Apps to 
 4. The [backend build pipeline]():
 

@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: platform-team
-  title: Platform Team
-  description: Responsible for maintaining and developing the internal platform
+  name: my-app-team
+  title: My-app Team
+  description: Responsible for maintaining and developing the my-app system
   tags:
     - engineering
     - infrastructure
