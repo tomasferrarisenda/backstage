@@ -83,21 +83,6 @@ catalog:
         - Group
         - Template
 
-  # We don't use this anymore because I installed the GitHub Discovery plugin
-  # locations:
-    # - type: url
-    #   target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-templates.yaml
-    #   rules:
-    #     - allow: [Template]
-    # - type: url
-    #   target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-users.yaml
-    #   rules:
-    #     - allow: [User]
-    # - type: url
-    #   target: https://github.com/tomasferrarisenda/backstage/blob/main/backstage/entities/all-groups.yaml
-    #   rules:
-    #     - allow: [Group]
-
   refreshIntervalSeconds: 5 # In seconds. Default is 100
 
   providers:
@@ -105,7 +90,7 @@ catalog:
 
       # Use this if new services are created in their own repositories
       # catalogsProvider:
-      #   organization: 'tomasferrarisenda' # string
+      #   organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
       #   catalogPath: '/catalog-info.yaml' # string
       #   filters:
       #     branch: 'main' # string
@@ -116,7 +101,7 @@ catalog:
 
       # Systems
       systemsProvider:
-        organization: 'tomasferrarisenda' # string
+        organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
         catalogPath: '/backstage/entities/systems/**/*.yaml' # this will search all folders for files that end in .yaml
         filters:
           branch: 'main' # string
@@ -127,7 +112,7 @@ catalog:
 
       # Catalogs
       catalogsProvider:
-        organization: 'tomasferrarisenda' # string
+        organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
         catalogPath: '/my-app/**/*catalog-info.yaml' # this will search all folders for files that end in template.yaml
         filters:
           branch: 'main' # string
@@ -138,7 +123,7 @@ catalog:
 
       # Resources
       resourcesProvider:
-        organization: 'tomasferrarisenda' # string
+        organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
         catalogPath: '/my-app/**/*catalog-info.yaml' # this will search all folders for files that end in template.yaml
         filters:
           branch: 'main' # string
@@ -149,7 +134,7 @@ catalog:
 
       # APIs
       apisProvider:
-        organization: 'tomasferrarisenda' # string
+        organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
         catalogPath: '/my-app/**/*api.yaml' # this will search all folders for files that end in template.yaml
         filters:
           branch: 'main' # string
@@ -160,7 +145,7 @@ catalog:
 
       # Templates
       templatesProvider:
-        organization: 'tomasferrarisenda' # string
+        organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
         catalogPath: '/backstage/entities/templates/**/*template.yaml' # this will search all folders for files that end in template.yaml
         filters:
           branch: 'main' # string
@@ -171,7 +156,7 @@ catalog:
 
       # Groups
       groupsProvider:
-        organization: 'tomasferrarisenda' # string
+        organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
         catalogPath: '/backstage/entities/groups/**/*.yaml' # this will search all folders for files that end in .yaml
         filters: # optional filters
           branch: 'main' # optional string
@@ -182,7 +167,7 @@ catalog:
 
       # Users
       usersProvider:
-        organization: 'tomasferrarisenda' # string
+        organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
         catalogPath: '/backstage/entities/users/**/*.yaml' # this will search all folders for files that end in .yaml
         filters: # optional filters
           branch: 'main' # optional string
