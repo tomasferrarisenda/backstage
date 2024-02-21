@@ -4,6 +4,7 @@ metadata:
   name: my-app-redis
   description: My-App Redis Databse
   annotations:
+    backstage.io/techdocs-ref: dir:.
     backstage.io/kubernetes-id: my-app-redis
   tags:
     - redis 

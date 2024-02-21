@@ -4,9 +4,8 @@ metadata:
   name: my-app-backend
   description: My-App Backend Service
   annotations:
-    backstage.io/kubernetes-id: my-app-backend
     backstage.io/techdocs-ref: dir:.
-    # backstage.io/techdocs-ref: https://github.com/tomasferrarisenda/backstage-minikube-lab/blob/main/my-app/backend/mkdocs.yaml
+    backstage.io/kubernetes-id: my-app-backend
   tags:
     - nodejs
   links:
