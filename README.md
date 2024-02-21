@@ -48,9 +48,10 @@ We'll be using a GitOps methodology with Helm, ArgoCD and the App Of Apps Patter
 </br>
 
 # PREREQUISITES
-- Minikube installed
+- minikube installed
 - kubectl installed
-- Helm installed
+- helm installed
+- vim installed
 
 </br>
 </br>
@@ -95,8 +96,8 @@ https://www.kosli.com/blog/succeeding-with-backstage-part-1-customizing-the-look
 </br>
 
 ## Templates I've created
-#### New nodejs in new repo
-lorem ipsum
+<!-- #### New nodejs in new repo
+lorem ipsum -->
 
 #### New nodejs in existing repo
 lorem ipsum
@@ -107,7 +108,7 @@ lorem ipsum
 #### New backstage group
 lorem ipsum
 
-#### New documentation
+<!-- #### New documentation -->
 
 </br>
 </br>
@@ -131,7 +132,8 @@ cd backstage-minikube-lab
 2. Run the initial setup script. Come back when you are done:
 
 ```bash
-python3 python/initial-setup.py
+chmod +x initial-setup.sh
+./initial-setup.sh
 ```
 
 4. Hope you enjoyed the welcome script! Now push your customized repo to GitHub:
@@ -170,7 +172,10 @@ You can do the following to create a GitHub PAT:
 Navigate to the GitHub PAT creation page.
 In the Note field, enter the name of the token, such as backstage-token.
 Choose a value for Expiration and select the scope of your token. When creating a template, you’ll need to select at least the repo scope.
-https://i.imgur.com/x28b4Q5.png
+
+<p title="GitHub Token" align="center"> <img src="https://i.imgur.com/x28b4Q5.png"> </p>
+
+
 
 #### Local testing
 Create en env var for your GitHub token
@@ -205,7 +210,7 @@ chmod +x build-push-image.sh
 ```
 
 #### Update image tag in backstage chart values
-Update the value of backstage.image.tag in the backstage values-custom.yaml
+Update the value of backstage.image.tag in the backstage values-custom.yaml 
 ```bash
 cd ../..
 vim helm/infra/backstage/values-custom.yaml
@@ -221,9 +226,15 @@ git push
 #### Minikube Environment Setup
 Run the start.sh script to get everything setup
 ```bash
+chmod +x backstage/deploy-in-minikube.sh
+backstage/deploy-in-minikube.sh
+```
+
+<!-- Run the start.sh script to get everything setup
+```bash
 chmod +x backstage/deploy-k8s-environment.sh
 backstage/deploy-k8s-environment.sh
-```
+``` -->
 
 Now go to localhost:8080 on your browser and Voilá!
 

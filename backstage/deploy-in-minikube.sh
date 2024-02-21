@@ -8,7 +8,7 @@ read GITHUB_TOKEN
 minikube start
 
 # We create the secret for the Github token with this command. This way the token won't get pushed to Github.
-ubectl create ns backstage
+kubectl create ns backstage
 kubectl create secret generic github-token --namespace=backstage --from-literal=GITHUB_TOKEN="$GITHUB_TOKEN"
 
 # Install Backstage
