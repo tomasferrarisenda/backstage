@@ -44,6 +44,17 @@ techdocs:
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
+
+# This is because of error: 
+# Refused to load the image 'https://i.imgur.com/LWGqYi2.jpg' because it violates the following Content Security Policy directive: "img-src 'self' data:".
+# See: https://john-tucker.medium.com/backstage-by-example-part-3-5a1efec3bcb1
+csp:
+  connect-src: ["'self'", 'http:', 'https:']
+  # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
+  # Default Helmet Content-Security-Policy values can be removed by setting the key to false
+  img-src: ["'self'", 'data:', 'https://i.imgur.com']
+
+
 catalog:
   rules:
     - allow:
