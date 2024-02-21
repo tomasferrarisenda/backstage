@@ -17,7 +17,7 @@ helm install backstage -n backstage helm/infra/backstage --values helm/infra/bac
 # Install Redis
 helm install redis -n my-app helm/my-app/redis --dependency-update --create-namespace
 
-# Install Redis
+# Install Backend service
 helm install backend -n my-app helm/my-app/backend --dependency-update --create-namespace
 
 # Wait for the Backstage pod to be ready

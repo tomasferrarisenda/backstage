@@ -1,5 +1,4 @@
 appName: my-app
-environment: dev
 
 service: backend
 
