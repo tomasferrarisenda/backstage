@@ -29,12 +29,6 @@ spec:
           description: Describe the new group
           ui:field: EntityNamePicker
           ui:autofocus: true
-        email:
-          title: Email
-          type: string
-          description: Email of the new group
-          # ui:field: EntityNamePicker
-          ui:autofocus: true
         type:
           title: Type
           type: string
@@ -45,6 +39,13 @@ spec:
               - team
               - business-unit
               - product-area
+        email:
+          title: Email
+          type: string
+          description: Email of the new group
+          # ui:field: EntityNamePicker
+          ui:autofocus: true
+
 
     - title: Choose a location
       required:
@@ -66,10 +67,9 @@ spec:
         url: ./skeleton
         values:
           name: ${{ parameters.name }}
-          lastName: ${{ parameters.lastName }}
+          description: ${{ parameters.description }}
+          type: ${{ parameters.type }}
           email: ${{ parameters.email }}
-          group: ${{ parameters.group }}
-          pictureURL: ${{ parameters.pictureURL }}
 
     # - id: append-new-user
     #   name: Append new user to all-users.yaml
@@ -87,11 +87,11 @@ spec:
       input:
         allowedHosts: ['github.com']
         repoUrl: ${{ parameters.repoUrl }}
-        title: "Create new user: ${{parameters.name}} ${{parameters.lastName}}"
-        branchName: create-${{parameters.name | lower }}-${{parameters.lastName | lower }}
+        title: "Create new group: ${{parameters.name}}"
+        branchName: create-group-${{parameters.name | lower }}
         description: |
-          # New user: ${{parameters.name}} ${{parameters.lastName}}
-        targetPath: backstage/entities/users
+          # New user: ${{parameters.name}}
+        targetPath: backstage/entities/groups
         # targetPath: "" # Leave empty to use the root of the repo or specify if needed
         # paths: 
         #   - backstage/entities/users
