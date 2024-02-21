@@ -45,7 +45,7 @@ techdocs:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
 
-# This is because of error: 
+# This is because when running in K8S, profile images of users don't load. We get error: 
 # Refused to load the image 'https://i.imgur.com/LWGqYi2.jpg' because it violates the following Content Security Policy directive: "img-src 'self' data:".
 # See: https://john-tucker.medium.com/backstage-by-example-part-3-5a1efec3bcb1
 csp:
