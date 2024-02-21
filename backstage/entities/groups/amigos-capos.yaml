@@ -10,7 +10,6 @@ metadata:
 spec:
   type: team
   children: []
-  parent: []
   profile:
     email: amigos@gmail.com
     # slack: 
