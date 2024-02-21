@@ -4,7 +4,7 @@ backstage:
   image:
     registry: ""
     repository: tferrari92/backstage
-    tag: "60"
+    tag: "61"
 
   extraEnvVars:
     - name: GITHUB_TOKEN
