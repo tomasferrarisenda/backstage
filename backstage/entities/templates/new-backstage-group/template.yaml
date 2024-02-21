@@ -81,7 +81,7 @@ spec:
           title: ${{ parameters.title }}
           description: ${{ parameters.description }}
           type: ${{ parameters.type }}
-          parent: ${{ parameters.parent }}
+          parent: "parent: ${{ parameters.parent }}"
           email: ${{ parameters.email }}
 
     # - id: append-new-user
