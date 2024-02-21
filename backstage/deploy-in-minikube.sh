@@ -4,7 +4,7 @@
 read -p "Enter your GitHub token: " GITHUB_TOKEN
 
 # Start cluster. Extra beefy beause Backstage is a bit heavy.
-minikube start --cpus 4 --memory 8192
+minikube start --cpus 4 --memory 4096
 
 # We create the secret for the Github token with this command. This way the token won't get pushed to Github.
 kubectl create ns backstage
