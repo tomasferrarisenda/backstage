@@ -14,7 +14,7 @@ kubectl create secret generic github-token -n backstage --from-literal=GITHUB_TO
 helm install backstage -n backstage helm/infra/backstage --values helm/infra/backstage/values-custom.yaml --dependency-update --create-namespace
 
 # Install Redis
-helm install redis -n my-app helm/my-app/redis --dependency-update --create-namespace
+helm install redis -n my-app helm/my-app/redis --values helm/my-app/redis/values-custom.yaml --dependency-update --create-namespace
 
 # Install Backend service
 helm install backend -n my-app helm/my-app/backend --dependency-update --create-namespace
