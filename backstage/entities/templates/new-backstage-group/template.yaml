@@ -40,12 +40,10 @@ spec:
           title: Type
           type: string
           description: Type of the new group
-          ui:field: OwnerPicker
-          ui:options:
-            allowedKinds:
-              - team
-              - business-unit
-              - product-area
+          enum:
+            - team
+            - business-unit
+            - product-area
         email:
           title: Email
           type: string
