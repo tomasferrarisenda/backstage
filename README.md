@@ -402,3 +402,11 @@ search:
       fragmentDelimiter: ' ... ' # Delimiter string used to concatenate fragments. Defaults to " ... ".
 ```
 https://www.kosli.com/blog/implementing-backstage-2-using-the-core-features/
+
+
+
+# ARBITRARY RULES
+
+### Users and groups hierarchy
+Had to add default value 'root' because the 'parent' parameter in the Group manifest needs to have a value. It cannot be '[]' or 'null'. 
+And since we are establishing hierarchy from the bottom up, we must have the 'parent' parameter in the Group manifest.
