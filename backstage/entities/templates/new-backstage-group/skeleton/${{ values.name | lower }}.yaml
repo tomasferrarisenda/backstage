@@ -10,8 +10,6 @@ metadata:
 spec:
   type: ${{ values.type }}
   children: []
-  # members:
-  #   - kratos
   profile:
     email: ${{ values.email }}
     slack: #platform-team

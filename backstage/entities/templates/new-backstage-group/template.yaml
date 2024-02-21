@@ -13,10 +13,9 @@ spec:
     - title: Provide some simple information
       required:
         - name
-        - lastName
+        - description
+        - type
         - email
-        - group
-        - pictureURL
       properties:
         name:
           title: Name
