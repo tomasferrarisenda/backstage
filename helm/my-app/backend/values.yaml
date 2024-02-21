@@ -15,4 +15,4 @@ deployment:
     backstage.io/kubernetes-id: my-app-backend
     
   env:
-    redis_host: redis-dev-master 
+    redis_host: redis-master 

@@ -249,7 +249,7 @@ We are starting off with a Redis database and a backend. Everytime the backend r
 
 You can test it like this:
 ```bash
-kubectl get pods -n my-app-dev -l app=my-app-backend-dev -o name | xargs -I {} kubectl exec -n my-app-dev {} -- curl -s localhost:3000
+kubectl get pods -n my-app -l app=my-app-backend -o name | xargs -I {} kubectl exec -n my-app {} -- curl -s localhost:3000
 ```
 
 You should get:
@@ -257,11 +257,18 @@ You should get:
 {"count":1}%
 ```
 
-You can test it on the other environments too:
+If you run it again, you'll get:
+```bash
+{"count":2}%
+```
+
+And so on...
+
+<!-- You can test it on the other environments too:
 ```bash
 kubectl get pods -n my-app-stage -l app=my-app-backend-stage -o name | xargs -I {} kubectl exec -n my-app-stage {} -- curl -s localhost:3000
 kubectl get pods -n my-app-prod -l app=my-app-backend-prod -o name | xargs -I {} kubectl exec -n my-app-prod {} -- curl -s localhost:3000
-```
+``` -->
 
 ## What we are doing
 We are going to create the missing piece with the help of backstage, the frontend.
