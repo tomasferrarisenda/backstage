@@ -13,6 +13,7 @@ spec:
     - title: Provide some simple information
       required:
         - name
+        - title
         - description
         - type
         - email
@@ -23,11 +24,17 @@ spec:
           description: Name of the new user
           ui:field: EntityNamePicker
           ui:autofocus: true
+        title:
+          title: Title
+          type: string
+          description: Human readable title of the new group
+          # ui:field: EntityNamePicker
+          ui:autofocus: true
         description:
           title: Description
           type: string
           description: Describe the new group
-          ui:field: EntityNamePicker
+          # ui:field: EntityNamePicker
           ui:autofocus: true
         type:
           title: Type
@@ -67,6 +74,7 @@ spec:
         url: ./skeleton
         values:
           name: ${{ parameters.name }}
+          title: ${{ parameters.title }}
           description: ${{ parameters.description }}
           type: ${{ parameters.type }}
           email: ${{ parameters.email }}
