@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: amigos-capos
+  title: Amigos Capos
+  description: grupo de amigos capos
+  tags:
+    - engineering
+    - nodejs
+spec:
+  type: team
+  children: []
+  parent: orphan 
+  profile:
+    email: amigos@hotmail.com
+    # slack: 
