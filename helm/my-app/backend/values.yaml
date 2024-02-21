@@ -7,5 +7,12 @@ deployment:
     repository: tferrari92/my-app-backend # This value was modified by the initial-setup script
     tag: 1641
   replicas: 1
+
+  # METER ESTO POR VALUES
+  labels:
+    app: my-app
+    service: backend
+    backstage.io/kubernetes-id: my-app-backend
+    
   env:
     redis_host: redis-dev-master 

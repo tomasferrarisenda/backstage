@@ -282,7 +282,9 @@ All of these files and directories we need to create for any new service we want
 
 
 
+# Customizing Your Backstage
 
+# Paso a paso para buildear nueva imgen y utilizarla
 
 
 

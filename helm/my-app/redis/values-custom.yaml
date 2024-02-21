@@ -1,2 +1,5 @@
 replica:
   replicaCount: 1
+
+commonLabels:
+  backstage.io/kubernetes-id: my-app-redis

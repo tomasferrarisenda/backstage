@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.appName }}-{{ .Values.service }}-deployment
+  labels:
+    backstage.io/kubernetes-id: my-app-backend
 spec:
   replicas: {{ .Values.deployment.replicas }}
   selector:
@@ -11,6 +13,7 @@ spec:
     metadata:
       labels:
         app: {{ .Values.appName }}-{{ .Values.service }}
+        backstage.io/kubernetes-id: my-app-backend
     spec:
       containers:
         - name: {{ .Values.appName }}-{{ .Values.service }}
