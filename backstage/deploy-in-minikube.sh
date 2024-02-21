@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Prompt the user for their GitHub token
-echo "Enter your GitHub token:"
-read GITHUB_TOKEN
+read -p "Enter your GitHub token: " GITHUB_TOKEN
 
 # Start cluster
 minikube start
