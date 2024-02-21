@@ -10,9 +10,7 @@ metadata:
 spec:
   type: ${{ values.type }}
   children: []
-  # Had to add default value 'orphan' because parent needs to have a value. It cannot be '[]' or 'null'. 
-  # Since we are establishing hierarchy from the bottom up, we need to have the 'parent' parameter in the template.
-  parent: ${{ values.parent || 'orphan' }} 
+  parent: ${{ values.parent }} 
   profile:
     email: ${{ values.email }}
     # slack: 
