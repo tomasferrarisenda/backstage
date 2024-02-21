@@ -4,6 +4,15 @@ app:
   baseUrl: http://localhost:7007
 
 backend:
+  # This is because when running in K8S, profile images of users don't load. We get error: 
+  # Refused to load the image 'https://i.imgur.com/LWGqYi2.jpg' because it violates the following Content Security Policy directive: "img-src 'self' data:".
+  # See: https://john-tucker.medium.com/backstage-by-example-part-3-5a1efec3bcb1
+  csp:
+    connect-src: ["'self'", 'http:', 'https:']
+    # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
+    # Default Helmet Content-Security-Policy values can be removed by setting the key to false
+    img-src: ["'self'", 'data:', 'https://i.imgur.com']
+
   # Note that the baseUrl should be the URL that the browser and other clients
   # should use when communicating with the backend, i.e. it needs to be
   # reachable not just from within the backend host, but from all of your
@@ -43,16 +52,6 @@ techdocs:
     runIn: 'local' # We use local in porduction because it fails with "docker" when runnin in minikube
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
-
-
-# This is because when running in K8S, profile images of users don't load. We get error: 
-# Refused to load the image 'https://i.imgur.com/LWGqYi2.jpg' because it violates the following Content Security Policy directive: "img-src 'self' data:".
-# See: https://john-tucker.medium.com/backstage-by-example-part-3-5a1efec3bcb1
-csp:
-  connect-src: ["'self'", 'http:', 'https:']
-  # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
-  # Default Helmet Content-Security-Policy values can be removed by setting the key to false
-  img-src: ["'self'", 'data:', 'https://i.imgur.com']
 
 
 catalog:
