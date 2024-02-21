@@ -1,19 +1,6 @@
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: ${{ values.name | lower }}-${{ values.lastName | lower }}
-spec:
-  profile:
-    displayName: "${{ values.name }} ${{ values.lastName }}"	
-    email: ${{ values.email }}
-    picture: ${{ values.pictureURL }}
-  memberOf:
-    - ${{ values.group }}
-
-
-apiVersion: backstage.io/v1alpha1
-kind: Group
-metadata:
   name: ${{ values.name | lower }}
   title: ${{ values.name }}
   description: ${{ values.description }}
@@ -23,8 +10,8 @@ metadata:
 spec:
   type: ${{ values.type }}
   children: []
-  members:
-    - kratos
+  # members:
+  #   - kratos
   profile:
     email: ${{ values.email }}
     slack: #platform-team
