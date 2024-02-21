@@ -23,31 +23,28 @@ spec:
           description: Name of the new user
           ui:field: EntityNamePicker
           ui:autofocus: true
-        lastName:
-          title: Last Name
+        description:
+          title: Description
           type: string
-          description: Last name of the new user
+          description: Describe the new group
           ui:field: EntityNamePicker
           ui:autofocus: true
         email:
           title: Email
           type: string
-          description: Email of the new user
+          description: Email of the new group
           # ui:field: EntityNamePicker
           ui:autofocus: true
-        pictureURL:
-          title: Profile picutre
+        type:
+          title: Type
           type: string
-          description: URL to the profile picture of the new user
-          ui:autofocus: true
-        group:
-          title: Group
-          type: string
-          description: Group this user belongs to
+          description: Type of the new group
           ui:field: OwnerPicker
           ui:options:
             allowedKinds:
-              - Group
+              - team
+              - business-unit
+              - product-area
 
     - title: Choose a location
       required:
