@@ -13,4 +13,4 @@ spec:
   parent: ${{ values.parent }}
   profile:
     email: ${{ values.email }}
-    slack: #platform-team
+    slack: 

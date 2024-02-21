@@ -16,7 +16,6 @@ spec:
         - title
         - description
         - type
-        - parent
         - email
       properties:
         name:
@@ -38,7 +37,7 @@ spec:
           # ui:field: EntityNamePicker
           ui:autofocus: true
         parent:
-          title: Description
+          title: Parent
           type: string
           description: Parent of the new group. If empty, it will be a top level group
           # ui:field: EntityNamePicker
