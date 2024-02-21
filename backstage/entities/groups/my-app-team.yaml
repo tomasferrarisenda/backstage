@@ -10,7 +10,7 @@ metadata:
 spec:
   type: team
   children: []
-  parent: # Empty means it's a top level group
+  # parent: # Empty means it's a top level group
   # children: 
   #   - my-app-redis-subteam
   #   - my-app-backend-subteam
