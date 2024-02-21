@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: new-nodejs-in-existing-repo
-  title: New Node.js in existing repo
+  title: New Node.js in Existing Repo
   description: Create directory for new NodeJS service in existing repo
   tags:
     - nodejs

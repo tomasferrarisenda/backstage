@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: ${{ values.name | lower }}-${{ values.lastName | lower }}
+spec:
+  profile:
+    displayName: "${{ values.name }} ${{ values.lastName }}"	
+    email: ${{ values.email }}
+    picture: ${{ values.pictureURL }}
+  memberOf:
+    - ${{ values.group }}
+
+
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: ${{ values.name | lower }}
+  title: ${{ values.name }}
+  description: ${{ values.description }}
+  tags:
+    - engineering
+    - nodejs
+spec:
+  type: ${{ values.type }}
+  children: []
+  members:
+    - kratos
+  profile:
+    email: ${{ values.email }}
+    slack: #platform-team
