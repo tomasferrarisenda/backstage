@@ -39,7 +39,7 @@ spec:
         parent:
           title: Parent
           type: string
-          description: Parent of the new group. If empty, it will default to 'orphan'
+          description: Parent of the new group. If empty, it will default to 'root'
         type:
           title: Type
           type: string
@@ -79,9 +79,9 @@ spec:
           title: ${{ parameters.title }}
           description: ${{ parameters.description }}
           type: ${{ parameters.type }}
-          # Had to add default value 'orphan' because the 'parent' parameter in the Group manifest needs to have a value. It cannot be '[]' or 'null'. 
-          # And since we are establishing hierarchy from the bottom up, we need to have the 'parent' parameter in the template.
-          parent: ${{ parameters.parent | default('orphan') }}
+          # Had to add default value 'root' because the 'parent' parameter in the Group manifest needs to have a value. It cannot be '[]' or 'null'. 
+          # And since we are establishing hierarchy from the bottom up, we must have the 'parent' parameter in the Group manifest.
+          parent: ${{ parameters.parent | default('root') }}
           email: ${{ parameters.email }}
 
     # - id: append-new-user
