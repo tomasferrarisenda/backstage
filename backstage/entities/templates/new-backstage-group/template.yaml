@@ -11,6 +11,12 @@ spec:
   type: component
   parameters:
     - title: Provide some simple information
+      required:
+        - name
+        - title
+        - description
+        - type
+        - email
       properties:
         name:
           title: Name
@@ -50,12 +56,6 @@ spec:
           description: Email of the new group
           # ui:field: EntityNamePicker
           ui:autofocus: true
-      required:
-        - name
-        - title
-        - description
-        - type
-        - email
 
 
     - title: Choose a location
