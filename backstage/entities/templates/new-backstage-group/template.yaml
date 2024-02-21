@@ -16,6 +16,7 @@ spec:
         - title
         - description
         - type
+        - parent
         - email
       properties:
         name:
@@ -36,6 +37,12 @@ spec:
           description: Describe the new group
           # ui:field: EntityNamePicker
           ui:autofocus: true
+        parent:
+          title: Description
+          type: string
+          description: Parent of the new group. If empty, it will be a top level group
+          # ui:field: EntityNamePicker
+          # ui:autofocus: true
         type:
           title: Type
           type: string
@@ -75,6 +82,7 @@ spec:
           title: ${{ parameters.title }}
           description: ${{ parameters.description }}
           type: ${{ parameters.type }}
+          parent: ${{ parameters.parent }}
           email: ${{ parameters.email }}
 
     # - id: append-new-user
