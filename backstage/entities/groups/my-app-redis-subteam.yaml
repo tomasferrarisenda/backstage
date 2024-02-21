@@ -15,4 +15,4 @@ spec:
   #   - masterchief
   profile:
     email: my-app-redis-subteam@example.com
-    slack: #platform-team
+    # slack: 

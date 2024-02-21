@@ -13,4 +13,4 @@ spec:
   parent: # Empty means it's a top level group
   profile:
     email: amigos@gmail.com
-    slack: 
+    # slack: 

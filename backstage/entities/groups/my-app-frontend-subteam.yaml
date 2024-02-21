@@ -15,4 +15,4 @@ spec:
   #   - geralt
   profile:
     email: my-app-frontend-subteam@example.com
-    slack: #platform-team
+    # slack: 

@@ -18,4 +18,4 @@ spec:
   # members:
   profile:
     email: my-app-team@example.com
-    slack: #platform-team
+    # slack:
