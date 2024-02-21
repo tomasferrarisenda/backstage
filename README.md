@@ -426,7 +426,10 @@ And since we are establishing hierarchy from the bottom up, we must have the 'pa
 
 
 VER PORQ EL RESOURCE REDIS NO APARECE BAJO OWNERSHIP DEL GRUPO REDIS
-
+PORQ My-App Redis Subteam no muestra ownership de resource redis??? http://localhost:3000/catalog/default/group/my-app-redis-subteam
 
 
 Pipeline is out of the scope of this lab
+
+
+
