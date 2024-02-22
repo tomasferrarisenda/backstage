@@ -72,7 +72,7 @@ The [Kubernetes plugin](https://backstage.io/docs/features/kubernetes/) in Backs
 It will elevate the visibility of errors where identified, and provide drill down about the deployments, pods, and other objects for a service.
 
 ### GitHub Discovery plugin 
-The [GitHub integration](https://backstage.io/docs/integrations/github/discovery) has a discovery provider for discovering catalog entities within a GitHub organization. The provider will crawl the GitHub organization and register entities matching the configured path. This can be useful as an alternative to static locations or manually adding things to the catalog. This is the preferred method for ingesting entities into the catalog.
+The [GitHub Discovery plugin](https://backstage.io/docs/integrations/github/discovery) automatically discovers catalog entities within a GitHub organization. The provider will crawl the GitHub organization and register entities matching the configured path. This can be useful as an alternative to static locations or manually adding things to the catalog. This is the preferred method for ingesting entities into the catalog.
 
 I've installed it without events support. Updates to the catalog will rely on periodic scanning rather than real-time updates.
 
