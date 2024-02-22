@@ -1,5 +1,6 @@
 const express = require("express");
 const Redis = require("ioredis");
+
 const app = express();
 
 // Create a Redis client
