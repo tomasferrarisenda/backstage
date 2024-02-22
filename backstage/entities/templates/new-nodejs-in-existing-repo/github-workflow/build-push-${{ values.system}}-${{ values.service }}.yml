@@ -26,6 +26,6 @@ jobs:
           tag: {% raw %}${{ github.run_number }}{% endraw %}
           registry: docker.io
           directory: {% raw %}${{ env.SYSTEM }}/${{ env.SERVICE }}{% endraw %}
-          dockerfile: my-app/backend/Dockerfile
+          dockerfile: {% raw %}${{ env.SYSTEM }}/${{ env.SERVICE }}{% endraw %}/Dockerfile
           username: {% raw %}${{ secrets.DOCKER_USERNAME }}{% endraw %}
           password: {% raw %}${{ secrets.DOCKER_PASSWORD }}{% endraw %}
