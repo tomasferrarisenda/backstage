@@ -105,15 +105,15 @@ https://www.kosli.com/blog/succeeding-with-backstage-part-1-customizing-the-look
 ## Templates I've created
 <!-- #### New nodejs in new repo
 lorem ipsum -->
-
-### New nodejs in existing repo
+### New backstage group
 lorem ipsum
 
 ### New backstage user
 lorem ipsum
 
-### New backstage group
+### New nodejs in existing repo
 lorem ipsum
+
 
 <!-- #### New documentation -->
 </br>
