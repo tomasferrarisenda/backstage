@@ -109,13 +109,14 @@ lorem ipsum
 lorem ipsum
 
 <!-- #### New documentation -->
+</br>
 
-## Arbitrary rules
+## My arbitrary rules
+
 ### Users and groups hierarchy
+I decided that user and group hierarchy should be defined from the bottom the bottom up. To me, it makes more sense that childs should keep track of their parents than parents of their childs.
 
-
-Had to add default value 'root' because the 'parent' parameter in the Group manifest needs to have a value. It cannot be '[]' or 'null'. 
-And since we are establishing hierarchy from the bottom up, we must have the 'parent' parameter in the Group manifest.
+So we will not define the members of a group in the Group manifest, but we will define the group a user belongs to in the spec.memberOf of the User manifest. Also, will always have the spec.children value of Group manifests as an empty array and the spec.parent value filled with whoever the parent group of that group is. If it has no parent, the value of spec.parent should be "root".
 
 </br>
 </br>
