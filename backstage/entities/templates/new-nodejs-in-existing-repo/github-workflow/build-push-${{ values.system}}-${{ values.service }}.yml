@@ -22,10 +22,10 @@ jobs:
       - name: Build and push Docker image
         uses: mr-smithers-excellent/docker-build-push@v4
         with:
-          image: ${{ secrets.DOCKER_USERNAME }}/${{ env.SYSTEM }}-${{ env.SERVICE }}
-          tag: ${{ github.run_number }}
+          image: {% raw %}${{ secrets.DOCKER_USERNAME }}/${{ env.SYSTEM }}-${{ env.SERVICE }}{% endraw %}
+          tag: {% raw %}${{ github.run_number }}{% endraw %}
           registry: docker.io
-          directory: ${{ env.SYSTEM }}/${{ env.SERVICE }}
+          directory: {% raw %}${{ env.SYSTEM }}/${{ env.SERVICE }}{% endraw %}
           dockerfile: my-app/backend/Dockerfile
           username: {% raw %}${{ secrets.DOCKER_USERNAME }}{% endraw %}
           password: {% raw %}${{ secrets.DOCKER_PASSWORD }}{% endraw %}
