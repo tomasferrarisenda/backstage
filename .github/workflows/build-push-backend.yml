@@ -1,4 +1,4 @@
-name: Build and push Backend service Docker image
+name: Build & push my-app-backend image
 
 on:
   push:
