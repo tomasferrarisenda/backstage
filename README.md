@@ -62,15 +62,19 @@ Backstage is designed to be flexible and allow every organization to adapt it to
 I've already added some custom stuff to the default Backstage installation that I think are essential. 
 
 ## Plugins I've added
-#### Kubernetes plugin
+
+### Kubernetes plugin
 The [Kubernetes plugin](https://backstage.io/docs/features/kubernetes/) in Backstage is a tool that's designed around the needs of service owners, not cluster admins. Now developers can easily check the health of their services no matter how or where those services are deployed — whether it's on a local host for testing or in production on dozens of clusters around the world.
 
 It will elevate the visibility of errors where identified, and provide drill down about the deployments, pods, and other objects for a service.
 
-#### GitHub Discovery plugin 
+### GitHub Discovery plugin 
 The [GitHub integration](https://backstage.io/docs/integrations/github/discovery) has a discovery provider for discovering catalog entities within a GitHub organization. The provider will crawl the GitHub organization and register entities matching the configured path. This can be useful as an alternative to static locations or manually adding things to the catalog. This is the preferred method for ingesting entities into the catalog.
 
 I've installed it without events support. Updates to the catalog will rely on periodic scanning rather than real-time updates.
+
+### GitHub Actions plugin 
+https://roadie.io/backstage/plugins/github-actions/
 
 <!-- ## ArgoCD plugin
 https://roadie.io/backstage/plugins/argo-cd/
@@ -99,13 +103,13 @@ https://www.kosli.com/blog/succeeding-with-backstage-part-1-customizing-the-look
 <!-- #### New nodejs in new repo
 lorem ipsum -->
 
-#### New nodejs in existing repo
+### New nodejs in existing repo
 lorem ipsum
 
-#### New backstage user
+### New backstage user
 lorem ipsum
 
-#### New backstage group
+### New backstage group
 lorem ipsum
 
 <!-- #### New documentation -->
