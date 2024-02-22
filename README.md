@@ -106,10 +106,14 @@ https://www.kosli.com/blog/succeeding-with-backstage-part-1-customizing-the-look
 <!-- #### New nodejs in new repo
 lorem ipsum -->
 ### New backstage group
-lorem ipsum
+Creates a new Backstage group with the provided information. 
+
+It generates a Pull Request which includes a new Group catalog entity manifest. If merged, the Group catalog entity will be automatically added to the Backstage catalog by the GitHub Discovery plugin.
 
 ### New backstage user
-lorem ipsum
+Creates a new Backstage user with the provided information. 
+
+It generates a Pull Request which includes a new User catalog entity manifest. If merged, the User catalog entity will be automatically added to the Backstage catalog by the GitHub Discovery plugin.
 
 ### New nodejs in existing repo
 lorem ipsum
