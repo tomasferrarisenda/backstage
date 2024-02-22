@@ -107,10 +107,10 @@ spec:
       input:
         allowedHosts: ['github.com']
         repoUrl: ${{ parameters.repoUrl }}
-        title: "Create new project: ${{parameters.service}}"
-        branchName: create-${{parameters.service}}
+        title: "Create new project: ${{ parameters.system }}-${{ parameters.service }}"
+        branchName: create-${{ parameters.system }}-${{ parameters.service }}
         description: |
-          # New project: ${{parameters.service}}
+          # New project: ${{ parameters.system }}-${{ parameters.service }}
 
           ${{ parameters.description if parameters.description }}
         targetPath: "" # Leave empty to use the root of the repo or specify if needed
@@ -125,11 +125,11 @@ spec:
       action: catalog:register
       input:
         repoContentsUrl: https://github.com/tomasferrarisenda/backstage
-        catalogInfoPath: backstage/blob/create-${{parameters.service}}/${{ parameters.system }}/${{parameters.service}}/catalog-info.yaml
+        catalogInfoPath: backstage/blob/create-${{ parameters.system }}-${{ parameters.service }}/${{ parameters.system }}/${{ parameters.service }}/catalog-info.yaml
         
   output:
     links:
-      - url: ${{steps.publish.output.remoteUrl}}
+      - url: ${{ steps.publish.output.remoteUrl }}
         title: "Go to PR"
       # - title: Repository
       #   url: ${{ steps.publish.output.remoteUrl }}
