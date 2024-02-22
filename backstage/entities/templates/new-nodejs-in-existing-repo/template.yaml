@@ -90,15 +90,7 @@ spec:
         url: ./helm-chart
         targetPath: helm/${{ parameters.system }}/${{ parameters.service }}
         values:
-          service: ${{ parameters.service }}
-
-    - id: fetch-argocd-application-manifest
-      name: Fetch ArgoCD Application Manifest
-      action: fetch:template
-      input:
-        url: ./argocd-applications
-        targetPath: argocd/applications/${{ parameters.system }}/${{ parameters.service }}
-        values:
+          system: ${{ parameters.system }}
           service: ${{ parameters.service }}
 
     - id: fetch-github-workflow
