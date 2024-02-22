@@ -12,10 +12,18 @@ spec:
   parameters:
     - title: Provide some simple information
       required:
-        - name
+        - system
+        - service
+        - description
         - owner
       properties:
-        name:
+        system:
+          title: System
+          type: string
+          description: Name of the system the new service belongs to
+          ui:field: EntityNamePicker
+          ui:autofocus: true
+        service:
           title: Name
           type: string
           description: Unique name of the new service
@@ -63,9 +71,10 @@ spec:
       action: fetch:template
       input:
         url: ./base-code
-        targetPath: my-app/${{parameters.name}}
+        targetPath: ${{ parameters.system }}/${{ parameters.service }}
         values:
-          name: ${{parameters.name}}
+          system: ${{ parameters.system }}
+          service: ${{ parameters.service }}
           description: ${{ parameters.description }}
           owner: ${{ parameters.owner }}
           # tags: ['nodejs', 'example-tag2', 'example-tag3']
@@ -79,18 +88,18 @@ spec:
       action: fetch:template
       input:
         url: ./helm-chart
-        targetPath: helm/my-app/${{parameters.name}}
+        targetPath: helm/${{ parameters.system }}/${{ parameters.service }}
         values:
-          name: ${{parameters.name}}
+          service: ${{ parameters.service }}
 
     - id: fetch-argocd-application-manifest
       name: Fetch ArgoCD Application Manifest
       action: fetch:template
       input:
         url: ./argocd-applications
-        targetPath: argocd/applications/my-app/${{parameters.name}}
+        targetPath: argocd/applications/${{ parameters.system }}/${{ parameters.service }}
         values:
-          name: ${{parameters.name}}
+          service: ${{ parameters.service }}
 
     - id: fetch-github-workflow
       name: Fetch GitHub workflow
@@ -99,7 +108,7 @@ spec:
         url: ./github-workflows
         targetPath: .github/workflows
         values:
-          name: ${{parameters.name}}
+          service: ${{ parameters.service }}
 
     - id: publish
       name: Publish
@@ -107,17 +116,17 @@ spec:
       input:
         allowedHosts: ['github.com']
         repoUrl: ${{ parameters.repoUrl }}
-        title: "Create new project: ${{parameters.name}}"
-        branchName: create-${{parameters.name}}
+        title: "Create new project: ${{parameters.service}}"
+        branchName: create-${{parameters.service}}
         description: |
-          # New project: ${{parameters.name}}
+          # New project: ${{parameters.service}}
 
           ${{ parameters.description if parameters.description }}
         targetPath: "" # Leave empty to use the root of the repo or specify if needed
         paths: 
-          - my-app/${{parameters.name}}
-          - helm/my-app/${{parameters.name}}
-          - argocd/applications/my-app/${{parameters.name}}
+          - my-app/${{parameters.service}}
+          - helm/my-app/${{parameters.service}}
+          - argocd/applications/my-app/${{parameters.service}}
           - azure-devops
 
     # ESTO NO FUNCIONA!
@@ -140,14 +149,14 @@ spec:
                         #  https://github.com/tomasferrarisenda/backstage/blob/create-backend-2/my-app/backend-2/catalog-info.yaml
                         #  https://github.com/tomasferrarisenda/backstage/tree/create-backend-2/catalog-info.yaml
                         #  https://github.com/tomasferrarisenda/backstage/tree/create-backend-2/my-app/backend-2/my-app/backend-2/catalog-info.yaml
-        # repoContentsUrl: https://github.com/tomasferrarisenda/backstage/blob/create-${{parameters.name}}
-        # repoContentsUrl: https://github.com/tomasferrarisenda/backstage/tree/create-${{parameters.name}}
+        # repoContentsUrl: https://github.com/tomasferrarisenda/backstage/blob/create-${{parameters.service}}
+        # repoContentsUrl: https://github.com/tomasferrarisenda/backstage/tree/create-${{parameters.service}}
         # repoContentsUrl: ${{ parameters.repoUrl }}
         # repoContentsUrl: "tomasferrarisenda/${{ parameters.repoUrl }}"
         # repoContentsUrl: tomasferrarisenda/backstage
         # repoContentsUrl: https://raw.githubusercontent.com/tomasferrarisenda/backstage/create-backend-2/my-app/backend-2/catalog-info.yaml
-        catalogInfoPath: backstage/blob/create-${{parameters.name}}/my-app/${{parameters.name}}/catalog-info.yaml
-        # catalogInfoPath: create-backend-2/my-app/${{parameters.name}}/catalog-info.yaml
+        catalogInfoPath: backstage/blob/create-${{parameters.service}}/my-app/${{parameters.service}}/catalog-info.yaml
+        # catalogInfoPath: create-backend-2/my-app/${{parameters.service}}/catalog-info.yaml
         # catalogInfoPath: /catalog-info.yaml
         
   output:

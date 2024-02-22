@@ -1,47 +1,31 @@
-name: build-and-deploy-${{ values.name }}
+name: Build & push ${{ values.name }} image
 
-trigger:
-  branches:
-    include:
-      - main  
-  paths:
-    include:
-      - my-app/${{ values.name }}/*
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'my-app/backend/**'
 
-variables:
-  - name: APP_NAME
-    value: gonchi # This value was modified by the initial-setup python script
-  - name: SERVICE_NAME
-    value: ${{ values.name }}
-  - name: DOCKERHUB_USERNAME
-    value: tferrari92 # This value was modified by the initial-setup python script
-  - name: USER_EMAIL
-    value: tomas.ferrari@sendati.com # This value was modified by the initial-setup python script
-    
-pool:
-  vmImage: 'ubuntu-latest' 
-  # If you are using a self-hosted agent, comment out the previous line and uncomment the following three
-  # name: <agent-pool-name> # Insert here the name of the agent pool you created
-  # demands:
-  #   - agent.name -equals <agent-name> # Insert here the name of the agent you created
+env:
+  APP_NAME: my-app
+  SERVICE: backend
 
-stages:
-- template: templates/build-docker-image.yml
-  parameters: 
-    APP_NAME: $(APP_NAME)
-    SERVICE_NAME: $(SERVICE_NAME)
-    DOCKERHUB_USERNAME: $(DOCKERHUB_USERNAME)
+jobs:
+  build-and-push:
+    name: Build & push docker image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-- template: templates/deploy-dev.yml
-  parameters: 
-    SERVICE_NAME: $(SERVICE_NAME)
-
-- template: templates/deploy-stage.yml
-  parameters: 
-    SERVICE_NAME: $(SERVICE_NAME)
-
-- template: templates/deploy-prod.yml
-  parameters: 
-    SERVICE_NAME: $(SERVICE_NAME)
-    USER_EMAIL: $(USER_EMAIL)
-
+      - name: Build and push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v4
+        with:
+          image: ${{ secrets.DOCKER_USERNAME }}/${{ env.APP_NAME }}-${{ env.SERVICE }}
+          tag: ${{ github.run_number }}
+          registry: docker.io
+          directory: my-app/backend
+          dockerfile: my-app/backend/Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
