@@ -20,13 +20,13 @@ spec:
         system:
           title: System
           type: string
-          description: Name of the system the new service belongs to
+          description: Name of the system the new service belongs to. Example -> 'my-app'
           ui:field: EntityNamePicker
           ui:autofocus: true
         service:
           title: Name
           type: string
-          description: Unique name of the new service
+          description: Unique name of the new service. Example -> 'backend'
           ui:field: EntityNamePicker
           ui:autofocus: true
         description:
@@ -81,7 +81,6 @@ spec:
           # tags:
           #   - hard-coded-tag1
           #   - hard-coded-tag2
-
 
     - id: fetch-helm-chart
       name: Fetch Helm Chart
