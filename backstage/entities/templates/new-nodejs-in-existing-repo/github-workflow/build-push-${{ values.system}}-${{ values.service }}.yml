@@ -27,5 +27,5 @@ jobs:
           registry: docker.io
           directory: ${{ env.SYSTEM }}/${{ env.SERVICE }}
           dockerfile: my-app/backend/Dockerfile
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: {% raw %}${{ secrets.DOCKER_USERNAME }}{% endraw %}
+          password: {% raw %}${{ secrets.DOCKER_PASSWORD }}{% endraw %}
