@@ -97,7 +97,7 @@ spec:
       action: fetch:template
       input:
         url: ./github-workflow
-        targetPath: .github/workflows
+        targetPath: ./.github/workflows
         values:
           system: ${{ parameters.system }}
           service: ${{ parameters.service }}
