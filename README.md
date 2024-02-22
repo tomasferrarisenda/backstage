@@ -57,7 +57,7 @@ We'll be using a GitOps methodology with Helm, ArgoCD and the App Of Apps Patter
 </br>
 
 # CUSTOMISING BACKSTAGE
-Backstage is designed from the ground up to be flexible and allow every organization to adapt it to their own needs. It is not a black-box application where you install plugins; rather, you maintain your own source code and can modify it as needed.
+Backstage is designed to be flexible and allow every organization to adapt it to their own needs. It is not a black-box application where you install plugins; rather, you maintain your own source code and can modify it as needed.
 
 I've already added some custom stuff to the default Backstage installation that I think are essential. 
 
@@ -109,6 +109,9 @@ lorem ipsum
 lorem ipsum
 
 <!-- #### New documentation -->
+
+## Arbitrary rules
+Hierarchy from the bottom up
 
 </br>
 </br>
