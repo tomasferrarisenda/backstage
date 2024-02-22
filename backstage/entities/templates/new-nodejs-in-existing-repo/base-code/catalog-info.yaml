@@ -3,12 +3,11 @@ kind: Component
 metadata:
   name: ${{ values.system }}-${{ values.service }}
   {%- if values.description %}
-  description: ${{values.description | dump}}
+  description: ${{ values.description }}
   {%- endif %}
   annotations:
     backstage.io/techdocs-ref: dir:.
     backstage.io/kubernetes-id: ${{ values.system }}-${{ values.service }}
-    github.com/project-slug: ${{values.destination.owner + "/" + values.destination.repo}}
   tags:
     - nodejs
   links:
@@ -29,10 +28,10 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: ${{ values.owner | dump }}
+  owner: ${{ values.owner }}
   system: ${{ values.system }}
-  dependsOn:
-    - resource:default/my-app-redis
-  providesApis:
-    - my-app-backend-api
+  # dependsOn:
+  #   - 
+  # providesApis:
+  #   - 
 

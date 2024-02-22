@@ -93,7 +93,7 @@ spec:
           service: ${{ parameters.service }}
 
     - id: fetch-github-workflow
-      name: Fetch GitHub workflow
+      name: Fetch GitHub Workflow
       action: fetch:template
       input:
         url: ./github-workflow
