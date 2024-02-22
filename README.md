@@ -63,6 +63,8 @@ I've already added some custom stuff to the default Backstage installation that 
 
 ## Plugins I've added
 
+</br>
+
 ### Kubernetes plugin
 The [Kubernetes plugin](https://backstage.io/docs/features/kubernetes/) in Backstage is a tool that's designed around the needs of service owners, not cluster admins. Now developers can easily check the health of their services no matter how or where those services are deployed — whether it's on a local host for testing or in production on dozens of clusters around the world.
 
@@ -120,7 +122,9 @@ lorem ipsum
 ### Users and groups hierarchy
 I decided that user and group hierarchy should be defined from the bottom the bottom up. To me, it makes more sense that childs should keep track of their parents than parents of their childs.
 
-So we will not define the members of a group in the Group manifest, but we will define the group a user belongs to in the spec.memberOf of the User manifest. Also, will always have the spec.children value of Group manifests as an empty array and the spec.parent value filled with whoever the parent group of that group is. If it has no parent, the value of spec.parent should be "root".
+So we will not define the members of a group in the Group manifest, but we will define the group a user belongs to in the spec.memberOf of the User manifest. 
+
+Also, will always have the spec.children value of Group manifests as an empty array and the spec.parent value filled with whoever the parent group of that group is. If it has no parent, the value of spec.parent should be "root".
 
 </br>
 </br>
