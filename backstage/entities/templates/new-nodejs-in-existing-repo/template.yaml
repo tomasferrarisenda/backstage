@@ -120,13 +120,14 @@ spec:
           - helm/${{ parameters.system }}/${{parameters.service}}
           - .github/workflows
 
+    # NO HACE FALTA REGISTRAR EN CATALOGO PORQ VA A SER AUTO DESCUBIERTO POR EL GH DISCOVERY PLUGIN
     # The final step is to register our new component in the catalog.
-    - id: register
-      name: Register
-      action: catalog:register
-      input:
-        repoContentsUrl: https://github.com/tomasferrarisenda/backstage
-        catalogInfoPath: backstage/blob/create-${{ parameters.system }}-${{ parameters.service }}/${{ parameters.system }}/${{ parameters.service }}/catalog-info.yaml
+    # - id: register
+    #   name: Register
+    #   action: catalog:register
+    #   input:
+    #     repoContentsUrl: https://github.com/tomasferrarisenda/backstage
+    #     catalogInfoPath: backstage/blob/create-${{ parameters.system }}-${{ parameters.service }}/${{ parameters.system }}/${{ parameters.service }}/catalog-info.yaml
         
   output:
     links:
@@ -134,8 +135,8 @@ spec:
         title: "Go to PR"
       # - title: Repository
       #   url: ${{ steps.publish.output.remoteUrl }}
-      - title: Open in catalog
-        icon: catalog
-        entityRef: ${{ steps.register.output.entityRef }}
+      # - title: Open in catalog
+      #   icon: catalog
+      #   entityRef: ${{ steps.register.output.entityRef }}
 
 
