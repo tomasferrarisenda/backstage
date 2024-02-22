@@ -63,7 +63,6 @@ spec:
           ui:options:
             allowedHosts:
               - github.com
-            # placeholder: "https://github.com/tomasferrarisenda/backstage"
 
   steps:
     - id: fetch-base-code
