@@ -96,9 +96,10 @@ spec:
       name: Fetch GitHub workflow
       action: fetch:template
       input:
-        url: ./github-workflows
+        url: ./github-workflow
         targetPath: .github/workflows
         values:
+          system: ${{ parameters.system }}
           service: ${{ parameters.service }}
 
     - id: publish
