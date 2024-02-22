@@ -60,5 +60,6 @@ jobs:
           tag: ${{ github.sha }}
           registry: docker.io
           directory: my-app/backend
+          dockerfile: my-app/backend/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
