@@ -8,11 +8,8 @@ on:
       - 'my-app/backend/**'
 
 env:
-  AWS_REGION: us-east-1
   APP_NAME: my-app
   SERVICE: backend
-  DOCKERHUB_USERNAME: tferrari92
-  USER_EMAIL: tomas-my-app@gmail.com
 
 jobs:
   build-and-push:
@@ -25,7 +22,7 @@ jobs:
       - name: Build and push Docker image
         uses: mr-smithers-excellent/docker-build-push@v4
         with:
-          image: ${{ env.DOCKERHUB_USERNAME }}/${{ env.APP_NAME }}-${{ env.SERVICE }}
+          image: ${{ secrets.DOCKER_USERNAME }}/${{ env.APP_NAME }}-${{ env.SERVICE }}
           tag: ${{ github.run_number }}
           registry: docker.io
           directory: my-app/backend
