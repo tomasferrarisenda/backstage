@@ -38,7 +38,7 @@
 </br>
 
 # INTRODUCTION
-This is a spinoff of my [Automate All The Things](https://github.com/tferrari92/automate-all-the-things) project. While working on the [Nirvana Edition](https://github.com/tferrari92/automate-all-the-things-nirvana) which will include a Developer Portal built with Backstage, I'm creating this smaller lab for anyone who wants to start experimenting with this tool.
+This is a spinoff of my [Automate All The Things](https://github.com/tferrari92/automate-all-the-things) project. While working on the [Nirvana Edition](https://github.com/tferrari92/automate-all-the-things-nirvana), which will include a Developer Portal built with Backstage, I'm creating this smaller lab for anyone who wants to start experimenting with this tool.
 
 Backstage is a framework for creating developer portals. This developer portal should act as a centralized hub for your organization, providing access to documentation, infrastructure, tooling, and code standards. It gives developers everything they need to create and manage their projects in a consistent and standardized manner. If you are new to Backstage, I invite you to read [this brilliant series of articles](https://www.kosli.com/blog/evaluating-backstage-1-why-backstage/) by Alexandre Couedelo.
 
@@ -125,11 +125,11 @@ lorem ipsum
 ## My arbitrary rules
 
 ### Users and groups hierarchy
-I decided that user and group hierarchy should be defined from the bottom the bottom up. To me, it makes more sense that childs should keep track of their parents than parents of their childs.
+I decided that user and group hierarchy should be defined from the bottom up. To me, it makes more sense that childs should keep track of their parents than parents of their childs.
 
 So we will not define the members of a group in the Group manifest, but we will define the group a user belongs to in the spec.memberOf of the User manifest. 
 
-Also, will always have the spec.children value of Group manifests as an empty array and the spec.parent value filled with whoever the parent group of that group is. If it has no parent, the value of spec.parent should be "root".
+Also, we will always have the spec.children value of Group manifests as an empty array and the spec.parent value filled with whoever the parent group of that group is. If it has no parent, the value of spec.parent should be "root".
 
 </br>
 </br>
