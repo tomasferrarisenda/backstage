@@ -15,6 +15,7 @@ helm install backstage -n backstage backstage/helm-chart --values backstage/helm
 # helm install backstage -n backstage helm/infra/backstage --values helm/infra/backstage/values-custom.yaml --dependency-update --create-namespace
 
 # Install Redis
+kubectl create ns my-app
 kubectl apply -f k8s-manifests/my-app-redis
 # helm install redis -n my-app helm/my-app/redis --values helm/my-app/redis/values-custom.yaml --dependency-update --create-namespace
 
