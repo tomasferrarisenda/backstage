@@ -2,8 +2,8 @@
 FROM nginx:1.25.1
 
 # Copy the nginx.conf file to the appropriate directory in the Docker container
-# COPY nginx.conf /etc/nginx/conf.d
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d
+# COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copy files into the container
 COPY . /usr/share/nginx/html
