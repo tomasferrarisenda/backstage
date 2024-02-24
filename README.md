@@ -285,7 +285,7 @@ If you run it again, you'll get:
 {"count":2}%
 ```
 
-And so on...
+And so on... If this works fine, we can continue.
 
 <!-- You can test it on the other environments too:
 ```bash
@@ -294,13 +294,14 @@ kubectl get pods -n my-app-prod -l app=my-app-backend-prod -o name | xargs -I {}
 ``` -->
 
 ## What we are doing
-We are going to create the missing piece with the help of backstage, the frontend.
+We are going to create the missing piece of this puzzle with the help of backstage, the frontend.
 
 Let's analyze the backend. With this Gitops setup we have, there's a number of things that need to exist in order for the backend service to be deployed. These are:
 1. The [my-app/backend directory](/my-app/backend/): In a real world scenario, the backend service would have its own repo where we would store all the application code. In this small lab we'll just save it in its own directory.
 2. The [helm/my-app/backend directory](/helm/my-app/backend/): Here we save the Helm chart for our backend service. This of course would also be in its own repo on a real world scenario.
-3. The [backend service argocd application manifests](/argo-cd/applications/my-app/backend/): These are read by the App of Apps to 
-4. The [backend build pipeline]():
+<!-- RELAODED -->
+<!-- 3. The [backend service argocd application manifests](/argo-cd/applications/my-app/backend/): These are read by the App of Apps to  -->
+4. The [backend build and push pipeline](/.github/workflows/build-push-my-app-backend.yml): COMPLETAR .
 
 All of these files and directories we need to create for any new service we want to deploy. Luckily, we have Backstage Software Templates.
 
