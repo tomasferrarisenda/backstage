@@ -5,7 +5,7 @@ service: frontend
 deployment:
   image:
     repository: tferrari92/my-app-frontend 
-    tag: 12
+    tag: 13
   replicas: 1
 
   labels:

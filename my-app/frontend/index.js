@@ -1,5 +1,3 @@
-// src = "resources/memes.js";
-
 var images = [
   "https://i.imgur.com/pttvySs.jpg", // If we had any
   "https://i.imgur.com/Stl0y81.jpg", // Hard right
