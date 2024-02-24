@@ -1,0 +1,17 @@
+appName: my-app  
+
+service: backend-2 
+
+deployment:
+  image:
+    repository: tferrari92/my-app-backend-2 
+    tag: 0
+  replicas: 1
+
+  # METER ESTO POR VALUES
+  labels:
+    app: my-app
+    service: backend-2
+    backstage.io/kubernetes-id: my-app-backend-2
+
+  env:
