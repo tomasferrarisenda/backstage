@@ -1,6 +1,9 @@
 # Use a Node.js base image
 FROM node:14
 
+# Copy the nginx.conf file to the appropriate directory in the Docker container
+COPY nginx.conf /etc/nginx/conf.d
+
 # Set the working directory
 WORKDIR /app
 

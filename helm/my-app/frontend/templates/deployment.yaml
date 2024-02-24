@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.appName }}-{{ .Values.service }}-deployment
+  name: {{ .Values.appName }}-{{ .Values.environment }}-deployment
   labels:
     {{- range $key, $value := .Values.deployment.labels }}
     {{ $key }}: {{ $value | quote }}
@@ -24,7 +24,4 @@ spec:
         - name: {{ .Values.appName }}-{{ .Values.service }}
           image: {{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}
           ports:
-            - containerPort: 3000
-          env:
-            - name: REDIS_HOST
-              value: {{ .Values.deployment.env.redis_host }} 
+            - containerPort: 80

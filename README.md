@@ -51,6 +51,7 @@ Backstage is a framework for creating developer portals. This developer portal s
 </br>
 
 # PREREQUISITES
+- Active DockerHub account
 - minikube installed
 - kubectl installed
 - helm installed
@@ -324,7 +325,11 @@ Ok, we now have all necessary files and directories to deploy the frontend. We j
 
 In the [example files directory](/example-files/) you will find necessary code for the frontend to work. Copy the contents of [index.html](/example-files/my-app-frontend/index.html), [index.js](/example-files/my-app-frontend/index.js) and [styles.css](/example-files/my-app-frontend/styles.css) into their respective files in [my-app/frontend](/my-app/frontend/).
 
-When done, commit the changes and this should trigger the frontend GitHub workflow, which will build the container image for the frontend and push it to DockerHub
+When done, commit the changes and this should trigger the frontend GitHub workflow, which will build the container image for the frontend and push it to DockerHub.
+
+When the workflow is done, go check your dockerhub account for the tag of the my-app-frontend image. 
+
+Take the number and paste it in the [values.yaml of the frontend](/helm/my-app/frontend/values.yaml)
 
 </br>
 </br>
