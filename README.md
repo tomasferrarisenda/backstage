@@ -320,7 +320,8 @@ Let's go into our Backstage console. In the Create tab on the left, we'll find t
 
 # Paso a paso para buildear nueva imgen y utilizarla
 
-
+## Creating new templates
+create template directory save it in backstage/entities/templates/
 
 
 
