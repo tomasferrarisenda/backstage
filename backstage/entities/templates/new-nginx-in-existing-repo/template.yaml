@@ -39,10 +39,14 @@ spec:
           title: Owner
           type: string
           description: Owner of the service
-          ui:field: OwnerPicker
           ui:options:
+            field: OwnerPicker
             allowedKinds:
               - Group
+          # ui:field: OwnerPicker
+          # ui:options:
+          #   allowedKinds:
+          #     - Group
         # tags:
         #   type: array
         #   title: Tags
