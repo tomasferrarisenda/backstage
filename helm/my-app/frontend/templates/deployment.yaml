@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.appName }}-{{ .Values.environment }}-deployment
+  name: {{ .Values.appName }}-{{ .Values.service }}-deployment
   labels:
     {{- range $key, $value := .Values.deployment.labels }}
     {{ $key }}: {{ $value | quote }}

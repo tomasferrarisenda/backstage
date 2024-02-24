@@ -1,14 +1,12 @@
-{{- if eq .Values.environment "dev" }} # Deploy only in dev environment
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.appName }}-{{ .Values.service }}-{{ .Values.environment }}-service
+  name: {{ .Values.appName }}-{{ .Values.service }}-service
 spec:
   selector:
-    app: {{ .Values.appName }}-{{ .Values.service }}-{{ .Values.environment }}
+    app: {{ .Values.appName }}
   ports:
     - protocol: TCP
-      port: {{ .Values.containerPort }}
-      targetPort: {{ .Values.containerPort }}
+      port: 80
+      targetPort: 80
   type: ClusterIP
-{{- end }}
