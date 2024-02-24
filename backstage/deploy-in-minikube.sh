@@ -19,6 +19,13 @@ helm install redis -n my-app helm/my-app/redis --values helm/my-app/redis/values
 # Install Backend service
 helm install backend -n my-app helm/my-app/backend --dependency-update --create-namespace
 
+# Wait for the Postgres pod to be ready
+echo "Waiting for postgres pod to be ready..."
+until [[ $(kubectl -n backstage get pods -l "app.kubernetes.io/name=postgresql" -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') == "True" ]]; do
+  echo "Waiting for postgress pod to be ready... It's required for backstage to start."
+  sleep 3
+done
+
 # Wait for the Backstage pod to be ready
 echo "Waiting for backstage pod to be ready..."
 until [[ $(kubectl -n backstage get pods -l "app.kubernetes.io/name=backstage" -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') == "True" ]]; do

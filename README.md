@@ -236,13 +236,13 @@ Update the value of backstage.image.tag in the backstage values-custom.yaml
 cd ../..
 vim helm/infra/backstage/values-custom.yaml
 ```
-
-Save and push to repo
+<!-- RELOADED -->
+<!-- Save and push to repo
 ```bash
 git add .
 git commit -m "Updated backstage image tag"
 git push
-```
+``` -->
 
 #### Minikube Environment Setup
 Run the start.sh script to get everything setup
