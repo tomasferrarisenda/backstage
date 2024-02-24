@@ -198,6 +198,7 @@ Choose a value for Expiration and select the scope of your token. When creating 
 
 <p title="GitHub Token" align="center"> <img src="https://i.imgur.com/x28b4Q5.png"> </p>
 
+### Set up secrets for github workflows
 
 
 #### Local testing
@@ -316,7 +317,14 @@ Let's go into our Backstage console. In the Create tab on the left, we'll find t
 
 On the next, under Owner complete with your GitHub username and under Repository complete with "backstage-minikube-lab". Click Review and then Create.
 
-If all goes well, you should see a few green ticks and a "Go to PR" button. Click on the button.
+If all goes well, you should see a few green ticks and a "Go to PR" button. Click on the button. This should send you to the Pull Request page on your repo. Merge the branch.
+
+### Next steps to deploy the new frontend service
+Ok, we now have all necessary files and directories to deploy the frontend. We just need the actual code.
+
+In the [example files directory](/example-files/) you will find necessary code for the frontend to work. Copy the contents of [index.html](/example-files/my-app-frontend/index.html), [index.js](/example-files/my-app-frontend/index.js) and [styles.css](/example-files/my-app-frontend/styles.css) into their respective files in [my-app/frontend](/my-app/frontend/).
+
+When done, commit the changes and this should trigger the frontend GitHub workflow, which will build the container image for the frontend and push it to DockerHub
 
 </br>
 </br>
