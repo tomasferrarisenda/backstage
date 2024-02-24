@@ -21,10 +21,8 @@ spec:
           title: System
           type: string
           description: Name of the system the new service belongs to. Example -> 'my-app'
-          ui:field: SingleSelect
-          ui:options:
-            allowedKinds:
-              - System
+          ui:field: EntityNamePicker
+          ui:autofocus: true
         service:
           title: Name
           type: string
