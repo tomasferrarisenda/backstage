@@ -21,8 +21,8 @@ spec:
           title: System
           type: string
           description: Name of the system the new service belongs to. Example -> 'my-app'
+          ui:field: SystemPicker
           ui:options:
-            field: SystemPicker
             allowedKinds:
               - System
         service:
@@ -39,14 +39,10 @@ spec:
           title: Owner
           type: string
           description: Owner of the service
+          ui:field: OwnerPicker
           ui:options:
-            field: OwnerPicker
             allowedKinds:
               - Group
-          # ui:field: OwnerPicker
-          # ui:options:
-          #   allowedKinds:
-          #     - Group
         # tags:
         #   type: array
         #   title: Tags
