@@ -2,7 +2,7 @@
 FROM node:14
 
 # Copy the nginx.conf file to the appropriate directory in the Docker container
-COPY nginx.conf /etc/nginx/conf.d
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Set the working directory
 WORKDIR /app
