@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-app-backend-deployment
+  namespace: my-app
   labels:
     app: "my-app-backend"
     backstage.io/kubernetes-id: "my-app-backend"

@@ -11,7 +11,8 @@ kubectl create ns backstage
 kubectl create secret generic github-token -n backstage --from-literal=GITHUB_TOKEN="$GITHUB_TOKEN"
 
 # Install Backstage
-helm install backstage -n backstage helm/infra/backstage --values helm/infra/backstage/values-custom.yaml --dependency-update --create-namespace
+helm install backstage -n backstage backstage/helm-chart --values backstage/helm-chart/values-custom.yaml --dependency-update --create-namespace
+# helm install backstage -n backstage helm/infra/backstage --values helm/infra/backstage/values-custom.yaml --dependency-update --create-namespace
 
 # Install Redis
 kubectl apply -f k8s-manifests/my-app-redis
