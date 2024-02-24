@@ -8,10 +8,10 @@ deployment:
     tag: 0
   replicas: 1
 
-  # METER ESTO POR VALUES
   labels:
-    app: ${{ values.system }}
+    system: ${{ values.system }}
     service: ${{ values.service }}
+    app: ${{ values.system }}-${{ values.service }}
     backstage.io/kubernetes-id: ${{ values.system }}-${{ values.service }}
 
   env:

@@ -3,17 +3,22 @@ kind: Deployment
 metadata:
   name: {{ .Values.appName }}-{{ .Values.service }}-deployment
   labels:
-    backstage.io/kubernetes-id: my-app-backend
+    {{- range $key, $value := .Values.deployment.labels }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
 spec:
   replicas: {{ .Values.deployment.replicas }}
   selector:
     matchLabels:
-      app: {{ .Values.appName }}-{{ .Values.service }}
+      {{- range $key, $value := .Values.deployment.labels }}
+      {{ $key }}: {{ $value | quote }}
+      {{- end }}
   template:
     metadata:
       labels:
-        app: {{ .Values.appName }}-{{ .Values.service }}
-        backstage.io/kubernetes-id: my-app-backend
+        {{- range $key, $value := .Values.deployment.labels }}
+        {{ $key }}: {{ $value | quote }}
+        {{- end }}
     spec:
       containers:
         - name: {{ .Values.appName }}-{{ .Values.service }}
