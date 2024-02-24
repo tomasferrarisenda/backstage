@@ -5,7 +5,7 @@ FROM node:14
 WORKDIR /app
 
 # Copy the nginx.conf file to the appropriate directory in the Docker container
-COPY nginx.conf /etc/nginx/conf.d
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copy package.json and package-lock.json
 COPY package*.json ./
