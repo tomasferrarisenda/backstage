@@ -28,7 +28,6 @@ spec:
           type: string
           description: Unique name of the new service. Example -> 'backend'
           ui:field: EntityNamePicker
-          ui:autofocus: true
         description:
           title: Description
           type: string
