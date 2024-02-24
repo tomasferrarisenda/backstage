@@ -21,8 +21,8 @@ spec:
           title: System
           type: string
           description: Name of the system the new service belongs to. Example -> 'my-app'
-          ui:field: SystemPicker
           ui:options:
+            field: SystemPicker
             allowedKinds:
               - System
         service:
