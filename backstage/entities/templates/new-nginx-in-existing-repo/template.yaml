@@ -1,11 +1,11 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: new-nodejs-in-existing-repo
-  title: New Node.js in Existing Repo
-  description: Create directory for new NodeJS service in existing repo
+  name: new-nginx-in-existing-repo
+  title: New NGINX in Existing Repo
+  description: Create directory for new NGINX service in existing repo
   tags:
-    - nodejs
+    - nginx
 spec:
   owner: web@example.com
   type: service
