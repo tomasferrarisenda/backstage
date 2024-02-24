@@ -129,8 +129,8 @@ spec:
         
   output:
     links:
-      - title: Repository
-        url: ${{ steps.publish.output.remoteUrl }}
+      # - title: Repository
+      #   url: ${{ steps.publish.output.remoteUrl }}
       - url: ${{ steps.publish.output.remoteUrl }}
         title: "Go to PR"
       # - title: Open in catalog

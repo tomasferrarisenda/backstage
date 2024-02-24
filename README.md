@@ -308,7 +308,15 @@ Let's analyze the backend. With this setup we have, there's a number of things t
 All of these files and directories we need to create for any new service we want to deploy. Luckily, we have Backstage Software Templates.
 
 ## How we are doing it
-Let's go into our Backstage console. In the Create tab on the left, we'll find the "New NGNIX in Existing Repo" Software Template
+Let's go into our Backstage console. In the Create tab on the left, we'll find the "New NGNIX in Existing Repo" Software Template. Click "Choose" on that card and complete with this info:
+- System: my-app
+- Service: frontend
+- Description: Frontend for the my-app system
+- Owner: my-app-frontend-subteam
+
+On the next, under Owner complete with your GitHub username and under Repository complete with "backstage-minikube-lab". Click Review and then Create.
+
+If all goes well, you should see a few green ticks and a "Go to PR" button. Click on the button.
 
 </br>
 </br>
