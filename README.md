@@ -308,7 +308,7 @@ Let's analyze the backend. With this setup we have, there's a number of things t
 All of these files and directories we need to create for any new service we want to deploy. Luckily, we have Backstage Software Templates.
 
 ## How we are doing it
-Let's go into our Backstage console. 
+Let's go into our Backstage console. In the Create tab on the left, we'll find the "New NGNIX in Existing Repo" Software Template
 
 </br>
 </br>
