@@ -25,7 +25,7 @@ metadata:
       type: logs-dashboard  
 spec:
   type: service
-  lifecycle: experimental
+  lifecycle: production
   owner: group:default/my-app-frontend-subteam
   system: my-app
   dependsOn:
