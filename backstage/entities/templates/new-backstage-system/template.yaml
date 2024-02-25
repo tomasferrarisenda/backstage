@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: new-backstage-system
   title: New Backstage System
-  description: Create new Backstage user
+  description: Create new Backstage system
   tags:
     - backstage
 spec:
