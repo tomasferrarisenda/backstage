@@ -79,6 +79,7 @@ spec:
           # tags:
           #   - hard-coded-tag1
           #   - hard-coded-tag2
+
 # RELOADED
     # - id: fetch-helm-chart
     #   name: Fetch Helm Chart
@@ -90,15 +91,15 @@ spec:
     #       system: ${{ parameters.system }}
     #       service: ${{ parameters.service }}
 
-    - id: fetch-k8s-manifests
-      name: Fetch K8S Manifests
-      action: fetch:template
-      input:
-        url: ./k8s-manifests
-        targetPath: k8s-manifests/${{ parameters.system }}-${{ parameters.service }}
-        values:
-          system: ${{ parameters.system }}
-          service: ${{ parameters.service }}
+    # - id: fetch-k8s-manifests
+    #   name: Fetch K8S Manifests
+    #   action: fetch:template
+    #   input:
+    #     url: ./k8s-manifests
+    #     targetPath: k8s-manifests/${{ parameters.system }}-${{ parameters.service }}
+    #     values:
+    #       system: ${{ parameters.system }}
+    #       service: ${{ parameters.service }}
 
     - id: fetch-github-workflow
       name: Fetch GitHub Workflow

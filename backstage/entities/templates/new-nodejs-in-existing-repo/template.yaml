@@ -79,6 +79,7 @@ spec:
           # tags:
           #   - hard-coded-tag1
           #   - hard-coded-tag2
+
 # RELOADED
     # - id: fetch-helm-chart
     #   name: Fetch Helm Chart
