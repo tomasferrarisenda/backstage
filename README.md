@@ -31,9 +31,9 @@ helm upgrade my-release /path/to/local/chart --set deployment.image.tag="2"
 - [Initial Setup](#initial-setup)
 - [Backstage Local Setup](#backstage-local-setup)
 - [Run In Kubernetes Environment](#run-in-kubernetes-environment)
-- [Excercise](#excercise)
+<!-- - [Excercise](#excercise)
   - [What we are starting off with](#what-we-are-starting-off-with)
-  - [What we are doing](#what-we-are-doing)
+  - [What we are doing](#what-we-are-doing) -->
 
 
 </br>
