@@ -181,6 +181,7 @@ nvm install 18
 nvm use 18
 nvm alias default 18
 ```
+</br>
 
 #### Install yarn
 ```bash
@@ -189,6 +190,7 @@ yarn set version 1.22.19
 yarn --version
 yarn global add concurrently
 ```
+</br>
 
 #### Get GitHub PAT (Personal Access Token)
 
@@ -199,6 +201,8 @@ Choose a name and a value for expiration. Under scopes select "repo" and "workfl
 <p title="GitHub Token" align="center"> <<img width="650" src="https://i.imgur.com/zTn7gDI.png"> </p>
 
 Click Generate token. Store the token somewhere safe.
+
+</br>
 
 # Set up secrets for github workflows
 
