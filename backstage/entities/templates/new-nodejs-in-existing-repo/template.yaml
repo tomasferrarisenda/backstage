@@ -79,13 +79,23 @@ spec:
           # tags:
           #   - hard-coded-tag1
           #   - hard-coded-tag2
+# RELOADED
+    # - id: fetch-helm-chart
+    #   name: Fetch Helm Chart
+    #   action: fetch:template
+    #   input:
+    #     url: ./helm-chart
+    #     targetPath: helm/${{ parameters.system }}/${{ parameters.service }}
+    #     values:
+    #       system: ${{ parameters.system }}
+    #       service: ${{ parameters.service }}
 
-    - id: fetch-helm-chart
-      name: Fetch Helm Chart
+    - id: fetch-k8s-manifests
+      name: Fetch K8S Manifests
       action: fetch:template
       input:
-        url: ./helm-chart
-        targetPath: helm/${{ parameters.system }}/${{ parameters.service }}
+        url: ./k8s-manifests
+        targetPath: k8s-manifests/${{ parameters.system }}-${{ parameters.service }}
         values:
           system: ${{ parameters.system }}
           service: ${{ parameters.service }}
@@ -129,8 +139,8 @@ spec:
         
   output:
     links:
-      - title: Repository
-        url: ${{ steps.publish.output.remoteUrl }}
+      # - title: Repository
+      #   url: ${{ steps.publish.output.remoteUrl }}
       - url: ${{ steps.publish.output.remoteUrl }}
         title: "Go to PR"
       # - title: Open in catalog

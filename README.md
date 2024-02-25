@@ -197,9 +197,10 @@ Navigate to the GitHub PAT creation page.
 In the Note field, enter the name of the token, such as backstage-token.
 Choose a value for Expiration and select the scope of your token. When creating a template, you’ll need to select at least the repo scope.
 
-<p title="GitHub Token" align="center"> <img src="https://i.imgur.com/x28b4Q5.png"> </p>
+<p title="GitHub Token" align="center"> <<img width="650" src="https://i.imgur.com/x28b4Q5.png"> </p>
 
-### Set up secrets for github workflows
+
+# Set up secrets for github workflows
 
 
 #### Local testing
@@ -238,7 +239,7 @@ chmod +x build-push-image.sh
 Update the value of backstage.image.tag in the backstage values-custom.yaml 
 ```bash
 cd ../..
-vim helm/infra/backstage/values-custom.yaml
+vim backstage/helm-chart/values-custom.yaml
 ```
 <!-- RELOADED -->
 <!-- Save and push to repo
@@ -272,7 +273,7 @@ Now go to localhost:8080 on your browser and Voilá!
 ## What we are starting off with
 We are starting off with a Redis database and a backend. Everytime the backend recieves a request it gets the value of "count" from the Redis db and returns it to the user. Before returning it, it adds +1 to "count".
 
-You can test it like this:
+Once all pods in "my-app" namespace are runnign, you can test it like this:
 ```bash
 kubectl get pods -n my-app -l app=my-app-backend -o name | xargs -I {} kubectl exec -n my-app {} -- curl -s localhost:3000
 ```
