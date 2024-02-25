@@ -93,12 +93,37 @@ read -r dockerhub_username
 
 # Function to search and replace in files
 search_and_replace() {
-    directory=$1
+    # Base directory is assumed to be the parent of where this script resides.
+    base_directory=$(dirname "$(dirname "${BASH_SOURCE[0]}")")
+    # Specific directories to search within, relative to the base directory.
+    declare -a search_directories=("$base_directory/backstage/helm-chart/" "$base_directory/application-code/")
     declare -A replacements=$2
-    for file in $(find "$directory" -type f \( -name 'application-dev.yaml' -o -name 'application-stage.yaml' -o -name 'application-prod.yaml' -o -name '00-deploy-infra.yml' -o -name '01-deploy-argocd.yml' -o -name '02-build-and-deploy-backend.yml' -o -name '03-build-and-deploy-frontend.yml' -o -name '04-destroy-all-the-things.yml' -o -name 'Chart.yaml' -o -name 'values.yaml' -o -name 'values-dev.yaml' -o -name 'values-stage.yaml' -o -name 'values-prod.yaml' -o -name 'terraform.tfvars' -o -name 'provider.tf' \)); do
-        for key in "${!replacements[@]}"; do
-            sed -i "s|$key|${replacements[$key]}|g" "$file"
-        done
+
+    # Loop through each specified directory
+    for search_directory in "${search_directories[@]}"; do
+        # Find and iterate over files within the specified directory that match the given patterns
+        while IFS= read -r file; do
+            for key in "${!replacements[@]}"; do
+                # Use sed to replace each key with its corresponding value in the found file
+                sed -i "s|$key|${replacements[$key]}|g" "$file"
+            done
+        done < <(find "$search_directory" -type f \( \
+            -name 'application-dev.yaml' -o \
+            -name 'application-stage.yaml' -o \
+            -name 'application-prod.yaml' -o \
+            -name '00-deploy-infra.yml' -o \
+            -name '01-deploy-argocd.yml' -o \
+            -name '02-build-and-deploy-backend.yml' -o \
+            -name '03-build-and-deploy-frontend.yml' -o \
+            -name '04-destroy-all-the-things.yml' -o \
+            -name 'Chart.yaml' -o \
+            -name 'values.yaml' -o \
+            -name 'values-dev.yaml' -o \
+            -name 'values-stage.yaml' -o \
+            -name 'values-prod.yaml' -o \
+            -name 'terraform.tfvars' -o \
+            -name 'provider.tf' \
+        \))
     done
 }
 
