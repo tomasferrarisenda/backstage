@@ -28,8 +28,8 @@ spec:
   lifecycle: experimental
   owner: group:default/my-app-frontend-subteam
   system: my-app
-  # dependsOn:
-  #   - 
+  dependsOn:
+    - my-app-backend
   # providesApis:
   #   - 
 
