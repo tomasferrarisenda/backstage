@@ -7,7 +7,7 @@ metadata:
     backstage.io/techdocs-ref: dir:.
     backstage.io/kubernetes-id: my-app-frontend
   tags:
-    - nodejs
+    - nginx
   links:
     - title: Documentation
       url: https://github.com/tomasferrarisenda/backstage-minikube-lab

@@ -2,6 +2,7 @@
 
 # Prompt the user for their GitHub token
 read -p "Enter your GitHub token: " GITHUB_TOKEN
+read -p "What image tag should be used for Backstage deployment?: " IMAGE_TAG
 
 # Start cluster. Extra beefy beause Backstage is a bit heavy.
 minikube start --cpus 4 --memory 4096
@@ -11,7 +12,8 @@ kubectl create ns backstage
 kubectl create secret generic github-token -n backstage --from-literal=GITHUB_TOKEN="$GITHUB_TOKEN"
 
 # Install Backstage
-helm install backstage -n backstage backstage/helm-chart --values backstage/helm-chart/values-custom.yaml --dependency-update --create-namespace
+helm install backstage -n backstage backstage/helm-chart --values backstage/helm-chart/values-custom.yaml --set-string backstage.image.tag="$IMAGE_TAG" --dependency-update --create-namespace
+
 # helm install backstage -n backstage helm/infra/backstage --values helm/infra/backstage/values-custom.yaml --dependency-update --create-namespace
 
 # Install Redis
