@@ -126,7 +126,7 @@ spec:
         targetPath: "" # Leave empty to use the root of the repo or specify if needed
         paths: 
           - ${{ parameters.system }}/${{parameters.service}}
-          # - k8s-manifests/${{ parameters.system }}-${{ parameters.service }}
+          - k8s-manifests/${{ parameters.system }}-${{ parameters.service }}
 # RELOADED
           # - helm/${{ parameters.system }}/${{parameters.service}}
           - .github/workflows

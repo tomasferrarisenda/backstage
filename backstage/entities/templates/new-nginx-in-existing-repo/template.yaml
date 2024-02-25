@@ -91,15 +91,15 @@ spec:
     #       system: ${{ parameters.system }}
     #       service: ${{ parameters.service }}
 
-    # - id: fetch-k8s-manifests
-    #   name: Fetch K8S Manifests
-    #   action: fetch:template
-    #   input:
-    #     url: ./k8s-manifests
-    #     targetPath: k8s-manifests/${{ parameters.system }}-${{ parameters.service }}
-    #     values:
-    #       system: ${{ parameters.system }}
-    #       service: ${{ parameters.service }}
+    - id: fetch-k8s-manifests
+      name: Fetch K8S Manifests
+      action: fetch:template
+      input:
+        url: ./k8s-manifests
+        targetPath: k8s-manifests/${{ parameters.system }}-${{ parameters.service }}
+        values:
+          system: ${{ parameters.system }}
+          service: ${{ parameters.service }}
 
     - id: fetch-github-workflow
       name: Fetch GitHub Workflow
@@ -126,7 +126,7 @@ spec:
         targetPath: "" # Leave empty to use the root of the repo or specify if needed
         paths: 
           - ${{ parameters.system }}/${{parameters.service}}
-          # - k8s-manifests/${{ parameters.system }}-${{ parameters.service }}
+          - k8s-manifests/${{ parameters.system }}-${{ parameters.service }}
 # RELOADED
           # - helm/${{ parameters.system }}/${{parameters.service}}
           - .github/workflows
