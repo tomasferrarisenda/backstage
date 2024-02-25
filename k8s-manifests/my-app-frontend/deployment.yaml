@@ -25,6 +25,6 @@ spec:
     spec:
       containers:
         - name: my-app-frontend
-          image: tferrari92/my-app-frontend:13
+          image: tferrari92/my-app-frontend:19
           ports:
             - containerPort: 80

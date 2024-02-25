@@ -270,6 +270,9 @@ Now go to localhost:8080 on your browser and Voilá!
 
 # EXCERCISE
 
+# Before we begin
+BUILDEAR Y PUSHEAR BACKEND
+
 ## What we are starting off with
 We are starting off with a Redis database and a backend. Everytime the backend recieves a request it gets the value of "count" from the Redis db and returns it to the user. Before returning it, it adds +1 to "count".
 
@@ -333,7 +336,12 @@ When done, commit and push the changes. This should trigger the frontend GitHub 
 When the workflow is done, go check your DockerHub account for the tag of the my-app-frontend image. 
 <!-- RELOADED -->
 <!-- Take the tag number and paste it in the [values.yaml of the frontend](/helm/my-app/frontend/values.yaml) -->
-Take the tag number and update the image tag in the [frontend deployment manifest](/k8s-manifests/my-app-frontend/deployment.yaml).
+Take the tag number and update the image tag in the [frontend deployment manifest](/k8s-manifests/my-app-frontend/deployment.yaml). 
+
+Run:
+```bash
+kubectl apply -f k8s-manifests/my-app-frontend
+```
 
 </br>
 </br>
