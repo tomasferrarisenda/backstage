@@ -122,4 +122,4 @@ main() {
 
 main
 
-print_gradually "That's it! All necessary files were updated with the info you provided.\nYou can go back to the README and carry on with the guide.\n\n"
+echo -n "That's it! All necessary files were updated with the info you provided.\nYou can go back to the README and carry on with the guide.\n\n"
