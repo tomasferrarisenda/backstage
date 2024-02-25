@@ -204,8 +204,10 @@ Click Generate token. Store the token somewhere safe.
 
 </br>
 
-# Set up secrets for github workflows
+#### Set up secrets for GitHub workflows
+pergar user y pass de dockerhub
 
+</br>
 
 #### Local testing
 Create en env var for your GitHub token
