@@ -191,13 +191,12 @@ yarn global add concurrently
 ```
 
 #### Get GitHub PAT (Personal Access Token)
-You can do the following to create a GitHub PAT:
 
-Navigate to the GitHub PAT creation page.
-In the Note field, enter the name of the token, such as backstage-token.
-Choose a value for Expiration and select the scope of your token. When creating a template, you’ll need to select at least the repo scope.
-# TIENE Q SELECIONAR GH ACTION WORKFLOW!!
-<p title="GitHub Token" align="center"> <<img width="650" src="https://i.imgur.com/x28b4Q5.png"> </p>
+Navigate to the GitHub PAT creation page. Select "Generate new token (classic)". 
+
+Choose a name and a value for Expiration. Under Scopes select "repo" and "workflow". It should look something like this:
+
+<p title="GitHub Token" align="center"> <<img width="650" src="https://i.imgur.com/zTn7gDI.png"> </p>
 
 
 # Set up secrets for github workflows
