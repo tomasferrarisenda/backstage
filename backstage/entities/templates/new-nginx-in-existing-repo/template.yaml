@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: new-nginx-in-existing-repo
   title: New NGINX in Existing Repo
-  description: Create directory for new NGINX service in existing repo
+  description: Create directory for new NGINX service in existing repo. Useful for creating a frontend static website.
   tags:
     - nginx
 spec:

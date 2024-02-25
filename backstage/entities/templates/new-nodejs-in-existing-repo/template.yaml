@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: new-nodejs-in-existing-repo
   title: New Node.js in Existing Repo
-  description: Create directory for new Node.JS service in existing repo
+  description: Create directory for new Node.JS service in existing repo. Useful for creating a backend service that provides an API.
   tags:
     - nodejs
 spec:
