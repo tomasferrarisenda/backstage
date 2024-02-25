@@ -324,11 +324,13 @@ If all goes well, you should see a few green ticks and a "Go to PR" button. Clic
 ### Next steps to deploy the new frontend service
 Ok, we now have all necessary files and directories to deploy the frontend. We just need the actual code.
 
-In the [example files directory](/example-files/) you will find necessary code for the frontend to work. Copy the contents of [index.html](/example-files/my-app-frontend/index.html), [index.js](/example-files/my-app-frontend/index.js) and [styles.css](/example-files/my-app-frontend/styles.css) into their respective files in [my-app/frontend](/my-app/frontend/).
+Run `git pull` on your machine to pull the new files.
 
-When done, commit the changes and this should trigger the frontend GitHub workflow, which will build the container image for the frontend and push it to DockerHub.
+Now, in the [example files directory](/example-files/) you will find necessary code for the frontend to work. Copy the contents of [index.html](/example-files/my-app-frontend/index.html), [index.js](/example-files/my-app-frontend/index.js) and [styles.css](/example-files/my-app-frontend/styles.css) into their respective files inside [my-app/frontend](/my-app/frontend/).
 
-When the workflow is done, go check your dockerhub account for the tag of the my-app-frontend image. 
+When done, commit the changes and push them. This should trigger the frontend GitHub workflow, which will build the container image for the frontend and push it to DockerHub.
+
+When the workflow is done, go check your DockerHub account for the tag of the my-app-frontend image. 
 
 Take the number and paste it in the [values.yaml of the frontend](/helm/my-app/frontend/values.yaml)
 
