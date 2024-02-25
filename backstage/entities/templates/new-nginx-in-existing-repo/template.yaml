@@ -125,7 +125,8 @@ spec:
         targetPath: "" # Leave empty to use the root of the repo or specify if needed
         paths: 
           - ${{ parameters.system }}/${{parameters.service}}
-          - helm/${{ parameters.system }}/${{parameters.service}}
+          - k8s-manifests/${{ parameters.system }}-${{parameters.service}}
+          # - helm/${{ parameters.system }}/${{parameters.service}}
           - .github/workflows
 
     # NO HACE FALTA REGISTRAR EN CATALOGO PORQ VA A SER AUTO DESCUBIERTO POR EL GH DISCOVERY PLUGIN
