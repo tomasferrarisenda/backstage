@@ -1,20 +1,11 @@
-# Use a Node.js base image
-FROM node:14
+# Use the official nginx base image
+FROM nginx:1.25.1
 
-# Set the working directory
-WORKDIR /app
+# Copy the nginx.conf file to the appropriate directory in the Docker container
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+# Copy files into the container
+COPY . /usr/share/nginx/html
 
-# Install dependencies
-RUN npm install
-
-# Copy the server files
-COPY . .
-
-# Expose the server port
-EXPOSE 3000
-
-# Start the server
-CMD [ "node", "app.js" ]
+# Expose port 80 to the outside world
+EXPOSE 80
