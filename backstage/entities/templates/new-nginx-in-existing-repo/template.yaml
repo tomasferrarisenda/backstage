@@ -69,7 +69,7 @@ spec:
       action: fetch:template
       input:
         url: ./base-code
-        targetPath: ${{ parameters.system }}/${{ parameters.service }}
+        targetPath: application-code/${{ parameters.system }}/${{ parameters.service }}
         values:
           system: ${{ parameters.system }}
           service: ${{ parameters.service }}
@@ -125,7 +125,7 @@ spec:
           ${{ parameters.description if parameters.description }}
         targetPath: "" # Leave empty to use the root of the repo or specify if needed
         paths: 
-          - ${{ parameters.system }}/${{parameters.service}}
+          - application-code/${{ parameters.system }}/${{ parameters.service }}
           - k8s-manifests/${{ parameters.system }}-${{ parameters.service }}
 # RELOADED
           # - helm/${{ parameters.system }}/${{parameters.service}}

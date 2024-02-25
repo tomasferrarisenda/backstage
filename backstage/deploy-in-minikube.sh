@@ -23,6 +23,10 @@ kubectl apply -f k8s-manifests/my-app-redis
 kubectl apply -f k8s-manifests/my-app-backend
 # helm install backend -n my-app helm/my-app/backend --dependency-update --create-namespace
 
+# Install Frontend service
+kubectl apply -f k8s-manifests/my-app-frontend
+# helm install backend -n my-app helm/my-app/backend --dependency-update --create-namespace
+
 # Wait for the Postgres pod to be ready
 echo "Waiting for postgres pod to be ready..."
 until [[ $(kubectl -n backstage get pods -l "app.kubernetes.io/name=postgresql" -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') == "True" ]]; do

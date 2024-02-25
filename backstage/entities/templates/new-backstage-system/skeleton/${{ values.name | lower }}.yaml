@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: ${{ values.name | lower }}-${{ values.lastName | lower }}
+  {%- if values.description %}
+  description: ${{ values.description }}
+  {%- endif %}
+spec:
+  owner: ${{ values.owner }}

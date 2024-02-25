@@ -74,13 +74,17 @@ The [Kubernetes plugin](https://backstage.io/docs/features/kubernetes/) in Backs
 
 It will elevate the visibility of errors where identified, and provide drill down about the deployments, pods, and other objects for a service.
 
+</br>
+
 ### GitHub Discovery plugin 
 The [GitHub Discovery plugin](https://backstage.io/docs/integrations/github/discovery) automatically discovers catalog entities within a GitHub organization. The provider will crawl the GitHub organization and register entities matching the configured path. This can be useful as an alternative to static locations or manually adding things to the catalog. This is the preferred method for ingesting entities into the catalog.
 
 I've installed it without events support. Updates to the catalog will rely on periodic scanning rather than real-time updates.
 
-### GitHub Actions plugin 
-https://roadie.io/backstage/plugins/github-actions/
+</br>
+
+<!-- ### GitHub Actions plugin 
+https://roadie.io/backstage/plugins/github-actions/ -->
 
 <!-- ## ArgoCD plugin
 https://roadie.io/backstage/plugins/argo-cd/
@@ -108,19 +112,31 @@ https://www.kosli.com/blog/succeeding-with-backstage-part-1-customizing-the-look
 ## Templates I've created
 <!-- #### New nodejs in new repo
 lorem ipsum -->
-### New backstage group
+### New Backstage System
+Creates a new Backstage system with the provided information. QUE SON LOS SYSTEM. For example, we have a System called "my-app" that includes the my-app-frontend service, the my-app-backend service, the my-app-redis database and the my-app-backend API.
+
+It generates a Pull Request which includes a new Group catalog entity manifest. If merged, the Group catalog entity will be automatically added to the Backstage catalog by the GitHub Discovery plugin.
+
+### New Backstage Group
 Creates a new Backstage group with the provided information. 
 
 It generates a Pull Request which includes a new Group catalog entity manifest. If merged, the Group catalog entity will be automatically added to the Backstage catalog by the GitHub Discovery plugin.
 
-### New backstage user
+</br>
+
+### New Backstage User
 Creates a new Backstage user with the provided information. 
 
 It generates a Pull Request which includes a new User catalog entity manifest. If merged, the User catalog entity will be automatically added to the Backstage catalog by the GitHub Discovery plugin.
 
-### New nodejs in existing repo
-lorem ipsum
-
+### New Node.js in existing repo
+Creates all the necessary files and directories for deploying a new Node.js servcie in Kubernetes:
+1. The [my-app/<name-of-the-new-service> directory](/my-app/backend/): In a real world scenario, the new service would have its own repo where we would store all the application code. In this small lab we'll just save it in its own directory.
+2. The [k8s-manifests/my-app/backend directory](/helm/my-app/backend/): Here we save the Helm chart for our backend service. This of course would also be in its own repo on a real world scenario.
+<!-- RELAODED -->
+<!-- 3. The [backend service argocd application manifests](/argo-cd/applications/my-app/backend/): These are read by the App of Apps to  -->
+4. The [backend build and push pipeline](/.github/workflows/build-push-my-app-backend.yml): In a real world scenario, the build and push workflow would probably exist within the .github/workflows of the backend applciation code repo. In this case, since we are using one repo for everything, we'll put it in the .github/workflows of this repo.
+<!-- Usuarlly when you want to deploy a new service, you would create a new repo to store the new services code. But since we are using this single repo, I created a software template that -->
 
 <!-- #### New documentation -->
 </br>
