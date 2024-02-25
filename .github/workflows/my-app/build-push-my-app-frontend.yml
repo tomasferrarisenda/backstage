@@ -1,15 +1,15 @@
-name: Build & push my-app-backend image
+name: Build & push my-app-frontend image
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'my-app/backend/**'
+      - 'application-code/my-app/frontend/**'
 
 env:
   SYSTEM: my-app
-  SERVICE: backend
+  SERVICE: frontend
 
 jobs:
   build-and-push:
@@ -29,11 +29,3 @@ jobs:
           dockerfile: application-code/${{ env.SYSTEM }}/${{ env.SERVICE }}/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-
-# RELOADED
-  # update-image-tag:
-  #   name: Update image tag
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v3

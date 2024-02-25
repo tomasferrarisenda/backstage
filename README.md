@@ -115,7 +115,7 @@ lorem ipsum -->
 ### New Backstage System
 Creates a new Backstage system with the provided information. QUE SON LOS SYSTEM. For example, we have a System called "my-app" that includes the my-app-frontend service, the my-app-backend service, the my-app-redis database and the my-app-backend API.
 
-It generates a Pull Request which includes a new Group catalog entity manifest. If merged, the Group catalog entity will be automatically added to the Backstage catalog by the GitHub Discovery plugin.
+It generates a Pull Request which includes a new System catalog entity manifest. If merged, the System catalog entity will be automatically added to the Backstage catalog by the GitHub Discovery plugin.
 
 ### New Backstage Group
 Creates a new Backstage group with the provided information. 
@@ -130,13 +130,12 @@ Creates a new Backstage user with the provided information.
 It generates a Pull Request which includes a new User catalog entity manifest. If merged, the User catalog entity will be automatically added to the Backstage catalog by the GitHub Discovery plugin.
 
 ### New Node.js in existing repo
-Creates all the necessary files and directories for deploying a new Node.js servcie in Kubernetes:
-1. The [my-app/<name-of-the-new-service> directory](/my-app/backend/): In a real world scenario, the new service would have its own repo where we would store all the application code. In this small lab we'll just save it in its own directory.
-2. The [k8s-manifests/my-app/backend directory](/helm/my-app/backend/): Here we save the Helm chart for our backend service. This of course would also be in its own repo on a real world scenario.
+Creates all the necessary files and directories for deploying a new Node.js servcice in Kubernetes:
+1. The application code directory, which will saved in [this directory](/application-code/)
+2. The kubernetes manifests directory, which will be saved [this directory](/k8s-manifests/)
 <!-- RELAODED -->
 <!-- 3. The [backend service argocd application manifests](/argo-cd/applications/my-app/backend/): These are read by the App of Apps to  -->
-4. The [backend build and push pipeline](/.github/workflows/build-push-my-app-backend.yml): In a real world scenario, the build and push workflow would probably exist within the .github/workflows of the backend applciation code repo. In this case, since we are using one repo for everything, we'll put it in the .github/workflows of this repo.
-<!-- Usuarlly when you want to deploy a new service, you would create a new repo to store the new services code. But since we are using this single repo, I created a software template that -->
+4. The build and push workflow file, which will be saved [this directory](/.github/workflows/):
 
 <!-- #### New documentation -->
 </br>
