@@ -113,7 +113,7 @@ catalog:
       # Catalogs
       catalogsProvider:
         organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
-        catalogPath: '/my-app/**/*catalog-info.yaml' # this will search all folders for files that end in template.yaml
+        catalogPath: '/application-code/**/*catalog-info.yaml' # this will search all folders for files that end in template.yaml
         filters:
           branch: 'main' # string
           repository: 'backstage-minikube-lab' # Regex
@@ -124,7 +124,7 @@ catalog:
       # Resources
       resourcesProvider:
         organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
-        catalogPath: '/my-app/**/*catalog-info.yaml' # this will search all folders for files that end in template.yaml
+        catalogPath: '/application-code/**/*catalog-info.yaml' # this will search all folders for files that end in template.yaml
         filters:
           branch: 'main' # string
           repository: 'backstage-minikube-lab' # Regex
@@ -135,7 +135,7 @@ catalog:
       # APIs
       apisProvider:
         organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
-        catalogPath: '/my-app/**/*api.yaml' # this will search all folders for files that end in template.yaml
+        catalogPath: '/application-code/**/*api-info.yaml' # this will search all folders for files that end in template.yaml
         filters:
           branch: 'main' # string
           repository: 'backstage-minikube-lab' # Regex

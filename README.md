@@ -81,6 +81,10 @@ The [GitHub Discovery plugin](https://backstage.io/docs/integrations/github/disc
 
 I've installed it without events support. Updates to the catalog will rely on periodic scanning rather than real-time updates.
 
+You can check the configuration in the [app-config.yaml](/backstage/my-backstage/app-config.yaml) and [app-config.production.yaml](/backstage/my-backstage/app-config.production.yaml) files under catalog.providers.github.
+
+**IMPORTANT**: We use [app-config.yaml](/backstage/my-backstage/app-config.yaml) for local testing (when we run `yarn dev`) and [app-config.production.yaml](/backstage/my-backstage/app-config.production.yaml) when deploying to Minikube.
+
 </br>
 
 <!-- ### GitHub Actions plugin 
