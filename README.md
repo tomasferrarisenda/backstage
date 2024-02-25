@@ -194,10 +194,11 @@ yarn global add concurrently
 
 Navigate to the GitHub PAT creation page. Select "Generate new token (classic)". 
 
-Choose a name and a value for Expiration. Under Scopes select "repo" and "workflow". It should look something like this:
+Choose a name and a value for expiration. Under scopes select "repo" and "workflow". It should look something like this:
 
 <p title="GitHub Token" align="center"> <<img width="650" src="https://i.imgur.com/zTn7gDI.png"> </p>
 
+Click Generate token. Store the token somewhere safe.
 
 # Set up secrets for github workflows
 
