@@ -328,11 +328,12 @@ Run `git pull` on your machine to pull the new files.
 
 Now, in the [example files directory](/example-files/) you will find necessary code for the frontend to work. Copy the contents of [index.html](/example-files/my-app-frontend/index.html), [index.js](/example-files/my-app-frontend/index.js) and [styles.css](/example-files/my-app-frontend/styles.css) into their respective files inside [my-app/frontend](/my-app/frontend/).
 
-When done, commit the changes and push them. This should trigger the frontend GitHub workflow, which will build the container image for the frontend and push it to DockerHub.
+When done, commit and push the changes. This should trigger the frontend GitHub workflow, which will build the container image for the frontend and push it to DockerHub.
 
 When the workflow is done, go check your DockerHub account for the tag of the my-app-frontend image. 
-
-Take the number and paste it in the [values.yaml of the frontend](/helm/my-app/frontend/values.yaml)
+<!-- RELOADED -->
+<!-- Take the tag number and paste it in the [values.yaml of the frontend](/helm/my-app/frontend/values.yaml) -->
+Take the tag number and update the image tag in the [frontend deployment manifest](/k8s-manifests/my-app-frontend/deployment.yaml).
 
 </br>
 </br>
