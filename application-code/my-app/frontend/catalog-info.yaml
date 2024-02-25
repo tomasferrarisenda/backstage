@@ -29,7 +29,5 @@ spec:
   owner: group:default/my-app-frontend-subteam
   system: my-app
   dependsOn:
-    - my-app-backend
-  # providesApis:
-  #   - 
+    - component:default/my-app-backend
 
