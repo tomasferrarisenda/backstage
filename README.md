@@ -135,7 +135,7 @@ Creates all the necessary files and directories for deploying a new Node.js serv
 2. The kubernetes manifests directory, which will be saved [this directory](/k8s-manifests/)
 <!-- RELAODED -->
 <!-- 3. The [backend service argocd application manifests](/argo-cd/applications/my-app/backend/): These are read by the App of Apps to  -->
-4. The build and push workflow file, which will be saved [this directory](/.github/workflows/):
+4. The build and push GitHub workflow manifest, which will be saved [this directory](/.github/workflows/):
 
 <!-- #### New documentation -->
 </br>
@@ -273,8 +273,8 @@ git push
 #### Minikube Environment Setup
 Run the start.sh script to get everything setup
 ```bash
-chmod +x backstage/deploy-in-minikube.sh
-backstage/deploy-in-minikube.sh
+chmod +x deploy-in-minikube.sh
+deploy-in-minikube.sh
 ```
 
 <!-- Run the start.sh script to get everything setup

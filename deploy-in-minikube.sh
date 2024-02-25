@@ -16,15 +16,15 @@ helm install backstage -n backstage backstage/helm-chart --values backstage/helm
 
 # Install Redis
 kubectl create ns my-app
-kubectl apply -f k8s-manifests/my-app-redis
+kubectl apply -f k8s-manifests/my-app/redis
 # helm install redis -n my-app helm/my-app/redis --values helm/my-app/redis/values-custom.yaml --dependency-update --create-namespace
 
 # Install Backend service
-kubectl apply -f k8s-manifests/my-app-backend
+kubectl apply -f k8s-manifests/my-app/backend
 # helm install backend -n my-app helm/my-app/backend --dependency-update --create-namespace
 
 # Install Frontend service
-kubectl apply -f k8s-manifests/my-app-frontend
+kubectl apply -f k8s-manifests/my-app/frontend
 # helm install backend -n my-app helm/my-app/backend --dependency-update --create-namespace
 
 # Wait for the Postgres pod to be ready
