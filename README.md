@@ -163,7 +163,7 @@ It generates a Pull Request which includes all these files al directories.
 The app-config is the file that establishes Backstage configuration. We will find three instances of app-config:
 1. [The app-config.yaml file](/backstage/my-backstage/app-config.yaml): This is the config that will be used for development and testing purposes when running locally with `yarn dev` command.
 2. [The app-config.production.yaml file](/backstage/my-backstage/app-config.yaml): This is the config that will be used for building the Docker image that will be deployed in Minikube. You will notice that it's missing the catalog configuration. That's because the catalog configuration will be passed in through a ConfigMap.
-3. [The helm chart values-custom.yaml file](/backstage/helm-chart/values-custom.yaml): Since the catalog configuration is something that might need to be modified more often, I decided it should be specified in a ConfigMap and not hard coded in the Docker image. You can modify the catalog configuration in the backstage.appConfig value of the chart values-custom.yaml file. Helm will create a ConfigMap with these values and pass it in to the Backstage pod at the time of creation.
+3. [The helm chart values-custom.yaml file](/backstage/helm-chart/values-custom.yaml): Since the catalog configuration is something that might need to be modified more often, I decided it should be specified in a ConfigMap and not hard coded into the Docker image. You can modify the catalog configuration in the backstage.appConfig value of the charts values-custom.yaml file. Helm will create a ConfigMap with these values and pass it in to the Backstage pod at the time of creation.
 
 </br>
 
