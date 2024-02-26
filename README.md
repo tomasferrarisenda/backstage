@@ -204,7 +204,7 @@ git push
 </br>
 
 # RUN BACKSTAGE LOCALLY
-Before deploying Backstage in a Kubernetes environment (Minikube), we need to build it locally. Testing the change you make to your Backstage implementation is also recommended to be done locally since it's much quicker than building the image, pushing it, etc. to test in in K8S.
+Before deploying Backstage in a Kubernetes environment (Minikube), we need to build it locally.
 
 </br>
 
@@ -272,12 +272,16 @@ Every time you make changes to the Backstage code, it's recommended you test it 
 
 # RUN BACKSTAGE IN MINIKUBE
 
+</br>
+
 ### Build and push backstage container image to DockerHub
 To build and push the Docker image, run the build-push-image.sh script
 ```bash
 chmod +x build-push-image.sh
 ./build-push-image.sh
 ```
+
+</br>
 
 ### Update image tag in backstage chart values
 Update the value of backstage.image.tag in the backstage values-custom.yaml 
@@ -293,6 +297,8 @@ git commit -m "Updated backstage image tag"
 git push
 ``` -->
 
+</br>
+
 ### Minikube Environment Setup
 Run the start.sh script to get everything setup
 ```bash
@@ -305,6 +311,8 @@ chmod +x deploy-in-minikube.sh
 chmod +x backstage/deploy-k8s-environment.sh
 backstage/deploy-k8s-environment.sh
 ``` -->
+
+</br>
 
 Now go to localhost:8080 on your browser and Voilá!
 
