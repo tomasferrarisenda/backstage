@@ -1,5 +1,3 @@
-helm upgrade my-release /path/to/local/chart --set deployment.image.tag="2"
-
 <a href="https://www.instagram.com/ttomasferrari/">
     <img align="right" alt="Abhishek's Instagram" width="22px" 
     src="https://i.imgur.com/EzpyGdV.png" />
