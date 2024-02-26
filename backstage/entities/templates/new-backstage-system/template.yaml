@@ -65,8 +65,8 @@ spec:
         values:
           name: ${{ parameters.name }}
           description: ${{ parameters.description }}
-          tags: ${{ parameters.tags }}
           owner: ${{ parameters.owner }}
+          tags: ${{ parameters.tags }}
 
     - id: publish
       name: Publish
