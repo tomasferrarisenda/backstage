@@ -113,29 +113,37 @@ https://www.kosli.com/blog/succeeding-with-backstage-part-1-customizing-the-look
 ## Templates I've created
 
 ### New Backstage System
-Creates a new Backstage system with the provided information. A SYstem in Backstage is a collection of entities (services, resources, APIs, etc.) that cooperate to perform a some function. For example, we have a System called "my-app" that includes the my-app-frontend service, the my-app-backend service, the my-app-redis database and the my-app-backend API.
+Creates a new Backstage System with the provided information. A System in Backstage is a collection of entities (services, resources, APIs, etc.) that cooperate to perform a some function. For example, we will have a System called "my-app" that includes the my-app-frontend service, the my-app-backend service, the my-app-redis database and the my-app-backend API.
 
-It generates a Pull Request which includes a new System catalog entity manifest. If merged, the System catalog entity will be automatically added to the Backstage catalog by the GitHub Discovery plugin.
+It generates a Pull Request which includes a new System manifest. When merged, the System catalog entity will be automatically added to the Backstage catalog by the GitHub Discovery plugin.
 
 ### New Backstage Group
 Creates a new Backstage group with the provided information. 
 
-It generates a Pull Request which includes a new Group catalog entity manifest. If merged, the Group catalog entity will be automatically added to the Backstage catalog by the GitHub Discovery plugin.
+It generates a Pull Request which includes a new Group manifest. When merged, the Group catalog entity will be automatically added to the Backstage catalog by the GitHub Discovery plugin.
 
 </br>
 
 ### New Backstage User
 Creates a new Backstage user with the provided information. 
 
-It generates a Pull Request which includes a new User catalog entity manifest. If merged, the User catalog entity will be automatically added to the Backstage catalog by the GitHub Discovery plugin.
+It generates a Pull Request which includes a new User manifest. When merged, the User catalog entity will be automatically added to the Backstage catalog by the GitHub Discovery plugin.
 
 ### New Node.js in existing repo
-Creates all the necessary files and directories for deploying a new Node.js servcice in Kubernetes:
-1. The application code directory, which will saved in [this directory](/application-code/)
-2. The kubernetes manifests directory, which will be saved [this directory](/k8s-manifests/)
+Creates all the boilerplate files and directories for deploying a new Node.js service in Kubernetes:
+1. The application code directory and files, which will saved in [the application-code directory](/application-code/).
+2. The kubernetes manifests directory and files, which will be saved in [the k8s-manifests directory](/k8s-manifests/).
 <!-- RELAODED -->
 <!-- 3. The [backend service argocd application manifests](/argo-cd/applications/my-app/backend/): These are read by the App of Apps to  -->
-4. The build and push GitHub workflow manifest, which will be saved [this directory](/.github/workflows/):
+4. The build and push GitHub workflow manifest, which will be saved [this directory](/.github/workflows/).
+
+### New NGINX in existing repo
+Creates all the boilerplate files and directories for deploying a new NGINX service in Kubernetes:
+1. The application code directory and files, which will saved in [the application-code directory](/application-code/).
+2. The kubernetes manifests directory and files, which will be saved in [the k8s-manifests directory](/k8s-manifests/).
+<!-- RELAODED -->
+<!-- 3. The [backend service argocd application manifests](/argo-cd/applications/my-app/backend/): These are read by the App of Apps to  -->
+4. The build and push GitHub workflow manifest, which will be saved [the .github/workflows directory](/.github/workflows/).
 
 <!-- #### New documentation -->
 </br>
