@@ -53,7 +53,6 @@ Backstage is a framework for creating developer portals. This developer portal s
 - minikube installed
 - kubectl installed
 - helm installed
-- vim installed
 
 </br>
 </br>
@@ -79,9 +78,9 @@ The [GitHub Discovery plugin](https://backstage.io/docs/integrations/github/disc
 
 I've installed it without events support. Updates to the catalog will rely on periodic scanning rather than real-time updates.
 
-You can check the configuration in the [app-config.yaml](/backstage/my-backstage/app-config.yaml) and [app-config.production.yaml](/backstage/my-backstage/app-config.production.yaml) files under catalog.providers.github.
+You can check the automatic discovery configuration under catalog.providers.github in the [app-config.yaml](/backstage/my-backstage/app-config.yaml) and [app-config.production.yaml](/backstage/my-backstage/app-config.production.yaml) files.
 
-**IMPORTANT**: We use [app-config.yaml](/backstage/my-backstage/app-config.yaml) for local testing (when we run `yarn dev`) and [app-config.production.yaml](/backstage/my-backstage/app-config.production.yaml) when deploying to Minikube.
+**IMPORTANT**: We use [app-config.yaml](/backstage/my-backstage/app-config.yaml) for local testing (when running `yarn dev`) and [app-config.production.yaml](/backstage/my-backstage/app-config.production.yaml) when deploying to Minikube.
 
 </br>
 
@@ -112,10 +111,9 @@ https://www.kosli.com/blog/succeeding-with-backstage-part-1-customizing-the-look
 </br>
 
 ## Templates I've created
-<!-- #### New nodejs in new repo
-lorem ipsum -->
+
 ### New Backstage System
-Creates a new Backstage system with the provided information. QUE SON LOS SYSTEM. For example, we have a System called "my-app" that includes the my-app-frontend service, the my-app-backend service, the my-app-redis database and the my-app-backend API.
+Creates a new Backstage system with the provided information. A SYstem in Backstage is a collection of entities (services, resources, APIs, etc.) that cooperate to perform a some function. For example, we have a System called "my-app" that includes the my-app-frontend service, the my-app-backend service, the my-app-redis database and the my-app-backend API.
 
 It generates a Pull Request which includes a new System catalog entity manifest. If merged, the System catalog entity will be automatically added to the Backstage catalog by the GitHub Discovery plugin.
 
