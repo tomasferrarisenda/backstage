@@ -1,0 +1,1 @@
+# No automatic deletion from catalog
