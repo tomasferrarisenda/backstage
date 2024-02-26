@@ -272,14 +272,14 @@ Every time you make changes to the Backstage code, it's recommended you test it 
 
 # RUN BACKSTAGE IN MINIKUBE
 
-#### Build and push backstage container image to DockerHub
+### Build and push backstage container image to DockerHub
 To build and push the Docker image, run the build-push-image.sh script
 ```bash
 chmod +x build-push-image.sh
 ./build-push-image.sh
 ```
 
-#### Update image tag in backstage chart values
+### Update image tag in backstage chart values
 Update the value of backstage.image.tag in the backstage values-custom.yaml 
 ```bash
 cd ../..
@@ -293,7 +293,7 @@ git commit -m "Updated backstage image tag"
 git push
 ``` -->
 
-#### Minikube Environment Setup
+### Minikube Environment Setup
 Run the start.sh script to get everything setup
 ```bash
 chmod +x deploy-in-minikube.sh
