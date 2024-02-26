@@ -134,7 +134,7 @@ It generates a Pull Request which includes a new User manifest. When merged, the
 </br>
 
 ### New Node.js in existing repo
-Creates all the boilerplate files and directories for deploying a new Node.js service in Kubernetes:
+Creates all the boilerplate files and directories in an existing repo for deploying a new Node.js service in Kubernetes:
 1. The application code directory and files, which will saved in [the application-code directory](/application-code/).
 2. The kubernetes manifests directory and files, which will be saved in [the k8s-manifests directory](/k8s-manifests/).
 3. The build and push GitHub workflow manifest, which will be saved [this directory](/.github/workflows/).
@@ -144,7 +144,7 @@ Creates all the boilerplate files and directories for deploying a new Node.js se
 </br>
 
 ### New NGINX in existing repo
-Creates all the boilerplate files and directories for deploying a new NGINX service in Kubernetes:
+Creates all the boilerplate files and directories in an existing repo for deploying a new NGINX service in Kubernetes:
 1. The application code directory and files, which will saved in [the application-code directory](/application-code/).
 2. The kubernetes manifests directory and files, which will be saved in [the k8s-manifests directory](/k8s-manifests/).
 3. The build and push GitHub workflow manifest, which will be saved [the .github/workflows directory](/.github/workflows/).
