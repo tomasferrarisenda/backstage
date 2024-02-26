@@ -32,9 +32,9 @@ spec:
           items:
             type: string
           description: Tags associated with the system
-          ui:field: TagsPicker
-          ui:options:
-            freeSolo: true  
+          # ui:field: TagsPicker
+          # ui:options:
+          #   freeSolo: true  
         owner:
           title: Owner
           type: string

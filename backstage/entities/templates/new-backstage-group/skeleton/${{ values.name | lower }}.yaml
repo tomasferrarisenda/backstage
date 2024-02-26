@@ -4,9 +4,12 @@ metadata:
   name: ${{ values.name | lower }}
   title: ${{ values.title }}
   description: ${{ values.description }}
-  tags:
-    - engineering
-    - nodejs
+  {%- if values.tags %}
+  tags: 
+    {%- for tag in values.tags %}
+    - ${{ tag }}
+    {%- endfor %}
+  {%- endif %}
 spec:
   type: ${{ values.type }}
   children: []
