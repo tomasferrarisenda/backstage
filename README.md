@@ -272,25 +272,20 @@ Every time you make changes to the Backstage code, it's recommended you test it 
 
 # RUN BACKSTAGE IN MINIKUBE
 
-</br>
-
 ### Build and push backstage container image to DockerHub
 To build and push the Docker image, run the build-push-image.sh script
 ```bash
 chmod +x build-push-image.sh
 ./build-push-image.sh
 ```
-
-</br>
-
+<!-- RELOADED
 ### Update image tag in backstage chart values
 Update the value of backstage.image.tag in the backstage values-custom.yaml 
 ```bash
 cd ../..
 vim backstage/helm-chart/values-custom.yaml
 ```
-<!-- RELOADED -->
-<!-- Save and push to repo
+Save and push to repo
 ```bash
 git add .
 git commit -m "Updated backstage image tag"
