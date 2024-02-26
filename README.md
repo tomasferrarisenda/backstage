@@ -117,6 +117,8 @@ Creates a new Backstage System with the provided information. A System in Backst
 
 It generates a Pull Request which includes a new System manifest. When merged, the System catalog entity will be automatically added to the Backstage catalog by the GitHub Discovery plugin.
 
+</br>
+
 ### New Backstage Group
 Creates a new Backstage group with the provided information. 
 
