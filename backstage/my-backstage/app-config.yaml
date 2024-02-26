@@ -70,6 +70,18 @@ auth:
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
 
+kubernetes:
+  serviceLocatorMethod:
+    type: 'multiTenant'
+  clusterLocatorMethods:
+    - type: 'config'
+      clusters:
+        - url: kubernetes.default.svc.cluster.local:443
+          name: local
+          authProvider: 'serviceAccount'
+          skipTLSVerify: false
+          skipMetricsLookup: true
+
 catalog:
   rules:
     - allow:
@@ -177,14 +189,3 @@ catalog:
           timeout: { minutes: 3 }
 
 
-kubernetes:
- serviceLocatorMethod:
-   type: 'multiTenant'
- clusterLocatorMethods:
-   - type: 'config'
-     clusters:
-       - url: kubernetes.default.svc.cluster.local:443
-         name: local
-         authProvider: 'serviceAccount'
-         skipTLSVerify: false
-         skipMetricsLookup: true

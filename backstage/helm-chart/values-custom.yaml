@@ -13,6 +13,103 @@ backstage:
           name: github-token
           key: GITHUB_TOKEN
 
+  appConfig:
+    catalog:
+      rules:
+        - allow:
+            - Component
+            - API
+            - Resource
+            - System
+            - Domain
+            - Location
+            - User
+            - Group
+            - Template
+
+      refreshIntervalSeconds: 5 # In seconds. Default is 100
+
+      providers:
+        github:
+          # Catalogs
+          catalogsProvider:
+            organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
+            catalogPath: '/application-code/**/*catalog-info.yaml' # this will search all folders for files that end in template.yaml
+            filters:
+              branch: 'main' # string
+              repository: 'backstage-minikube-lab' # Regex
+            schedule: # same options as in TaskScheduleDefinition
+              frequency: { minutes: 1 }
+              timeout: { minutes: 3 }
+
+          # Resources
+          resourcesProvider:
+            organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
+            catalogPath: '/application-code/**/*catalog-info.yaml' # this will search all folders for files that end in template.yaml
+            filters:
+              branch: 'main' # string
+              repository: 'backstage-minikube-lab' # Regex
+            schedule: # same options as in TaskScheduleDefinition
+              frequency: { minutes: 1 }
+              timeout: { minutes: 3 }
+
+          # APIs
+          apisProvider:
+            organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
+            catalogPath: '/application-code/**/*api-info.yaml' # this will search all folders for files that end in template.yaml
+            filters:
+              branch: 'main' # string
+              repository: 'backstage-minikube-lab' # Regex
+            schedule: # same options as in TaskScheduleDefinition
+              frequency: { minutes: 1 }
+              timeout: { minutes: 3 }
+
+          # Templates
+          templatesProvider:
+            organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
+            catalogPath: '/backstage/entities/templates/**/*template.yaml' # this will search all folders for files that end in template.yaml
+            filters:
+              branch: 'main' # string
+              repository: 'backstage-minikube-lab' # Regex
+            schedule: # same options as in TaskScheduleDefinition
+              frequency: { minutes: 1 }
+              timeout: { minutes: 3 }
+
+          # Systems
+          systemsProvider:
+            organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
+            catalogPath: '/backstage/entities/systems/**/*.yaml' # this will search all folders for files that end in .yaml
+            filters:
+              branch: 'main' # string
+              repository: 'backstage-minikube-lab' # Regex
+            schedule: # same options as in TaskScheduleDefinition
+              frequency: { minutes: 1 }
+              timeout: { minutes: 3 }
+
+          # Groups
+          groupsProvider:
+            organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
+            catalogPath: '/backstage/entities/groups/**/*.yaml' # this will search all folders for files that end in .yaml
+            filters: # optional filters
+              branch: 'main' # optional string
+              repository: 'backstage-minikube-lab' # optional Regex
+            schedule: # same options as in TaskScheduleDefinition
+              frequency: { minutes: 1 }
+              timeout: { minutes: 3 }
+
+          # Users
+          usersProvider:
+            organization: 'tomasferrarisenda' # This value was modified by the initial-setup script
+            catalogPath: '/backstage/entities/users/**/*.yaml' # this will search all folders for files that end in .yaml
+            filters: # optional filters
+              branch: 'main' # optional string
+              repository: 'backstage-minikube-lab' # optional Regex
+            schedule: # same options as in TaskScheduleDefinition
+              frequency: { minutes: 1 }
+              timeout: { minutes: 3 }
+
+
+
 postgresql:
   enabled: true
 
