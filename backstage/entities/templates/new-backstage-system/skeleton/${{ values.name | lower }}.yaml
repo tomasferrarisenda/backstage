@@ -6,7 +6,7 @@ metadata:
   description: ${{ values.description }}
   {%- endif %}
   tags:
-    ${{#each parameters.tags}}
+    ${{#each values.tags}}
     - ${{this}}
     ${{/each}}
 spec:
