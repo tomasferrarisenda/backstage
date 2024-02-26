@@ -208,7 +208,7 @@ Before deploying Backstage in a Kubernetes environment (Minikube), we need to bu
 
 </br>
 
-#### Install nvm
+### Install nvm
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 nvm install 18
@@ -217,7 +217,7 @@ nvm alias default 18
 ```
 </br>
 
-#### Install yarn
+### Install yarn
 ```bash
 npm install --global yarn
 yarn set version 1.22.19
@@ -226,7 +226,7 @@ yarn global add concurrently
 ```
 </br>
 
-#### Get GitHub PAT (Personal Access Token)
+### Get GitHub PAT (Personal Access Token)
 
 Navigate to the GitHub PAT creation page. Select "Generate new token (classic)". 
 
@@ -238,7 +238,7 @@ Click Generate token. Store the token somewhere safe.
 
 </br>
 
-#### (Optional) Set up secrets for GitHub workflows
+### (Optional) Set up secrets for GitHub workflows
 Create these two repository secrets on your GitHub repo:
 - DOCKER_USERNAME: <your-dockerhub-username\>
 - DOCKER_PASSWORD: <your-dockerhub-password\>
@@ -247,7 +247,7 @@ These are required for the GitHub workflows to work.
 
 </br>
 
-#### Local testing
+### Local testing
 Create env var for your GitHub token
 ```bash
 export GITHUB_TOKEN=<your-github-token>
