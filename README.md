@@ -236,13 +236,17 @@ Click Generate token. Store the token somewhere safe.
 
 </br>
 
-#### Set up secrets for GitHub workflows
-pergar user y pass de dockerhub
+#### (Optional) Set up secrets for GitHub workflows
+Create these two repository secrets on your GitHub repo:
+- DOCKER_USERNAME: <your-dockerhub-username\>
+- DOCKER_PASSWORD: <your-dockerhub-password\>
+
+These are required for the GitHub workflows to work
 
 </br>
 
 #### Local testing
-Create en env var for your GitHub token
+Create env var for your GitHub token
 ```bash
 export GITHUB_TOKEN=<your-github-token>
 ```
