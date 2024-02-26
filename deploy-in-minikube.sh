@@ -14,25 +14,20 @@ kubectl create secret generic github-token -n backstage --from-literal=GITHUB_TO
 # Install Backstage
 helm install backstage -n backstage backstage/helm-chart --values backstage/helm-chart/values-custom.yaml --set-string backstage.image.tag="$IMAGE_TAG" --dependency-update --create-namespace
 
-# helm install backstage -n backstage helm/infra/backstage --values helm/infra/backstage/values-custom.yaml --dependency-update --create-namespace
-
 # Install Redis
 kubectl create ns my-app
 kubectl apply -f k8s-manifests/my-app/redis
-# helm install redis -n my-app helm/my-app/redis --values helm/my-app/redis/values-custom.yaml --dependency-update --create-namespace
 
 # Install Backend service
 kubectl apply -f k8s-manifests/my-app/backend
-# helm install backend -n my-app helm/my-app/backend --dependency-update --create-namespace
 
 # Install Frontend service
 kubectl apply -f k8s-manifests/my-app/frontend
-# helm install backend -n my-app helm/my-app/backend --dependency-update --create-namespace
 
 # Wait for the Postgres pod to be ready
 echo "Waiting for postgres pod to be ready..."
 until [[ $(kubectl -n backstage get pods -l "app.kubernetes.io/name=postgresql" -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') == "True" ]]; do
-  echo "Waiting for postgress pod to be ready... It's required for backstage to start."
+  echo "Waiting for postgres pod to be ready... It's required for backstage to start."
   sleep 3
 done
 

@@ -192,7 +192,7 @@ chmod +x initial-setup.sh
 ./initial-setup.sh
 ```
 
-4. Hope you enjoyed the welcome script! Now push your customized repo to GitHub:
+4. Commit and push your customized repo to GitHub:
 
 ```bash
 git add .
