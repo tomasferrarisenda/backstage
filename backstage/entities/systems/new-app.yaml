@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: new-app
+  description: asds
+  tags:
+    - sadasd
+    - asdasd
+spec:
+  owner: group:default/my-app-team
