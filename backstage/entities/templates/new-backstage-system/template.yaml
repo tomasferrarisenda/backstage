@@ -26,6 +26,14 @@ spec:
           title: Description
           type: string
           description: Help others understand what this system is for
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the service
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
         tags:
           title: Tags
           type: array
@@ -35,14 +43,6 @@ spec:
           # ui:field: TagsPicker
           # ui:options:
           #   freeSolo: true  
-        owner:
-          title: Owner
-          type: string
-          description: Owner of the service
-          ui:field: OwnerPicker
-          ui:options:
-            allowedKinds:
-              - Group
 
     - title: Choose a location
       required:
