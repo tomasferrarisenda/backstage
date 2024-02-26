@@ -129,6 +129,8 @@ Creates a new Backstage user with the provided information.
 
 It generates a Pull Request which includes a new User manifest. When merged, the User catalog entity will be automatically added to the Backstage catalog by the GitHub Discovery plugin.
 
+</br>
+
 ### New Node.js in existing repo
 Creates all the boilerplate files and directories for deploying a new Node.js service in Kubernetes:
 1. The application code directory and files, which will saved in [the application-code directory](/application-code/).
@@ -136,6 +138,8 @@ Creates all the boilerplate files and directories for deploying a new Node.js se
 <!-- RELAODED -->
 <!-- 3. The [backend service argocd application manifests](/argo-cd/applications/my-app/backend/): These are read by the App of Apps to  -->
 4. The build and push GitHub workflow manifest, which will be saved [this directory](/.github/workflows/).
+
+</br>
 
 ### New NGINX in existing repo
 Creates all the boilerplate files and directories for deploying a new NGINX service in Kubernetes:
