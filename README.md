@@ -332,12 +332,17 @@ Now go to localhost:8080 on your browser and Voilá!
 Create a new system with a  -->
 
 
-# Customizing Your Backstage
+# CUSTOMIZE YOUR OWN BACKSTAGE
+Now you are free to make all the customizations you want . These are some things you can try:
 
-# Paso a paso para buildear nueva imgen y utilizarla
-
-## Creating new templates
+## Create New Templates
 create template directory save it in backstage/entities/templates/
+
+## Add New Plugins
+bla bla
+Test with yarn dev
+Build and push image
+
 
 
 
