@@ -5,9 +5,11 @@ metadata:
   {%- if values.description %}
   description: ${{ values.description }}
   {%- endif %}
-  tags:
-    ${{#each values.tags}}
-    - ${{this}}
-    ${{/each}}
+  {%- if values.tags %}
+  tags: 
+    {%- for tag in values.tags %}
+    - ${{ tag }}
+    {%- endfor %}
+  {%- endif %}
 spec:
   owner: ${{ values.owner }}
