@@ -206,7 +206,9 @@ git push
 # BACKSTAGE LOCAL SETUP
 Before deploying Backstage in a Kubernetes environment (Minikube), we need to build it locally. Testing the change you make to your Backstage implementation is also recommended to be done locally since it's much quicker than building the image, pushing it, etc. to test in in K8S.
 
-#### Install NVM
+</br>
+
+#### Install nvm
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 nvm install 18
@@ -241,7 +243,7 @@ Create these two repository secrets on your GitHub repo:
 - DOCKER_USERNAME: <your-dockerhub-username\>
 - DOCKER_PASSWORD: <your-dockerhub-password\>
 
-These are required for the GitHub workflows to work
+These are required for the GitHub workflows to work.
 
 </br>
 
@@ -259,11 +261,11 @@ yarn tsc
 yarn dev
 ```
 
-This should open backstage in your browser. If all runs smoothly, we can proceed to deploying backstage in Minikube. 
+This should open Backstage in your browser on localhost:3000.
 
 Every time you make changes to the Backstage code, it's recommended you test it by running it locally with "yarn dev", since it will be much faster that testing it in Minikube.
 
-"Ctrl + C" to stop the running process and let's continue...
+"Ctrl + C" to stop the running process and let's deploy it in Minikube...
 
 </br>
 </br>
