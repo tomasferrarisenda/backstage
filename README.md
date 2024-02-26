@@ -137,9 +137,9 @@ It generates a Pull Request which includes a new User manifest. When merged, the
 Creates all the boilerplate files and directories for deploying a new Node.js service in Kubernetes:
 1. The application code directory and files, which will saved in [the application-code directory](/application-code/).
 2. The kubernetes manifests directory and files, which will be saved in [the k8s-manifests directory](/k8s-manifests/).
+3. The build and push GitHub workflow manifest, which will be saved [this directory](/.github/workflows/).
 <!-- RELAODED -->
 <!-- 3. The [backend service argocd application manifests](/argo-cd/applications/my-app/backend/): These are read by the App of Apps to  -->
-4. The build and push GitHub workflow manifest, which will be saved [this directory](/.github/workflows/).
 
 </br>
 
@@ -147,9 +147,9 @@ Creates all the boilerplate files and directories for deploying a new Node.js se
 Creates all the boilerplate files and directories for deploying a new NGINX service in Kubernetes:
 1. The application code directory and files, which will saved in [the application-code directory](/application-code/).
 2. The kubernetes manifests directory and files, which will be saved in [the k8s-manifests directory](/k8s-manifests/).
+3. The build and push GitHub workflow manifest, which will be saved [the .github/workflows directory](/.github/workflows/).
 <!-- RELAODED -->
 <!-- 3. The [backend service argocd application manifests](/argo-cd/applications/my-app/backend/): These are read by the App of Apps to  -->
-4. The build and push GitHub workflow manifest, which will be saved [the .github/workflows directory](/.github/workflows/).
 
 <!-- #### New documentation -->
 </br>
