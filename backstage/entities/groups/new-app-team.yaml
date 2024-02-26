@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: new-app-team
+  title: New App team
+  description: sdfj dsifj sidfn
+  tags:
+    - engineering
+    - nodejs
+spec:
+  type: team
+  children: []
+  parent: root
+  profile:
+    email: nicote@loco.com
+    # slack: 
