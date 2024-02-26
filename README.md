@@ -137,9 +137,10 @@ It generates a Pull Request which includes a new User manifest. When merged, the
 Creates all the boilerplate files and directories in an existing repo for deploying a new Node.js service in Kubernetes:
 1. The application code directory and files, which will saved in [the application-code directory](/application-code/).
 2. The kubernetes manifests directory and files, which will be saved in [the k8s-manifests directory](/k8s-manifests/).
-3. The build and push GitHub workflow manifest, which will be saved [this directory](/.github/workflows/).
+3. The build and push GitHub workflow manifest, which will be saved [the .github/workflows directory](/.github/workflows/).
 <!-- RELAODED -->
 <!-- 3. The [backend service argocd application manifests](/argo-cd/applications/my-app/backend/): These are read by the App of Apps to  -->
+It generates a Pull Request which includes all these files al directories.
 
 </br>
 
@@ -151,7 +152,8 @@ Creates all the boilerplate files and directories in an existing repo for deploy
 <!-- RELAODED -->
 <!-- 3. The [backend service argocd application manifests](/argo-cd/applications/my-app/backend/): These are read by the App of Apps to  -->
 
-<!-- #### New documentation -->
+It generates a Pull Request which includes all these files al directories.
+
 </br>
 
 ## My arbitrary rules
