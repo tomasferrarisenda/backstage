@@ -91,60 +91,23 @@ read -r dockerhub_username
 
 # print_gradually "Give me a sec... "
 
-# Function to search and replace in files
-search_and_replace() {
-    # Base directory is assumed to be the parent of where this script resides.
-    base_directory=$(dirname "$(dirname "${BASH_SOURCE[0]}")")
-    # Specific directories to search within, relative to the base directory.
-    declare -a search_directories=("$base_directory/backstage/helm-chart/" "$base_directory/application-code/")
-    declare -A replacements=$2
-
-    # Loop through each specified directory
-    for search_directory in "${search_directories[@]}"; do
-        # Find and iterate over files within the specified directory that match the given patterns
-        while IFS= read -r file; do
-            for key in "${!replacements[@]}"; do
-                # Use sed to replace each key with its corresponding value in the found file
-                sed -i "s|$key|${replacements[$key]}|g" "$file"
-            done
-        done < <(find "$search_directory" -type f \( \
-            -name 'application-dev.yaml' -o \
-            -name 'application-stage.yaml' -o \
-            -name 'application-prod.yaml' -o \
-            -name '00-deploy-infra.yml' -o \
-            -name '01-deploy-argocd.yml' -o \
-            -name '02-build-and-deploy-backend.yml' -o \
-            -name '03-build-and-deploy-frontend.yml' -o \
-            -name '04-destroy-all-the-things.yml' -o \
-            -name 'Chart.yaml' -o \
-            -name 'values.yaml' -o \
-            -name 'values-dev.yaml' -o \
-            -name 'values-stage.yaml' -o \
-            -name 'values-prod.yaml' -o \
-            -name 'terraform.tfvars' -o \
-            -name 'provider.tf' \
-        \))
-    done
+# Function that looks for strings AATT_GITHUB_USERNAME and AATT_DOCKERHUB_USERNAME in a files /backstage/my-backstage/app-config.yaml and /k8s-manifests/my-app/backend/deployment and replaces them with the value of github_username and dockerhub_username
+replace_string_in_file() {
+    file_path=$1
+    github_username=$2
+    dockerhub_username=$3
+    sed -i "s/AATT_GITHUB_USERNAME/$github_username/g" "$file_path"
+    sed -i "s/AATT_DOCKERHUB_USERNAME/$dockerhub_username/g" "$file_path"
 }
 
-# Main function to run the script
-main() {
-    # Define replacements
-    declare -A replacements=(
-        # ["AATT_APP_NAME"]="$app_name"
-        ["AATT_GITHUB_USERNAME"]="$github_username"
-        # ["AATT_AWS_REGION"]="$aws_region"
-        ["AATT_DOCKERHUB_USERNAME"]="$dockerhub_username"
-        # ["AATT_USER_EMAIL"]="$user_email"
-    )
-
-    # Specify the directory to search (assuming the script's grandparent directory is the root)
-    directory=$(dirname "$(dirname "$(dirname "${BASH_SOURCE[0]}")")")
-
-    # Search and replace keys in files
-    search_and_replace "$directory" replacements
-}
-
-main
+# Call function to replace the strings
+replace_string_in_file "application-code/my-app/backend/catalog-info.yaml" "$github_username" "$dockerhub_username"
+replace_string_in_file "application-code/my-app/frontend/catalog-info.yaml" "$github_username" "$dockerhub_username"
+replace_string_in_file "application-code/my-app/redis/catalog-info.yaml" "$github_username" "$dockerhub_username"
+replace_string_in_file "backstage/helm-chart/values-custom.yaml" "$github_username" "$dockerhub_username"
+replace_string_in_file "backstage/my-backstage/app-config.yaml" "$github_username" "$dockerhub_username"
+replace_string_in_file "backstage/my-backstage/app-config.production.yaml" "$github_username" "$dockerhub_username"
+replace_string_in_file "k8s-manifests/my-app/backend/deployment.yaml" "$github_username" "$dockerhub_username"
+replace_string_in_file "k8s-manifests/my-app/frontend/deployment.yaml" "$github_username" "$dockerhub_username"
 
 echo -n "That's it! All necessary files were updated with the info you provided.\nYou can go back to the README and carry on with the guide.\n\n"
