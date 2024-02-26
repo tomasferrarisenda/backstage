@@ -26,6 +26,7 @@
 - [Customising Backstage](#customising-backstage)
   - [Plugins I've Added](#plugins-ive-added)
   - [Templates I've Created](#templates-ive-created)
+  - [My Arbitrary Rules](#my-arbitrary-rules)
 - [Initial Setup](#initial-setup)
 - [Backstage Local Setup](#backstage-local-setup)
 - [Run In Kubernetes Environment](#run-in-kubernetes-environment)
@@ -156,7 +157,7 @@ It generates a Pull Request which includes all these files al directories.
 
 </br>
 
-## My arbitrary rules
+## My Arbitrary Rules
 
 ### Users and groups hierarchy
 I decided that user and group hierarchy should be defined from the bottom up. To me, it makes more sense that childs should keep track of their parents than parents of their childs.
