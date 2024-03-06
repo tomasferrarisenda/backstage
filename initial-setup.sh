@@ -107,7 +107,5 @@ replace_string_in_file "application-code/my-app/redis/catalog-info.yaml" "$githu
 replace_string_in_file "backstage/helm-chart/values-custom.yaml" "$github_username" "$dockerhub_username"
 replace_string_in_file "backstage/my-backstage/app-config.yaml" "$github_username" "$dockerhub_username"
 replace_string_in_file "backstage/my-backstage/app-config.production.yaml" "$github_username" "$dockerhub_username"
-replace_string_in_file "k8s-manifests/my-app/backend/deployment.yaml" "$github_username" "$dockerhub_username"
-replace_string_in_file "k8s-manifests/my-app/frontend/deployment.yaml" "$github_username" "$dockerhub_username"
 
 echo -n "That's it! All necessary files were updated with the info you provided.\nYou can go back to the README and carry on with the guide.\n\n"
