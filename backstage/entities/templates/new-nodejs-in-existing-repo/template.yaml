@@ -96,7 +96,7 @@ spec:
       action: fetch:template
       input:
         url: ./k8s-manifests
-        targetPath: k8s-manifests/${{ parameters.system }}-${{ parameters.service }}
+        targetPath: k8s-manifests/${{ parameters.system }}/${{ parameters.service }}
         values:
           system: ${{ parameters.system }}
           service: ${{ parameters.service }}
