@@ -25,6 +25,6 @@ spec:
     spec:
       containers:
         - name: my-app-frontend
-          image: tferrari92/my-app-frontend:stable
+          image: tferrari92/my-app-frontend:backstage-minikube-lab
           ports:
             - containerPort: 80
