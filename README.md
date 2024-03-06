@@ -247,7 +247,7 @@ Click Generate token. Store the token somewhere safe.
 </br>
 
 ### (Optional) Set up secrets for GitHub workflows
-This is only required if you intend to use GitHub workflows..
+This is only required if you intend to use GitHub workflows.
 
 Create these two repository secrets on your GitHub repo:
 - DOCKER_USERNAME: <your-dockerhub-username\>

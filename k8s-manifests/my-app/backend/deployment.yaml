@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: my-app-backend
-          image: tferrari92/my-app-backend:1641
+          image: tferrari92/my-app-backend:stable
           ports:
             - containerPort: 3000
           env:
